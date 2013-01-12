@@ -7,15 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
+		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
+		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
+		60EC306116A2007900E9BE93 /* ORRedditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306016A2007900E9BE93 /* ORRedditImageController.m */; };
+		60EC306416A2020F00E9BE93 /* GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306316A2020F00E9BE93 /* GIF.m */; };
+		60EC306716A2089500E9BE93 /* ORImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306616A2089500E9BE93 /* ORImageView.m */; };
+		60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC306816A2097D00E9BE93 /* WebKit.framework */; };
 		60ECD1B416A1FA6400A0FB7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */; };
 		60ECD1BE16A1FA6400A0FB7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */; };
 		60ECD1C016A1FA6400A0FB7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1BF16A1FA6400A0FB7A /* main.m */; };
 		60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C216A1FA6400A0FB7A /* Credits.rtf */; };
 		60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */; };
 		60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */; };
+		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44059188DA724A85B6EA5694 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		50FD7C5321E34413A5C61F2D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
+		60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMenuController.m; sourceTree = "<group>"; };
+		60EC305F16A2007900E9BE93 /* ORRedditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORRedditImageController.h; sourceTree = "<group>"; };
+		60EC306016A2007900E9BE93 /* ORRedditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORRedditImageController.m; sourceTree = "<group>"; };
+		60EC306216A2020F00E9BE93 /* GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIF.h; sourceTree = "<group>"; };
+		60EC306316A2020F00E9BE93 /* GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIF.m; sourceTree = "<group>"; };
+		60EC306516A2089500E9BE93 /* ORImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORImageView.h; sourceTree = "<group>"; };
+		60EC306616A2089500E9BE93 /* ORImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageView.m; sourceTree = "<group>"; };
+		60EC306816A2097D00E9BE93 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		60ECD1AF16A1FA6400A0FB7A /* GIFs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		60ECD1B616A1FA6400A0FB7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -36,7 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */,
+				60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */,
+				60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */,
 				60ECD1B416A1FA6400A0FB7A /* Cocoa.framework in Frameworks */,
+				B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,9 +71,13 @@
 		60ECD1A416A1FA6400A0FB7A = {
 			isa = PBXGroup;
 			children = (
+				60EC306816A2097D00E9BE93 /* WebKit.framework */,
+				60EC305816A1FB7A00E9BE93 /* Quartz.framework */,
+				60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */,
 				60ECD1B916A1FA6400A0FB7A /* GIFs */,
 				60ECD1B216A1FA6400A0FB7A /* Frameworks */,
 				60ECD1B016A1FA6400A0FB7A /* Products */,
+				44059188DA724A85B6EA5694 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +94,7 @@
 			children = (
 				60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */,
 				60ECD1B516A1FA6400A0FB7A /* Other Frameworks */,
+				50FD7C5321E34413A5C61F2D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,6 +116,14 @@
 				60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */,
 				60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */,
 				60ECD1BA16A1FA6400A0FB7A /* Supporting Files */,
+				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
+				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
+				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
+				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
+				60EC306216A2020F00E9BE93 /* GIF.h */,
+				60EC306316A2020F00E9BE93 /* GIF.m */,
+				60EC306516A2089500E9BE93 /* ORImageView.h */,
+				60EC306616A2089500E9BE93 /* ORImageView.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -112,6 +150,7 @@
 				60ECD1AB16A1FA6400A0FB7A /* Sources */,
 				60ECD1AC16A1FA6400A0FB7A /* Frameworks */,
 				60ECD1AD16A1FA6400A0FB7A /* Resources */,
+				19214ADF355E4738A3E8B9A0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +201,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19214ADF355E4738A3E8B9A0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60ECD1AB16A1FA6400A0FB7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -169,6 +225,10 @@
 			files = (
 				60ECD1C016A1FA6400A0FB7A /* main.m in Sources */,
 				60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */,
+				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
+				60EC306116A2007900E9BE93 /* ORRedditImageController.m in Sources */,
+				60EC306416A2020F00E9BE93 /* GIF.m in Sources */,
+				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +317,7 @@
 		};
 		60ECD1CE16A1FA6400A0FB7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44059188DA724A85B6EA5694 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -269,6 +330,7 @@
 		};
 		60ECD1CF16A1FA6400A0FB7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44059188DA724A85B6EA5694 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -298,6 +360,7 @@
 				60ECD1CF16A1FA6400A0FB7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
