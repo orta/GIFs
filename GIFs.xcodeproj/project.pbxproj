@@ -14,6 +14,9 @@
 		60EC306416A2020F00E9BE93 /* GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306316A2020F00E9BE93 /* GIF.m */; };
 		60EC306716A2089500E9BE93 /* ORImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306616A2089500E9BE93 /* ORImageView.m */; };
 		60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC306816A2097D00E9BE93 /* WebKit.framework */; };
+		60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */; };
+		60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306E16A3305A00E9BE93 /* ORSearchController.m */; };
+		60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC307116A3306E00E9BE93 /* ORGIFController.m */; };
 		60ECD1B416A1FA6400A0FB7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */; };
 		60ECD1BE16A1FA6400A0FB7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */; };
 		60ECD1C016A1FA6400A0FB7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1BF16A1FA6400A0FB7A /* main.m */; };
@@ -37,6 +40,12 @@
 		60EC306516A2089500E9BE93 /* ORImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORImageView.h; sourceTree = "<group>"; };
 		60EC306616A2089500E9BE93 /* ORImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageView.m; sourceTree = "<group>"; };
 		60EC306816A2097D00E9BE93 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORWebViewDelegateStuff.h; sourceTree = "<group>"; };
+		60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORWebViewDelegateStuff.m; sourceTree = "<group>"; };
+		60EC306D16A3305A00E9BE93 /* ORSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSearchController.h; sourceTree = "<group>"; };
+		60EC306E16A3305A00E9BE93 /* ORSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSearchController.m; sourceTree = "<group>"; };
+		60EC307016A3306E00E9BE93 /* ORGIFController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFController.h; sourceTree = "<group>"; };
+		60EC307116A3306E00E9BE93 /* ORGIFController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFController.m; sourceTree = "<group>"; };
 		60ECD1AF16A1FA6400A0FB7A /* GIFs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		60ECD1B616A1FA6400A0FB7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -124,6 +133,12 @@
 				60EC306316A2020F00E9BE93 /* GIF.m */,
 				60EC306516A2089500E9BE93 /* ORImageView.h */,
 				60EC306616A2089500E9BE93 /* ORImageView.m */,
+				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
+				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
+				60EC306D16A3305A00E9BE93 /* ORSearchController.h */,
+				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
+				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
+				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -229,6 +244,9 @@
 				60EC306116A2007900E9BE93 /* ORRedditImageController.m in Sources */,
 				60EC306416A2020F00E9BE93 /* GIF.m in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
+				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
+				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
+				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

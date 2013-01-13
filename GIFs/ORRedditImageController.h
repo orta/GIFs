@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Quartz/Quartz.h>
-#import <WebKit/WebKit.h>
+#import "ORGIFController.h"
 
-@interface ORRedditImageController : NSObject 
+@class GIF;
+@interface ORRedditImageController : NSObject <ORGIFSource>
 
 - (void)setRedditURL:(NSString *)redditURL;
-@property (weak) IBOutlet NSScrollView *imageScrollView;
-
-@property (weak) IBOutlet WebView *webView;
-@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+@property (weak) IBOutlet ORGIFController *gifController;
 
 @end

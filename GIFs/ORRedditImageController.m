@@ -18,32 +18,12 @@
     BOOL _downloading;
 }
 
-- (void)awakeFromNib {
-    [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(myTableClipBoundsChanged:)
-                                                 name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
-
-}
-
-- (void)myTableClipBoundsChanged:(NSNotification *)notification {
-    NSClipView *clipView = [notification object];
-    NSRect newClipBounds = [clipView bounds];
-    CGFloat height = _imageScrollView.contentSize.height;
-    if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) > height - 10) {
-        [self getNextGIFs];
-    }
-    
-    NSLog(@"%@", NSStringFromRect(newClipBounds));
-    NSLog(@"%f > %f ", CGRectGetMinY(newClipBounds), height);
-}
-
-
 - (void)setRedditURL:(NSString *)redditURL {
     _url = redditURL;
     _gifs = @[];
-    [_imageBrowser reloadData];
+    _token = nil;
     _downloading = NO;
+
     
     [self getNextGIFs];
 }
@@ -72,8 +52,12 @@
         }
         _gifs = [NSArray arrayWithArray:mutableGifs];
         _downloading = NO;
-        [_imageBrowser reloadData];
 
+        [_gifController gotNewGIFs];
+
+        if (_gifs.count < 21) {
+            [self performSelectorOnMainThread:@selector(getNextGIFs) withObject:nil waitUntilDone:NO];
+        }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
 
     }];
@@ -82,26 +66,13 @@
     [op start];
 }
 
-- (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser {
+
+- (NSInteger)numberOfGifs {
     return _gifs.count;
 }
 
-- (id) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
+- (GIF *)gifAtIndex:(NSInteger)index {
     return _gifs[index];
 }
-
-- (void) imageBrowserSelectionDidChange:(IKImageBrowserView *) aBrowser {
-    NSInteger index = [[aBrowser selectionIndexes] lastIndex];
-    
-    if (index != NSNotFound) {
-        GIF *gif = _gifs[index];
-        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
-        [[_webView mainFrame] loadRequest:request];
-        
-//        [_largeImageView setImageWithURL:gif.imageRepresentation];
-    }
-}
-
-
 
 @end

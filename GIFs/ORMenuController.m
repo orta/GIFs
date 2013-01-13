@@ -10,6 +10,7 @@
 
 @implementation ORMenuController {
     NSDictionary *_sources;
+    NSArray *_searches;
 }
 
 - (void)awakeFromNib {
@@ -23,14 +24,18 @@
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return _sources.allKeys.count;
+    return _sources.allKeys.count + _searches.count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     NSTableCellView *result = [tableView makeViewWithIdentifier:@"menuItem" owner:self];
-    result.textField.stringValue = _sources.allKeys[row];
+    if (row < _searches.count) {
+        result.textField.stringValue = _searches[row];
+    } else {
+        result.textField.stringValue = _sources.allKeys[row];
+    }
     return result;
 }
 
@@ -38,8 +43,14 @@
     NSTableView *tableView = notification.object;
     NSInteger index = [tableView selectedRow];
     
-    if (index != NSNotFound && index != -1) {
-        [_redditController setRedditURL:_sources.allValues[index]];
+    if (index == NSNotFound && index != -1) {
+        return;
+    }
+
+    if(index < _searches.count){
+        [_gifViewController getGIFsFromSourceString:_searches[index]];
+    } else {
+        [_gifViewController getGIFsFromSourceString:_sources.allValues[index]];
     }
 }
 

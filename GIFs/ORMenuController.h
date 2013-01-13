@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ORRedditImageController.h"
+#import "ORGIFController.h"
 
 @interface ORMenuController : NSObject <NSTableViewDataSource, NSTableViewDelegate>
-@property (weak) IBOutlet ORRedditImageController *redditController;
+@property (weak) IBOutlet ORGIFController *gifViewController;
 
 @end
