@@ -31,6 +31,7 @@
 
 - (void)gotNewGIFs;
 
+- (void)searchForGIFs:(NSString *)query;
 - (void)getGIFsFromSourceString:(NSString *)string;
 
 @end

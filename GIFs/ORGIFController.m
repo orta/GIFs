@@ -18,9 +18,11 @@
 - (void)getGIFsFromSourceString:(NSString *)string {
     if([string rangeOfString:@"reddit"].location != NSNotFound){
         _currentSource = _redditController;
+        _searchController.gifViewController = self;
         [_redditController setRedditURL:string];
     } else {
         _currentSource = _searchController;
+        _searchController.gifViewController = self;
         [_searchController setSearchQuery:string];
     }
 }
@@ -30,7 +32,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
                                                  name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
-
 }
 
 - (void)myTableClipBoundsChanged:(NSNotification *)notification {
@@ -38,7 +39,6 @@
     NSRect newClipBounds = [clipView bounds];
     CGFloat height = _imageScrollView.contentSize.height;
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) > height - 10) {
-        NSLog(@"getting next gifs");
         [_currentSource getNextGIFs];
     }
 }
@@ -64,7 +64,5 @@
         [[_webView mainFrame] loadRequest:request];
     }
 }
-
-
 
 @end

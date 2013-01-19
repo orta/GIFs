@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ORGIFController.h"
 
-@interface ORMenuController : NSObject <NSTableViewDataSource, NSTableViewDelegate>
+@interface ORMenuController : NSObject <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 @property (weak) IBOutlet ORGIFController *gifViewController;
+@property (weak) IBOutlet NSTableView *menuTableView;
 
 @end

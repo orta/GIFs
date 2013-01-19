@@ -8,14 +8,25 @@
 
 #import "ORWebViewDelegateStuff.h"
 
-@implementation ORWebViewDelegateStuff
+@implementation ORWebViewDelegateStuff {
+    NSURL *currentAddress;
+}
 
 - (void)awakeFromNib {
     _webView.UIDelegate = self;
 }
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems {
-    return nil;
+
+    currentAddress = element[WebElementImageURLKey];
+    NSMenuItem *item =[[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
+    item.target = self;
+    return @[item];
+}
+
+- (void)copyURL {
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] writeObjects:@[currentAddress]];
 }
 
 @end
