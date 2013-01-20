@@ -80,9 +80,6 @@
 		60ECD1A416A1FA6400A0FB7A = {
 			isa = PBXGroup;
 			children = (
-				60EC306816A2097D00E9BE93 /* WebKit.framework */,
-				60EC305816A1FB7A00E9BE93 /* Quartz.framework */,
-				60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */,
 				60ECD1B916A1FA6400A0FB7A /* GIFs */,
 				60ECD1B216A1FA6400A0FB7A /* Frameworks */,
 				60ECD1B016A1FA6400A0FB7A /* Products */,
@@ -101,6 +98,9 @@
 		60ECD1B216A1FA6400A0FB7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60EC306816A2097D00E9BE93 /* WebKit.framework */,
+				60EC305816A1FB7A00E9BE93 /* Quartz.framework */,
+				60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */,
 				60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */,
 				60ECD1B516A1FA6400A0FB7A /* Other Frameworks */,
 				50FD7C5321E34413A5C61F2D /* libPods.a */,
