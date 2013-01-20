@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
 #import <WebKit/WebKit.h>
+#import "ORSimpleSourceListView.h"
 
 @class GIF, ORRedditImageController, ORSearchController;
 @protocol ORGIFSource <NSObject>
@@ -31,7 +32,6 @@
 
 - (void)gotNewGIFs;
 
-- (void)searchForGIFs:(NSString *)query;
 - (void)getGIFsFromSourceString:(NSString *)string;
 
 @end

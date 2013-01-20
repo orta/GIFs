@@ -39,8 +39,6 @@
     NSRect newClipBounds = [clipView bounds];
     CGFloat height = _imageScrollView.contentSize.height;
 
-    NSLog(@"%f vs %f", CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds), height + 20);
-
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
         NSLog(@"get next from height");
         [_currentSource getNextGIFs];

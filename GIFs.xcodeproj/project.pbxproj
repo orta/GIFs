@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 60238CBD16ABC7C6002DC7CD /* gif_template.html */; };
+		60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -31,6 +32,8 @@
 		44059188DA724A85B6EA5694 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		50FD7C5321E34413A5C61F2D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		60238CBD16ABC7C6002DC7CD /* gif_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gif_template.html; sourceTree = "<group>"; };
+		60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSimpleSourceListView.h; sourceTree = "<group>"; };
+		60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSimpleSourceListView.m; sourceTree = "<group>"; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
 				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
 				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
+				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
+				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
 				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
 				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
+				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
