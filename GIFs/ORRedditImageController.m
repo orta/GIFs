@@ -9,6 +9,7 @@
 #import "ORRedditImageController.h"
 #import "AFNetworking.h"
 #import "GIF.h"
+#import "ORAppDelegate.h"
 
 @implementation ORRedditImageController {
     NSString *_url;
@@ -39,7 +40,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
 
     AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
+            [ORAppDelegate setNetworkActivity:NO];
         _token = JSON[@"data"][@"after"];
         NSArray *messages = JSON[@"data"][@"children"];
         NSMutableArray *mutableGifs = [NSMutableArray arrayWithArray:_gifs];
@@ -58,12 +59,15 @@
         if (_gifs.count < 21) {
             [self performSelectorOnMainThread:@selector(getNextGIFs) withObject:nil waitUntilDone:NO];
         }
+        
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-
+        [ORAppDelegate setNetworkActivity:NO];
+        
     }];
 
     _downloading = YES;
     [op start];
+    [ORAppDelegate setNetworkActivity:YES];
 }
 
 

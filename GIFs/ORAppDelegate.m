@@ -10,9 +10,18 @@
 
 @implementation ORAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+static ORAppDelegate *_sharedInstance = nil;
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    _sharedInstance = self;
+}
+
++ (void)setNetworkActivity:(BOOL)activity {
+    if (activity) {
+        [_sharedInstance.networkProgress startAnimation:self];
+    } else {
+        [_sharedInstance.networkProgress stopAnimation:self];
+    }
 }
 
 @end

@@ -25,9 +25,11 @@
         _searchController.gifViewController = self;
         [_searchController setSearchQuery:string];
     }
+    [_imageBrowser reloadData];
 }
 
 - (void)awakeFromNib {
+    [_imageBrowser setValue:[NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000] forKey:IKImageBrowserBackgroundColorKey];
     [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)

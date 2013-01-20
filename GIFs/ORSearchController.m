@@ -9,6 +9,7 @@
 #import "ORSearchController.h"
 #import "AFNetworking.h"
 #import "GIF.h"
+#import "ORAppDelegate.h"
 
 @implementation ORSearchController {
     NSArray *_gifs;
@@ -18,7 +19,7 @@
 }
 
 - (void)setSearchQuery:(NSString *)query {
-    _query = query;
+    _query = [query stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     _gifs = @[];
     _redditToken = nil;
     _downloading = NO;
@@ -39,7 +40,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
 
     AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-
+        [ORAppDelegate setNetworkActivity:NO];
         _redditToken = JSON[@"data"][@"after"];
         NSArray *messages = JSON[@"data"][@"children"];
         NSMutableArray *mutableGifs = [NSMutableArray arrayWithArray:_gifs];
@@ -54,12 +55,12 @@
         _gifs = [NSArray arrayWithArray:mutableGifs];
         _downloading = NO;
 
-        NSLog(@"found %lu from reddit", mutableGifs.count);
         [_gifViewController gotNewGIFs];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-
+        [ORAppDelegate setNetworkActivity:NO];
     }];
 
+    [ORAppDelegate setNetworkActivity:YES];
     _downloading = YES;
     [op start];
 }

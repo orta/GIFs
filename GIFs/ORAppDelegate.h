@@ -9,7 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ORAppDelegate : NSObject <NSApplicationDelegate>
+@property (weak) IBOutlet NSProgressIndicator *networkProgress;
 
 @property (assign) IBOutlet NSWindow *window;
+
++ (void)setNetworkActivity:(BOOL)activity;
 
 @end

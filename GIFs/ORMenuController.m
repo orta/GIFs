@@ -8,8 +8,23 @@
 
 #import "ORMenuController.h"
 
+@interface ORMenuItem : NSObject
++ (id)itemWithName:(NSString *)name address:(NSString *)address;
+@property NSString *name;
+@property NSString *address;
+@end
+
+@implementation ORMenuItem
++ (id)itemWithName:(NSString *)name address:(NSString *)address {
+    ORMenuItem *item = [[ORMenuItem alloc] init];
+    item.name = name;
+    item.address = address;
+    return item;
+}
+@end
+
 @implementation ORMenuController {
-    NSMutableDictionary *_sources;
+    NSMutableArray *_sources;    
     NSMutableArray *_searches;
 }
 
@@ -18,15 +33,24 @@
     if (!self) return nil;
 
     _searches = [@[] mutableCopy];
-    _sources = [@{
-                    @"/r/GIFs": @"http://www.reddit.com/r/gifs.json",
-                    @"/r/GIF": @"http://www.reddit.com/r/gif.json",
-                    @"/r/WhitePeopleGIFs": @"http://www.reddit.com/r/whitepeoplegifs.json",
-                    @"/r/BlackPeopleGIFs": @"http://www.reddit.com/r/blackpeoplegifs.json",
-                    @"/r/ReactionGIFs": @"http://www.reddit.com/r/reactiongifs.json"
-    } mutableCopy];
+
+    _sources = [@[
+        [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
+        [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
+        [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
+        [ORMenuItem itemWithName:@"/r/WhitePeopleGIFs" address:@"http://www.reddit.com/r/whitepeoplegifs.json"],
+        [ORMenuItem itemWithName:@"/r/BlackPeopleGIFs" address:@"http://www.reddit.com/r/blackpeoplegifs.json"],
+        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"]
+    ] mutableCopy];
 
     return self;
+}
+
+- (void)awakeFromNib {
+    _window.titleBarHeight = 60;
+    _windowToolbar.frame = self.window.titleBarView.bounds;
+    _windowToolbar.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [_window.titleBarView addSubview:_windowToolbar];
 }
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
@@ -68,7 +92,8 @@
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section) {
         ORSourceListItem *item = [[ORSourceListItem alloc] init];
-        item.title = _sources.allKeys[indexPath.row];
+        ORMenuItem *menuItem = _sources[indexPath.row];
+        item.title = menuItem.name;
         item.thumbnail = @"Reddit";
         item.selectedThumbnail = @"RedditWhite";
         return item;
@@ -98,7 +123,7 @@
     NSUInteger index = indexPath.row;
     
     if(indexPath.section){
-        [_gifViewController getGIFsFromSourceString:_sources.allValues[index]];
+        [_gifViewController getGIFsFromSourceString:[_sources[index] address]];
     } else {
         [_gifViewController getGIFsFromSourceString:_searches[index]];
     }
