@@ -19,12 +19,19 @@
     _thumbnailURL = dictionary[@"data"][@"thumbnail"];
 
     _downloadURL = dictionary[@"data"][@"url"];
-    _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
+
 
     if (_thumbnailURL.length == 0) {
-        _thumbnailURL = _downloadURL;
+        if ([_downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
+            _thumbnailURL = [_downloadURL stringByReplacingOccurrencesOfString:@".gif" withString:@"b.jpg"];
+
+        } else {
+            // ergh, this would take a while
+            _thumbnailURL = _downloadURL;
+        }
     }
-    
+
+    _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
     if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound) {
         return nil;
     }
