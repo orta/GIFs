@@ -24,8 +24,9 @@
 @property (assign, nonatomic) BOOL selected;
 @end
 
-@interface ORSourceListItem :NSObject
-@property (strong) NSImage *thumbnail;
+@interface ORSourceListItem : NSObject
+@property (strong) NSString *selectedThumbnail;
+@property (strong) NSString *thumbnail;
 @property (strong) NSString *title;
 @end
 

@@ -8,6 +8,16 @@
 
 #import "ORSimpleSourceListView.h"
 
+CGFloat ORCellHeight = 28;
+CGFloat ORCellLeftPadding = 12;
+
+CGFloat ORCellTitleTopPadding = 8;
+
+CGFloat ORCellItemLeftPadding = 40;
+CGFloat ORCellItemTopPadding = 6;
+
+CGFloat ORCellImageDimensions = 16;
+
 @implementation NSIndexPath(SourceListExtension)
 + (NSIndexPath *)indexPathForRow:(NSInteger)row inSection:(NSInteger)section {
     NSUInteger indexArr[] = { row, section };
@@ -85,7 +95,7 @@
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    return 24;
+    return ORCellHeight;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView
@@ -96,12 +106,10 @@
     if ([item isMemberOfClass:[ORSourceListItem class]]){
         ORSourceListItem *sourceListItem = (ORSourceListItem *)item;
         result = [[ORSourceListItemView alloc] initWithSourceListItem:sourceListItem];
-        result.textField.stringValue = @"item";
 
     } else {
         NSString *headerString = (NSString *)item;
         result = [[ORSourceListHeaderView alloc] initWithTitle:headerString];
-        result.textField.stringValue = @"HEADER";
     }
     return result;
 }
@@ -112,7 +120,6 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSLog(@"changed selection");
     NSTableView *tableView = notification.object;
     NSInteger index = [self selectedRow];
     if (index == _currentSelectionIndex || index == -1) {
@@ -153,6 +160,25 @@
     return [NSIndexPath indexPathForRow:indexRow inSection:indexSection];
 }
 
++ (NSTextField *)textFieldForItems {
+    NSTextField *titleLabel = [[NSTextField alloc] init];
+    [titleLabel setBezeled:NO];
+    [titleLabel setDrawsBackground:NO];
+    [titleLabel setEditable:NO];
+    [titleLabel setSelectable:NO];
+    [[titleLabel cell] setBackgroundStyle:NSBackgroundStyleRaised];
+    titleLabel.font = [NSFont fontWithName:@"Ariel" size:12];
+    titleLabel.textColor = [NSColor colorWithCalibratedRed:0.550 green:0.522 blue:0.598 alpha:1.000];
+    return titleLabel;
+}
+
++ (NSTextField *)textFieldForHeaders {
+    NSTextField *headerTextField = [self textFieldForItems];
+    headerTextField.font = [NSFont fontWithName:@"Ariel" size:10];
+    return headerTextField;
+}
+
+
 @end
 
 @implementation ORSourceListHeaderView
@@ -161,8 +187,11 @@
     self = [super init];
     if(!self)return nil;
 
-    self.textField.stringValue = [title uppercaseString];
-    self.textField.textColor = [NSColor colorWithCalibratedRed:0.310 green:0.294 blue:0.341 alpha:1.000];
+    NSTextField *headerTextField = [ORSimpleSourceListView textFieldForHeaders];
+    self.textField = headerTextField;
+    [self addSubview:headerTextField];
+
+    self.textField.stringValue = [title uppercaseString];    
     return self;
 }
 
@@ -172,24 +201,54 @@
 	NSRectFill(dirtyRect);
 }
 
+- (void)setFrame:(NSRect)frameRect {
+    [super setFrame:frameRect];
+    self.textField.frame = CGRectMake(ORCellLeftPadding, -ORCellTitleTopPadding, CGRectGetWidth(frameRect) - ORCellLeftPadding, ORCellHeight);
+}
+
 @end
 
-@implementation ORSourceListItemView
+@implementation ORSourceListItemView {
+    NSString *_thumbnail;
+    NSString *_selectedThumbnail;
+}
 
 - (id)initWithSourceListItem:(ORSourceListItem *)item {
     self = [super init];
     if(!self)return nil;
 
+    _thumbnail = item.thumbnail;
+    _selectedThumbnail = item.selectedThumbnail;
+
+    NSTextField *titleTextField = [ORSimpleSourceListView textFieldForItems];
+    self.textField = titleTextField;
+    [self addSubview:titleTextField];
+
+    NSImageView *itemImage = [[NSImageView alloc] init];
+    self.imageView = itemImage;
+    [self addSubview:itemImage];
+
     self.textField.stringValue = item.title;
-    self.textField.textColor = [NSColor colorWithCalibratedRed:0.310 green:0.294 blue:0.341 alpha:1.000];
+    self.imageView.image = [NSImage imageNamed:_thumbnail];
     return self;
+}
+
+- (void)setFrame:(NSRect)frameRect {
+    [super setFrame:frameRect];
+    self.textField.frame = CGRectMake(ORCellItemLeftPadding, -ORCellItemTopPadding, CGRectGetWidth(frameRect) - ORCellItemLeftPadding, ORCellHeight);
+    self.imageView.frame = CGRectMake(ORCellLeftPadding, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
     if (_selected) {
         [[NSColor colorWithCalibratedRed:0.206 green:0.449 blue:0.940 alpha:1.000] set];
+        self.textField.textColor = [NSColor colorWithCalibratedRed:1 green:1 blue:1.000 alpha:1.000];
+        self.imageView.image = [NSImage imageNamed:_selectedThumbnail];
     } else {
+        self.imageView.image = [NSImage imageNamed:_thumbnail];
+        self.textField.textColor = [NSColor colorWithCalibratedRed:0.550 green:0.522 blue:0.598 alpha:1.000];
         [[NSColor colorWithCalibratedRed:0.150 green:0.140 blue:0.169 alpha:1.000] set];
+
     }
     NSRectFill(dirtyRect);
 }

@@ -75,11 +75,11 @@
 }
 
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@ - %@", NSStringFromSelector(_cmd), indexPath);
-    
     if (indexPath.section) {
         ORSourceListItem *item = [[ORSourceListItem alloc] init];
         item.title = _sources.allKeys[indexPath.row];
+        item.thumbnail = @"Reddit";
+        item.selectedThumbnail = @"RedditWhite";
         return item;
     } else {
         ORSourceListItem *item = [[ORSourceListItem alloc] init];
