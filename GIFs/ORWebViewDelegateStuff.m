@@ -17,11 +17,14 @@
 }
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems {
-
-    currentAddress = element[WebElementImageURLKey];
-    NSMenuItem *item =[[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
-    item.target = self;
-    return @[item];
+    if (element[WebElementImageURLKey]) {
+        currentAddress = element[WebElementImageURLKey];
+        NSMenuItem *item =[[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
+        item.target = self;
+        return @[item];
+    }
+    
+    return defaultMenuItems;
 }
 
 - (void)copyURL {

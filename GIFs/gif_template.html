@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+
+<style>
+  html, body { height: 100%; }
+
+  body {
+  	width: 100%; /* needed for FF */
+  	margin: 0;
+	  background-color: #ddd;
+  	/* Flexbox hawtness */
+    display: -webkit-box;
+  	-webkit-box-align: center;
+  	-webkit-box-pack: center;
+  }
+
+  div {
+  	padding: 1em 1.5em;
+  	margin: 1em auto;
+  	background: #ccc;
+  	text-align: center;
+  	border-radius: .3em;
+  	color: #405060;
+  	font: bold 120% sans-serif;
+  	text-shadow: 0 2px 1px hsla(0,0%,100%,.2);
+  }
+  
+</style></head>
+
+<body>
+<div>
+  <img id="image" src="{{OR_IMAGE_URL}}" />
+  <h4>{{OR_IMAGE_URL}}</h4>
+</div>
+
+</body>
+</html>

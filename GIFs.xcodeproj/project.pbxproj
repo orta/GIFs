@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 60238CBD16ABC7C6002DC7CD /* gif_template.html */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		44059188DA724A85B6EA5694 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		50FD7C5321E34413A5C61F2D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		60238CBD16ABC7C6002DC7CD /* gif_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gif_template.html; sourceTree = "<group>"; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
 				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
 				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
+				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				60ECD1BE16A1FA6400A0FB7A /* InfoPlist.strings in Resources */,
 				60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */,
 				60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */,
+				60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

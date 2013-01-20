@@ -64,8 +64,13 @@
 
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
-        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
-        [[_webView mainFrame] loadRequest:request];
+
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
+        NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
+        html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
+        if (html) {
+            [[_webView mainFrame] loadHTMLString:html baseURL:nil];
+        }
     }
 }
 

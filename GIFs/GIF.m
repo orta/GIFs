@@ -17,9 +17,7 @@
     self = [super init];
 
     _thumbnailURL = dictionary[@"data"][@"thumbnail"];
-
     _downloadURL = dictionary[@"data"][@"url"];
-
 
     if (_thumbnailURL.length == 0) {
         if ([_downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
