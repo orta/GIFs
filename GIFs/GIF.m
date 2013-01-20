@@ -21,10 +21,13 @@
     _downloadURL = dictionary[@"data"][@"url"];
     _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
 
+    if (_thumbnailURL.length == 0) {
+        _thumbnailURL = _downloadURL;
+    }
+    
     if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound) {
         return nil;
     }
-
 
     return self;
 }

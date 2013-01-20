@@ -50,6 +50,7 @@
                 [mutableGifs addObject:gif];
             }
         }
+
         _gifs = [NSArray arrayWithArray:mutableGifs];
         _downloading = NO;
 
