@@ -61,7 +61,9 @@ CGFloat ORCellImageDimensions = 16;
     self.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     self.intercellSpacing = CGSizeMake(0, 0);
     self.backgroundColor = [NSColor colorWithCalibratedRed:0.2039 green:0.1922 blue:0.2275 alpha:1.0000];
-
+    self.allowsMultipleSelection = NO;
+    self.allowsEmptySelection = NO;
+    
     _currentSelectionIndex = NSNotFound;
 }
 
@@ -69,7 +71,7 @@ CGFloat ORCellImageDimensions = 16;
     [self reloadData];
 }
 
-- (void)reloadData {    
+- (void)reloadData {
     if(_sourceListDataSource){
         NSUInteger numberOfSections = [_sourceListDataSource numberOfSectionsInSourceList:self];
         if(!numberOfSections) return;
@@ -119,31 +121,71 @@ CGFloat ORCellImageDimensions = 16;
     return [item isKindOfClass:[ORSourceListItem class]];
 }
 
-- (void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSTableView *tableView = notification.object;
-    NSInteger index = [self selectedRow];
-    if (index == _currentSelectionIndex || index == -1) {
-        return;
-    }
+//- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+//    NSInteger index = [self selectedRow];
+//    if (index == _currentSelectionIndex || index == -1) {
+//        return;
+//    }
+//
+//    id item = _items[index];
+//}
 
-    id item = _items[index];
-    if ([item isMemberOfClass:[ORSourceListItem class]]) {
-        if (_currentSelectionIndex != NSNotFound) {
-            ORSourceListItemView *oldCell = [self viewAtColumn:0 row:_currentSelectionIndex makeIfNecessary:NO];
-            if (oldCell && [oldCell isKindOfClass:[ORSourceListItemView class]]) {
-                oldCell.selected = NO;
+- (void)setSelectedIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = [self indexPathToRow:indexPath];
+    if (index != NSNotFound) {
+        NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:index];
+        [self selectRowIndexes:set byExtendingSelection:NO];
+    }
+}
+
+- (void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)extend {
+    NSUInteger newIndex = [indexes firstIndex];
+    if (newIndex != NSNotFound) {
+        [self _changeSelectionToRow:newIndex];
+        [super selectRowIndexes:indexes byExtendingSelection:extend];
+
+        id item = _items[newIndex];
+        if ([item isMemberOfClass:[ORSourceListItem class]]) {
+            NSIndexPath *path = [self rowToIndexPath:newIndex];
+            [_sourceListDelegate sourceList:self selectionDidChangeToIndexPath:path];
+        }
+    }
+}
+
+- (void)_changeSelectionToRow:(NSInteger)row {
+    if (_currentSelectionIndex != NSNotFound) {
+        [self _visuallySelectRowAtIndex:_currentSelectionIndex toState:NO];
+    }
+    _currentSelectionIndex = row;
+    [self _visuallySelectRowAtIndex:row toState:YES];
+}
+
+- (void)_visuallySelectRowAtIndex:(NSUInteger)index toState:(BOOL)state {
+    ORSourceListItemView *cell = [self viewAtColumn:0 row:index makeIfNecessary:NO];
+    if (cell && [cell respondsToSelector:@selector(setSelected:)]) {
+        cell.selected = state;
+    }
+}
+
+- (NSUInteger)indexPathToRow:(NSIndexPath *)path {
+    NSInteger section = -1;
+    NSInteger currentRow = -1;
+    BOOL foundSection = NO;
+    for (int i = 0; i < _items.count; i++) {
+        if (![_items[i] isKindOfClass:[ORSourceListItem class]]) {
+            section++;
+            if (section == path.section) {
+                foundSection = YES;
             }
         }
-
-        ORSourceListItemView *cell = [self viewAtColumn:0 row:index makeIfNecessary:NO];
-        if (cell) {
-            cell.selected = YES;
+        else if (foundSection) {
+            currentRow++;
+            if (currentRow == path.row) {
+                return i;
+            }
         }
-
-        _currentSelectionIndex = index;
-        NSIndexPath *path = [self rowToIndexPath:index];
-        [_sourceListDelegate sourceList:self selectionDidChangeToIndexPath:path];
     }
+    return NSNotFound;
 }
 
 - (NSIndexPath *)rowToIndexPath:(NSUInteger)row {
@@ -174,7 +216,7 @@ CGFloat ORCellImageDimensions = 16;
 
 + (NSTextField *)textFieldForHeaders {
     NSTextField *headerTextField = [self textFieldForItems];
-    headerTextField.font = [NSFont fontWithName:@"Ariel" size:10];
+    headerTextField.font = [NSFont fontWithName:@"Arial Bold" size:10];
     return headerTextField;
 }
 

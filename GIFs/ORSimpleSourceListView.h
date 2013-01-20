@@ -47,4 +47,6 @@
 @interface ORSimpleSourceListView : NSTableView <NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet id <ORSourceListDelegate> sourceListDelegate;
 @property (weak) IBOutlet id <ORSourceListDataSource> sourceListDataSource;
+
+- (void)setSelectedIndexPath:(NSIndexPath *)indexPath;
 @end

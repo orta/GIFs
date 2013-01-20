@@ -29,39 +29,30 @@
     return self;
 }
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return _sources.allKeys.count + _searches.count;
-}
-
-- (NSView *)tableView:(NSTableView *)tableView
-   viewForTableColumn:(NSTableColumn *)tableColumn
-                  row:(NSInteger)row {
-    NSTableCellView *result = [tableView makeViewWithIdentifier:@"menuItem" owner:self];
-    if (row < _searches.count) {
-        result.textField.stringValue = _searches[row];
-    } else {
-        result.textField.stringValue = _sources.allKeys[row - _searches.count];
-    }
-    return result;
-}
-
-- (void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSTableView *tableView = notification.object;
-    NSInteger index = [tableView selectedRow];
-    
-}
-
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
-    NSLog(@"%@ - %@", NSStringFromSelector(_cmd), control);
     NSSearchField *searchField = (NSSearchField *)control;
     [_searches insertObject:searchField.stringValue atIndex:0];
     [searchField setStringValue:@""];
-    
-    [_menuTableView becomeFirstResponder];
+
     [_menuTableView reloadData];
-    [_menuTableView selectRowIndexes:[[NSIndexSet alloc] initWithIndex:0] byExtendingSelection:NO];
+    
+    [_menuTableView setSelectedIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 
     return YES;
+}
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex {
+    if(dividerIndex == 0){
+        return 180;
+    }
+    return proposedMinimumPosition;
+}
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMaximumPosition ofSubviewAt:(NSInteger)dividerIndex {
+    if(dividerIndex == 0){
+        return 240;
+    }
+    return proposedMaximumPosition;
 }
 
 #pragma mark -
