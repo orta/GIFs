@@ -109,6 +109,10 @@ CGFloat ORCellImageDimensions = 16;
         ORSourceListItem *sourceListItem = (ORSourceListItem *)item;
         result = [[ORSourceListItemView alloc] initWithSourceListItem:sourceListItem];
 
+        if (row == _currentSelectionIndex) {
+            [(ORSourceListItemView *)result setSelected:YES];
+        }
+
     } else {
         NSString *headerString = (NSString *)item;
         result = [[ORSourceListHeaderView alloc] initWithTitle:headerString];
@@ -120,15 +124,6 @@ CGFloat ORCellImageDimensions = 16;
     id item =_items[row];
     return [item isKindOfClass:[ORSourceListItem class]];
 }
-
-//- (void)tableViewSelectionDidChange:(NSNotification *)notification {
-//    NSInteger index = [self selectedRow];
-//    if (index == _currentSelectionIndex || index == -1) {
-//        return;
-//    }
-//
-//    id item = _items[index];
-//}
 
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath {
     NSInteger index = [self indexPathToRow:indexPath];

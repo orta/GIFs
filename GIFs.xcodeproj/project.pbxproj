@@ -13,6 +13,10 @@
 		60238CD916AC7302002DC7CD /* Reddit.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CD716AC7301002DC7CD /* Reddit.png */; };
 		60238CDD16AC76E2002DC7CD /* RedditWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CDB16AC76E2002DC7CD /* RedditWhite.png */; };
 		60238CDE16AC76E2002DC7CD /* RedditWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */; };
+		60238CF216ACB9E0002DC7CD /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF016ACB9DF002DC7CD /* Search.png */; };
+		60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF116ACB9DF002DC7CD /* Search@2x.png */; };
+		60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF516ACBA0C002DC7CD /* SearchWhite.png */; };
+		60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -42,6 +46,10 @@
 		60238CD716AC7301002DC7CD /* Reddit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reddit.png; sourceTree = "<group>"; };
 		60238CDB16AC76E2002DC7CD /* RedditWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedditWhite.png; sourceTree = "<group>"; };
 		60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RedditWhite@2x.png"; sourceTree = "<group>"; };
+		60238CF016ACB9DF002DC7CD /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
+		60238CF116ACB9DF002DC7CD /* Search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@2x.png"; sourceTree = "<group>"; };
+		60238CF516ACBA0C002DC7CD /* SearchWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchWhite.png; sourceTree = "<group>"; };
+		60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SearchWhite@2x.png"; sourceTree = "<group>"; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -159,6 +167,10 @@
 				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
 				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
 				60238CD716AC7301002DC7CD /* Reddit.png */,
+				60238CF016ACB9DF002DC7CD /* Search.png */,
+				60238CF116ACB9DF002DC7CD /* Search@2x.png */,
+				60238CF516ACBA0C002DC7CD /* SearchWhite.png */,
+				60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -236,6 +248,10 @@
 				60238CD916AC7302002DC7CD /* Reddit.png in Resources */,
 				60238CDD16AC76E2002DC7CD /* RedditWhite.png in Resources */,
 				60238CDE16AC76E2002DC7CD /* RedditWhite@2x.png in Resources */,
+				60238CF216ACB9E0002DC7CD /* Search.png in Resources */,
+				60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */,
+				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
+				60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

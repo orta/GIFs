@@ -1912,28 +1912,27 @@
 			<object class="NSCustomObject" id="839589822">
 				<string key="NSClassName">ORSearchController</string>
 			</object>
-			<object class="NSCustomView" id="83834163">
+			<object class="NSCustomView" id="405935245">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSProgressIndicator" id="917803549">
-						<reference key="NSNextResponder" ref="83834163"/>
+					<object class="NSProgressIndicator" id="527979947">
+						<reference key="NSNextResponder" ref="405935245"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{685, 22}, {16, 16}}</string>
-						<reference key="NSSuperview" ref="83834163"/>
+						<string key="NSFrame">{{681, 22}, {16, 16}}</string>
+						<reference key="NSSuperview" ref="405935245"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:945</string>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMaxValue">100</double>
 					</object>
 					<object class="NSSearchField" id="437495480">
-						<reference key="NSNextResponder" ref="83834163"/>
+						<reference key="NSNextResponder" ref="405935245"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{503, 19}, {160, 22}}</string>
-						<reference key="NSSuperview" ref="83834163"/>
+						<string key="NSFrame">{{543, 19}, {160, 22}}</string>
+						<reference key="NSSuperview" ref="405935245"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="917803549"/>
+						<reference key="NSNextKeyView" ref="527979947"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSearchFieldCell" key="NSCell" id="173921293">
@@ -2683,7 +2682,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">networkProgress</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="917803549"/>
+						<reference key="destination" ref="527979947"/>
 					</object>
 					<int key="connectionID">674</int>
 				</object>
@@ -2789,7 +2788,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">windowToolbar</string>
 						<reference key="source" ref="257770575"/>
-						<reference key="destination" ref="83834163"/>
+						<reference key="destination" ref="405935245"/>
 					</object>
 					<int key="connectionID">673</int>
 				</object>
@@ -4059,10 +4058,10 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">671</int>
-						<reference key="object" ref="83834163"/>
+						<reference key="object" ref="405935245"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="437495480"/>
-							<reference ref="917803549"/>
+							<reference ref="527979947"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -4072,7 +4071,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="173921293"/>
 						</array>
-						<reference key="parent" ref="83834163"/>
+						<reference key="parent" ref="405935245"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">642</int>
@@ -4081,8 +4080,8 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">672</int>
-						<reference key="object" ref="917803549"/>
-						<reference key="parent" ref="83834163"/>
+						<reference key="object" ref="527979947"/>
+						<reference key="parent" ref="405935245"/>
 					</object>
 				</array>
 			</object>

@@ -35,12 +35,13 @@
     _searches = [@[] mutableCopy];
 
     _sources = [@[
+        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
         [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
         [ORMenuItem itemWithName:@"/r/WhitePeopleGIFs" address:@"http://www.reddit.com/r/whitepeoplegifs.json"],
         [ORMenuItem itemWithName:@"/r/BlackPeopleGIFs" address:@"http://www.reddit.com/r/blackpeoplegifs.json"],
-        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"]
+        [ORMenuItem itemWithName:@"/r/AsianPeopleGIFs" address:@"http://www.reddit.com/r/asianpeoplegifs.json"]
     ] mutableCopy];
 
     return self;
@@ -100,6 +101,9 @@
     } else {
         ORSourceListItem *item = [[ORSourceListItem alloc] init];
         item.title = _searches[indexPath.row];
+        item.thumbnail = @"Search";
+        item.selectedThumbnail = @"SearchWhite";
+
         return item;
     }
 }
