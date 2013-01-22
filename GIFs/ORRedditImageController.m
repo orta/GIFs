@@ -55,10 +55,6 @@
         _downloading = NO;
 
         [_gifController gotNewGIFs];
-
-        if (_gifs.count < 21) {
-            [self performSelectorOnMainThread:@selector(getNextGIFs) withObject:nil waitUntilDone:NO];
-        }
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         [ORAppDelegate setNetworkActivity:NO];

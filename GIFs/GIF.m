@@ -37,6 +37,16 @@
     return self;
 }
 
+- (id)initWithDownloadURL:(NSString *)downloadURL andThumbnail:(NSString *)thumbnail {
+    self = [super init];
+
+    _thumbnailURL = thumbnail;
+    _downloadURL = downloadURL;
+
+    return self;
+}
+
+
 - (NSString *)imageUID {
     return _thumbnailURL;
 }
@@ -51,6 +61,13 @@
 
 - (NSURL *)downloadURL {
     return  [NSURL URLWithString:_downloadURL];
+}
+
+- (BOOL)isEqual:(id)object {
+    if ([object isKindOfClass:self.class]) {
+        return [self.imageUID isEqual:[object imageUID]];
+    }
+    return  [super isEqual:object];
 }
 
 @end

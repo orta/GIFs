@@ -12,6 +12,7 @@
 @interface GIF : NSObject
 
 - (id)initWithRedditDictionary:(NSDictionary *)dictionary;
+- (id)initWithDownloadURL:(NSString *)downloadURL andThumbnail:(NSString *)thumbnail;
 
 - (NSString *)imageUID;
 - (NSString *)imageRepresentationType;

@@ -11,7 +11,7 @@
 #import <WebKit/WebKit.h>
 #import "ORSimpleSourceListView.h"
 
-@class GIF, ORRedditImageController, ORSearchController;
+@class GIF, ORRedditImageController, ORSearchController, ORTumblrController;
 @protocol ORGIFSource <NSObject>
 
 - (void)getNextGIFs;
@@ -29,6 +29,9 @@
 
 @property (weak) IBOutlet ORRedditImageController *redditController;
 @property (weak) IBOutlet ORSearchController *searchController;
+@property (weak) IBOutlet ORTumblrController *tumblrController;
+
+@property (strong) GIF *currentGIF;
 
 - (void)gotNewGIFs;
 

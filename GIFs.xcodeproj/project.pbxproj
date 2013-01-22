@@ -17,6 +17,9 @@
 		60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF116ACB9DF002DC7CD /* Search@2x.png */; };
 		60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF516ACBA0C002DC7CD /* SearchWhite.png */; };
 		60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */; };
+		60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CFE16ACD600002DC7CD /* ORSharingController.m */; };
+		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
+		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -33,6 +36,7 @@
 		60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C216A1FA6400A0FB7A /* Credits.rtf */; };
 		60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */; };
 		60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */; };
+		60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFF216AE1E2600036609 /* ORTumblrController.m */; };
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +54,11 @@
 		60238CF116ACB9DF002DC7CD /* Search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@2x.png"; sourceTree = "<group>"; };
 		60238CF516ACBA0C002DC7CD /* SearchWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchWhite.png; sourceTree = "<group>"; };
 		60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SearchWhite@2x.png"; sourceTree = "<group>"; };
+		60238CFD16ACD600002DC7CD /* ORSharingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSharingController.h; sourceTree = "<group>"; };
+		60238CFE16ACD600002DC7CD /* ORSharingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSharingController.m; sourceTree = "<group>"; };
+		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSystemPreferences.h; sourceTree = "<group>"; };
+		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -80,6 +89,8 @@
 		60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORAppDelegate.h; sourceTree = "<group>"; };
 		60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORAppDelegate.m; sourceTree = "<group>"; };
 		60ECD1C916A1FA6400A0FB7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		60F8BFF116AE1E2600036609 /* ORTumblrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORTumblrController.h; sourceTree = "<group>"; };
+		60F8BFF216AE1E2600036609 /* ORTumblrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORTumblrController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */,
 				60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */,
 				60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */,
 				60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */,
@@ -101,6 +113,7 @@
 		60ECD1A416A1FA6400A0FB7A = {
 			isa = PBXGroup;
 			children = (
+				60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */,
 				60ECD1B916A1FA6400A0FB7A /* GIFs */,
 				60ECD1B216A1FA6400A0FB7A /* Frameworks */,
 				60ECD1B016A1FA6400A0FB7A /* Products */,
@@ -142,14 +155,13 @@
 		60ECD1B916A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
+				60F8BFF516AE1E6B00036609 /* Resources */,
 				60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */,
 				60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */,
 				60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */,
 				60ECD1BA16A1FA6400A0FB7A /* Supporting Files */,
 				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
 				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
-				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
-				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
 				60EC306216A2020F00E9BE93 /* GIF.h */,
 				60EC306316A2020F00E9BE93 /* GIF.m */,
 				60EC306516A2089500E9BE93 /* ORImageView.h */,
@@ -163,14 +175,12 @@
 				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
 				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
 				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
-				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
-				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
-				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
-				60238CD716AC7301002DC7CD /* Reddit.png */,
-				60238CF016ACB9DF002DC7CD /* Search.png */,
-				60238CF116ACB9DF002DC7CD /* Search@2x.png */,
-				60238CF516ACBA0C002DC7CD /* SearchWhite.png */,
-				60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */,
+				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
+				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
+				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
+				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
+				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
+				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -185,6 +195,23 @@
 				60ECD1C216A1FA6400A0FB7A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60F8BFF516AE1E6B00036609 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */,
+				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
+				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
+				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
+				60238CD716AC7301002DC7CD /* Reddit.png */,
+				60238CF016ACB9DF002DC7CD /* Search.png */,
+				60238CF116ACB9DF002DC7CD /* Search@2x.png */,
+				60238CF516ACBA0C002DC7CD /* SearchWhite.png */,
+				60238D0016ACDACC002DC7CD /* more.png */,
+				60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +279,7 @@
 				60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */,
 				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
 				60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */,
+				60238D0116ACDACD002DC7CD /* more.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +317,8 @@
 				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
 				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
+				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
+				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

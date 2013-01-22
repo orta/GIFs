@@ -41,14 +41,16 @@
         [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
         [ORMenuItem itemWithName:@"/r/WhitePeopleGIFs" address:@"http://www.reddit.com/r/whitepeoplegifs.json"],
         [ORMenuItem itemWithName:@"/r/BlackPeopleGIFs" address:@"http://www.reddit.com/r/blackpeoplegifs.json"],
-        [ORMenuItem itemWithName:@"/r/AsianPeopleGIFs" address:@"http://www.reddit.com/r/asianpeoplegifs.json"]
+        [ORMenuItem itemWithName:@"/r/AsianPeopleGIFs" address:@"http://www.reddit.com/r/asianpeoplegifs.json"],
+        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"]
+
     ] mutableCopy];
 
     return self;
 }
 
 - (void)awakeFromNib {
-    _window.titleBarHeight = 60;
+    _window.titleBarHeight = 40;
     _windowToolbar.frame = self.window.titleBarView.bounds;
     _windowToolbar.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [_window.titleBarView addSubview:_windowToolbar];
@@ -127,7 +129,8 @@
     NSUInteger index = indexPath.row;
     
     if(indexPath.section){
-        [_gifViewController getGIFsFromSourceString:[_sources[index] address]];
+        ORMenuItem *item = _sources[index];
+        [_gifViewController getGIFsFromSourceString:[item address]];
     } else {
         [_gifViewController getGIFsFromSourceString:_searches[index]];
     }

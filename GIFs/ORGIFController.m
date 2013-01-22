@@ -9,6 +9,7 @@
 #import "ORGIFController.h"
 #import "ORRedditImageController.h"
 #import "ORSearchController.h"
+#import "ORTumblrController.h"
 #import "GIF.h"
 
 @implementation ORGIFController {
@@ -20,6 +21,13 @@
         _currentSource = _redditController;
         _searchController.gifViewController = self;
         [_redditController setRedditURL:string];
+    }
+
+    else if([string rangeOfString:@".tumblr"].location != NSNotFound){
+        _currentSource = _tumblrController;
+        _searchController.gifViewController = self;
+        [_tumblrController setTumblrURL:string];
+
     } else {
         _currentSource = _searchController;
         _searchController.gifViewController = self;
@@ -42,13 +50,16 @@
     CGFloat height = _imageScrollView.contentSize.height;
 
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
-        NSLog(@"get next from height");
         [_currentSource getNextGIFs];
     }
 }
 
 - (void)gotNewGIFs {
     [_imageBrowser reloadData];
+    NSClipView *clipView = (NSClipView *)[_imageBrowser superview];
+    if (CGRectGetHeight(clipView.documentVisibleRect) == CGRectGetHeight([clipView.documentView bounds])) {
+        [_currentSource getNextGIFs];
+    }
 }
 
 - (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser {
@@ -64,7 +75,8 @@
 
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
-
+        _currentGIF = gif;
+        
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
         NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
