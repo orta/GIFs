@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ORGIFController.h"
 #import "GIF.h"
+#import "DragDropImageView.h"
 
 @interface ORSharingController : NSObject <NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 
@@ -19,5 +20,6 @@
 @property (weak) IBOutlet NSButton *facebookButton;
 @property (weak) IBOutlet NSButton *twitterButton;
 @property (weak) IBOutlet NSButton *miscButton;
+@property (weak) IBOutlet DragDropImageView *mainImageView;
 
 @end

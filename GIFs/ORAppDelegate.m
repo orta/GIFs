@@ -16,6 +16,10 @@ static ORAppDelegate *_sharedInstance = nil;
     _sharedInstance = self;
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
 + (void)setNetworkActivity:(BOOL)activity {
     if (activity) {
         [_sharedInstance.networkProgress startAnimation:self];

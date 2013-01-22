@@ -8,7 +8,6 @@
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<dictionary class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="com.apple.InterfaceBuilder.CocoaPlugin">2844</string>
-			<string key="com.apple.WebKitIBPlugin">1810</string>
 			<string key="com.apple.imagekit.ibplugin">1810</string>
 		</dictionary>
 		<array key="IBDocument.IntegratedClassDependencies">
@@ -17,6 +16,8 @@
 			<string>NSButtonCell</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
+			<string>NSImageCell</string>
+			<string>NSImageView</string>
 			<string>NSMenu</string>
 			<string>NSMenuItem</string>
 			<string>NSProgressIndicator</string>
@@ -33,11 +34,9 @@
 			<string>NSTextFieldCell</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
-			<string>WebView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string>com.apple.WebKitIBPlugin</string>
 			<string>com.apple.imagekit.ibplugin</string>
 		</array>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
@@ -1333,7 +1332,7 @@
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSSearchField" id="437495480">
 											<reference key="NSNextResponder" ref="142109568"/>
-											<int key="NSvFlags">265</int>
+											<int key="NSvFlags">266</int>
 											<string key="NSFrame">{{5, 371}, {148, 22}}</string>
 											<reference key="NSSuperview" ref="142109568"/>
 											<reference key="NSWindow"/>
@@ -1877,10 +1876,39 @@
 											<reference key="NSNextResponder" ref="981983142"/>
 											<int key="NSvFlags">256</int>
 											<array class="NSMutableArray" key="NSSubviews">
+												<object class="NSImageView" id="955895016">
+													<reference key="NSNextResponder" ref="249961265"/>
+													<int key="NSvFlags">274</int>
+													<set class="NSMutableSet" key="NSDragTypes">
+														<string>Apple PDF pasteboard type</string>
+														<string>Apple PICT pasteboard type</string>
+														<string>Apple PNG pasteboard type</string>
+														<string>NSFilenamesPboardType</string>
+														<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+														<string>NeXT TIFF v4.0 pasteboard type</string>
+													</set>
+													<string key="NSFrame">{{20, 52}, {384, 326}}</string>
+													<reference key="NSSuperview" ref="249961265"/>
+													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView" ref="172614746"/>
+													<string key="NSReuseIdentifierKey">_NS:9</string>
+													<bool key="NSEnabled">YES</bool>
+													<object class="NSImageCell" key="NSCell" id="396533463">
+														<int key="NSCellFlags">134217728</int>
+														<int key="NSCellFlags2">33554432</int>
+														<string key="NSCellIdentifier">_NS:9</string>
+														<int key="NSAlign">0</int>
+														<int key="NSScale">0</int>
+														<int key="NSStyle">0</int>
+														<bool key="NSAnimates">YES</bool>
+													</object>
+													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+													<bool key="NSEditable">YES</bool>
+												</object>
 												<object class="NSButton" id="172614746">
 													<reference key="NSNextResponder" ref="249961265"/>
-													<int key="NSvFlags">289</int>
-													<string key="NSFrame">{{153, 0}, {56, 42}}</string>
+													<int key="NSvFlags">293</int>
+													<string key="NSFrame">{{140, 11}, {30, 30}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="252337072"/>
@@ -1908,8 +1936,8 @@
 												</object>
 												<object class="NSButton" id="252337072">
 													<reference key="NSNextResponder" ref="249961265"/>
-													<int key="NSvFlags">289</int>
-													<string key="NSFrame">{{208, 0}, {56, 42}}</string>
+													<int key="NSvFlags">293</int>
+													<string key="NSFrame">{{178, 11}, {30, 30}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="169786364"/>
@@ -1933,8 +1961,8 @@
 												</object>
 												<object class="NSButton" id="169786364">
 													<reference key="NSNextResponder" ref="249961265"/>
-													<int key="NSvFlags">289</int>
-													<string key="NSFrame">{{263, 0}, {56, 42}}</string>
+													<int key="NSvFlags">293</int>
+													<string key="NSFrame">{{216, 11}, {30, 30}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="386049318"/>
@@ -1958,10 +1986,11 @@
 												</object>
 												<object class="NSButton" id="386049318">
 													<reference key="NSNextResponder" ref="249961265"/>
-													<int key="NSvFlags">289</int>
-													<string key="NSFrame">{{318, 0}, {106, 42}}</string>
+													<int key="NSvFlags">293</int>
+													<string key="NSFrame">{{254, 11}, {30, 30}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:22</string>
 													<bool key="NSEnabled">YES</bool>
 													<object class="NSButtonCell" key="NSCell" id="81865561">
@@ -1980,50 +2009,11 @@
 													</object>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 												</object>
-												<object class="WebView" id="229190978">
-													<reference key="NSNextResponder" ref="249961265"/>
-													<int key="NSvFlags">274</int>
-													<set class="NSMutableSet" key="NSDragTypes">
-														<string>Apple HTML pasteboard type</string>
-														<string>Apple PDF pasteboard type</string>
-														<string>Apple PICT pasteboard type</string>
-														<string>Apple URL pasteboard type</string>
-														<string>Apple Web Archive pasteboard type</string>
-														<string>NSColor pasteboard type</string>
-														<string>NSFilenamesPboardType</string>
-														<string>NSStringPboardType</string>
-														<string>NeXT RTFD pasteboard type</string>
-														<string>NeXT Rich Text Format v1.0 pasteboard type</string>
-														<string>NeXT TIFF v4.0 pasteboard type</string>
-														<string>WebURLsWithTitlesPboardType</string>
-														<string>public.png</string>
-														<string>public.url</string>
-														<string>public.url-name</string>
-													</set>
-													<string key="NSFrame">{{0, 40}, {424, 388}}</string>
-													<reference key="NSSuperview" ref="249961265"/>
-													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
-													<string key="NSReuseIdentifierKey">_NS:9</string>
-													<string key="NSHuggingPriority">{591, 550}</string>
-													<string key="FrameName"/>
-													<string key="GroupName"/>
-													<object class="WebPreferences" key="Preferences">
-														<string key="Identifier"/>
-														<dictionary class="NSMutableDictionary" key="Values">
-															<integer value="12" key="WebKitDefaultFixedFontSize"/>
-															<integer value="12" key="WebKitDefaultFontSize"/>
-															<integer value="1" key="WebKitMinimumFontSize"/>
-														</dictionary>
-													</object>
-													<bool key="UseBackForwardList">YES</bool>
-													<bool key="AllowsUndo">YES</bool>
-												</object>
 											</array>
 											<string key="NSFrame">{{217, 0}, {424, 428}}</string>
 											<reference key="NSSuperview" ref="981983142"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="229190978"/>
+											<reference key="NSNextKeyView" ref="955895016"/>
 											<string key="NSClassName">NSView</string>
 										</object>
 									</array>
@@ -2083,7 +2073,7 @@
 			<object class="NSCustomObject" id="972044349">
 				<string key="NSClassName">ORSharingController</string>
 			</object>
-			<object class="NSCustomObject" id="350386198">
+			<object class="NSCustomObject" id="51526073">
 				<string key="NSClassName">ORTumblrController</string>
 			</object>
 			<object class="NSCustomView" id="467107722">
@@ -2096,6 +2086,7 @@
 						<string key="NSFrame">{{692, 12}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="467107722"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:945</string>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMaxValue">100</double>
@@ -2923,14 +2914,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">UIDelegate</string>
-						<reference key="source" ref="229190978"/>
-						<reference key="destination" ref="29102575"/>
-					</object>
-					<int key="connectionID">654</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="437495480"/>
 						<reference key="destination" ref="257770575"/>
@@ -2947,27 +2930,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">webView</string>
-						<reference key="source" ref="29102575"/>
-						<reference key="destination" ref="229190978"/>
-					</object>
-					<int key="connectionID">647</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">imageBrowser</string>
 						<reference key="source" ref="532003686"/>
 						<reference key="destination" ref="989706877"/>
 					</object>
 					<int key="connectionID">649</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">webView</string>
-						<reference key="source" ref="532003686"/>
-						<reference key="destination" ref="229190978"/>
-					</object>
-					<int key="connectionID">650</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2997,9 +2964,17 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">tumblrController</string>
 						<reference key="source" ref="532003686"/>
-						<reference key="destination" ref="350386198"/>
+						<reference key="destination" ref="51526073"/>
 					</object>
 					<int key="connectionID">705</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">imageView</string>
+						<reference key="source" ref="532003686"/>
+						<reference key="destination" ref="955895016"/>
+					</object>
+					<int key="connectionID">708</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3091,8 +3066,16 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">mainImageView</string>
+						<reference key="source" ref="972044349"/>
+						<reference key="destination" ref="955895016"/>
+					</object>
+					<int key="connectionID">709</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">gifController</string>
-						<reference key="source" ref="350386198"/>
+						<reference key="source" ref="51526073"/>
 						<reference key="destination" ref="532003686"/>
 					</object>
 					<int key="connectionID">704</int>
@@ -4209,10 +4192,10 @@
 						<int key="objectID">560</int>
 						<reference key="object" ref="249961265"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="229190978"/>
-							<reference ref="386049318"/>
-							<reference ref="169786364"/>
+							<reference ref="955895016"/>
 							<reference ref="252337072"/>
+							<reference ref="169786364"/>
+							<reference ref="386049318"/>
 							<reference ref="172614746"/>
 						</array>
 						<reference key="parent" ref="981983142"/>
@@ -4249,11 +4232,6 @@
 						<int key="objectID">639</int>
 						<reference key="object" ref="552250822"/>
 						<reference key="parent" ref="371596194"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">623</int>
-						<reference key="object" ref="229190978"/>
-						<reference key="parent" ref="249961265"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">646</int>
@@ -4355,8 +4333,21 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">703</int>
-						<reference key="object" ref="350386198"/>
+						<reference key="object" ref="51526073"/>
 						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">706</int>
+						<reference key="object" ref="955895016"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="396533463"/>
+						</array>
+						<reference key="parent" ref="249961265"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">707</int>
+						<reference key="object" ref="396533463"/>
+						<reference key="parent" ref="955895016"/>
 					</object>
 				</array>
 			</object>
@@ -4529,7 +4520,6 @@
 				<string key="592.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="611.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="616.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="623.IBPluginDependency">com.apple.WebKitIBPlugin</string>
 				<string key="637.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="639.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="640.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4552,6 +4542,9 @@
 				<string key="687.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="688.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="703.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="706.CustomClassName">DragDropImageView</string>
+				<string key="706.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="707.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4568,10 +4561,18 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">705</int>
+			<int key="maxID">709</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">DragDropImageView</string>
+					<string key="superclassName">NSImageView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DragDropImageView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">INAppStoreWindow</string>
 					<string key="superclassName">NSWindow</string>
@@ -4608,10 +4609,10 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imageBrowser">IKImageBrowserView</string>
 						<string key="imageScrollView">NSScrollView</string>
+						<string key="imageView">NSImageView</string>
 						<string key="redditController">ORRedditImageController</string>
 						<string key="searchController">ORSearchController</string>
 						<string key="tumblrController">ORTumblrController</string>
-						<string key="webView">WebView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="imageBrowser">
@@ -4621,6 +4622,10 @@
 						<object class="IBToOneOutletInfo" key="imageScrollView">
 							<string key="name">imageScrollView</string>
 							<string key="candidateClassName">NSScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imageView">
+							<string key="name">imageView</string>
+							<string key="candidateClassName">NSImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="redditController">
 							<string key="name">redditController</string>
@@ -4633,10 +4638,6 @@
 						<object class="IBToOneOutletInfo" key="tumblrController">
 							<string key="name">tumblrController</string>
 							<string key="candidateClassName">ORTumblrController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="webView">
-							<string key="name">webView</string>
-							<string key="candidateClassName">WebView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -4751,6 +4752,7 @@
 						<string key="emailButton">NSButton</string>
 						<string key="facebookButton">NSButton</string>
 						<string key="gifController">ORGIFController</string>
+						<string key="mainImageView">DragDropImageView</string>
 						<string key="miscButton">NSButton</string>
 						<string key="twitterButton">NSButton</string>
 					</dictionary>
@@ -4770,6 +4772,10 @@
 						<object class="IBToOneOutletInfo" key="gifController">
 							<string key="name">gifController</string>
 							<string key="candidateClassName">ORGIFController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="mainImageView">
+							<string key="name">mainImageView</string>
+							<string key="candidateClassName">DragDropImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="miscButton">
 							<string key="name">miscButton</string>

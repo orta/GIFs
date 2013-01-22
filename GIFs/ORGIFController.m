@@ -11,9 +11,11 @@
 #import "ORSearchController.h"
 #import "ORTumblrController.h"
 #import "GIF.h"
+#import "AFNetworking.h"
 
 @implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
+    NSString *_gifPath;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
@@ -73,17 +75,26 @@
 - (void) imageBrowserSelectionDidChange:(IKImageBrowserView *) aBrowser {
     NSInteger index = [[aBrowser selectionIndexes] lastIndex];
 
+
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
         _currentGIF = gif;
+
+        _imageView.image = nil;
+        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
+        __block AFImageRequestOperation *op =[AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
+            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
+
+            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
+            [op.responseData writeToFile:_gifPath atomically:YES];
+        }];
         
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
-        NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
-        html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
-        if (html) {
-            [[_webView mainFrame] loadHTMLString:html baseURL:nil];
-        }
+        [op start];
     }
+}
+
+- (NSString *)gifFilePath {
+    return _gifPath;
 }
 
 @end

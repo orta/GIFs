@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
-#import <WebKit/WebKit.h>
 #import "ORSimpleSourceListView.h"
 
 @class GIF, ORRedditImageController, ORSearchController, ORTumblrController;
@@ -24,8 +23,8 @@
 
 @property (weak) IBOutlet NSScrollView *imageScrollView;
 
-@property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+@property (weak) IBOutlet NSImageView *imageView;
 
 @property (weak) IBOutlet ORRedditImageController *redditController;
 @property (weak) IBOutlet ORSearchController *searchController;
@@ -36,5 +35,7 @@
 - (void)gotNewGIFs;
 
 - (void)getGIFsFromSourceString:(NSString *)string;
+
+- (NSString *)gifFilePath;
 
 @end
