@@ -37,7 +37,6 @@
 		60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */; };
 		60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */; };
 		60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFF216AE1E2600036609 /* ORTumblrController.m */; };
-		60F8C00016AE39EF00036609 /* NSImageView+ImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFFF16AE39EF00036609 /* NSImageView+ImageFrame.m */; };
 		60F8C00B16AE3B2A00036609 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8C00A16AE3B2A00036609 /* DragDropImageView.m */; };
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -93,8 +92,6 @@
 		60ECD1C916A1FA6400A0FB7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		60F8BFF116AE1E2600036609 /* ORTumblrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORTumblrController.h; sourceTree = "<group>"; };
 		60F8BFF216AE1E2600036609 /* ORTumblrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORTumblrController.m; sourceTree = "<group>"; };
-		60F8BFFE16AE39EF00036609 /* NSImageView+ImageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImageView+ImageFrame.h"; sourceTree = "<group>"; };
-		60F8BFFF16AE39EF00036609 /* NSImageView+ImageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImageView+ImageFrame.m"; sourceTree = "<group>"; };
 		60F8C00916AE3B2A00036609 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropImageView.h; sourceTree = "<group>"; };
 		60F8C00A16AE3B2A00036609 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +186,6 @@
 				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
 				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
 				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
-				60F8BFFE16AE39EF00036609 /* NSImageView+ImageFrame.h */,
-				60F8BFFF16AE39EF00036609 /* NSImageView+ImageFrame.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -329,7 +324,6 @@
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
-				60F8C00016AE39EF00036609 /* NSImageView+ImageFrame.m in Sources */,
 				60F8C00B16AE3B2A00036609 /* DragDropImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
