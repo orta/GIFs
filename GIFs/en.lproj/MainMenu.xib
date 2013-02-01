@@ -2047,6 +2047,7 @@
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMinSize">{800, 422}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<string key="NSFrameAutosaveName">mainWindow</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -4723,30 +4724,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ORSharingController</string>
 					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="emailClicked:">id</string>
-						<string key="facebookClicked:">id</string>
-						<string key="miscClicked:">id</string>
-						<string key="twitterClicked:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="emailClicked:">
-							<string key="name">emailClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="facebookClicked:">
-							<string key="name">facebookClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="miscClicked:">
-							<string key="name">miscClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="twitterClicked:">
-							<string key="name">twitterClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="appWindow">NSWindow</string>
 						<string key="emailButton">NSButton</string>

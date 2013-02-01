@@ -68,6 +68,19 @@
     return _currentSource.numberOfGifs;
 }
 
+- (void)imageBrowser:(IKImageBrowserView *)aBrowser cellWasRightClickedAtIndex:(NSUInteger)index withEvent:(NSEvent *)event {
+    NSMenu *menu = [[NSMenu alloc] initWithTitle:@"menu"];
+    [menu setAutoenablesItems:NO];
+    NSMenuItem *item = [menu addItemWithTitle:@"Copy URL to Clipboard" action: @selector(copyURL) keyEquivalent:@""];
+    [item setTarget:self];
+    [NSMenu popUpContextMenu:menu withEvent:event forView:aBrowser];
+}
+
+- (void)copyURL {
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] writeObjects:@[_currentGIF.downloadURL]];
+}
+
 - (id) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
     return [_currentSource gifAtIndex:index];;
 }

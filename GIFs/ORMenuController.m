@@ -39,9 +39,9 @@
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
         [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
-        [ORMenuItem itemWithName:@"/r/WhitePeopleGIFs" address:@"http://www.reddit.com/r/whitepeoplegifs.json"],
-        [ORMenuItem itemWithName:@"/r/BlackPeopleGIFs" address:@"http://www.reddit.com/r/blackpeoplegifs.json"],
-        [ORMenuItem itemWithName:@"/r/AsianPeopleGIFs" address:@"http://www.reddit.com/r/asianpeoplegifs.json"],
+        [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
+        [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
+        [ORMenuItem itemWithName:@"/r/perfectloops" address:@"http://www.reddit.com/r/perfectloops.json"],
         [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"]
 
     ] mutableCopy];
