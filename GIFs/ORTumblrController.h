@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ORGIFController.h"
+#import "ORGIFAppViewController.h"
 
 @class GIF;
 
 @interface ORTumblrController : NSObject <ORGIFSource>
 - (void)setTumblrURL:(NSString *)tumblrURL;
 
-@property (weak) IBOutlet ORGIFController *gifController;
+@property (weak) IBOutlet ORGIFAppViewController *gifController;
 @end

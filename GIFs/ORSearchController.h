@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ORGIFController.h"
+#import "ORGIFAppViewController.h"
 
 @interface ORSearchController : NSObject <ORGIFSource>
 
-@property (weak) IBOutlet ORGIFController *gifViewController;
+@property (weak) IBOutlet ORGIFAppViewController *gifViewController;
 - (void)setSearchQuery:(NSString *)query;
 
 @end

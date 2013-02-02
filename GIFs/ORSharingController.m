@@ -7,7 +7,6 @@
 //
 
 #import "ORSharingController.h"
-#import "SBSystemPreferences.h"
 
 
 @implementation ORSharingController {
