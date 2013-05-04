@@ -6,21 +6,16 @@
 //  Copyright (c) 2013 Orta Therox. All rights reserved.
 //
 
-#import "ORGIFAppViewController.h"
+#import "ORGIFController.h"
 #import "ORRedditImageController.h"
 #import "ORSearchController.h"
 #import "ORTumblrController.h"
 #import "GIF.h"
 #import "AFNetworking.h"
 
-
-@implementation ORGIFAppViewController {
+@implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
     NSString *_gifPath;
-
-    ORRedditImageController *_redditController;
-    ORSearchController *_searchController;
-    ORTumblrController *_tumblrController;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
@@ -49,10 +44,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
                                                  name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
-
-    _redditController = [[ORRedditImageController alloc] init];
-    _searchController = [[ORSearchController alloc] init];
-    _tumblrController = [[ORTumblrController alloc] init];
 }
 
 - (void)myTableClipBoundsChanged:(NSNotification *)notification {

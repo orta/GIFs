@@ -19,6 +19,7 @@
 		60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */; };
 		60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CFE16ACD600002DC7CD /* ORSharingController.m */; };
 		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
+		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -28,7 +29,7 @@
 		60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC306816A2097D00E9BE93 /* WebKit.framework */; };
 		60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */; };
 		60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC306E16A3305A00E9BE93 /* ORSearchController.m */; };
-		60EC307216A3306E00E9BE93 /* ORGIFAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC307116A3306E00E9BE93 /* ORGIFAppViewController.m */; };
+		60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC307116A3306E00E9BE93 /* ORGIFController.m */; };
 		60ECD1B416A1FA6400A0FB7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */; };
 		60ECD1BE16A1FA6400A0FB7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */; };
 		60ECD1C016A1FA6400A0FB7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1BF16A1FA6400A0FB7A /* main.m */; };
@@ -57,6 +58,8 @@
 		60238CFD16ACD600002DC7CD /* ORSharingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSharingController.h; sourceTree = "<group>"; };
 		60238CFE16ACD600002DC7CD /* ORSharingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSharingController.m; sourceTree = "<group>"; };
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSystemPreferences.h; sourceTree = "<group>"; };
+		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -72,8 +75,8 @@
 		60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORWebViewDelegateStuff.m; sourceTree = "<group>"; };
 		60EC306D16A3305A00E9BE93 /* ORSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSearchController.h; sourceTree = "<group>"; };
 		60EC306E16A3305A00E9BE93 /* ORSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSearchController.m; sourceTree = "<group>"; };
-		60EC307016A3306E00E9BE93 /* ORGIFAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFAppViewController.h; sourceTree = "<group>"; };
-		60EC307116A3306E00E9BE93 /* ORGIFAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFAppViewController.m; sourceTree = "<group>"; };
+		60EC307016A3306E00E9BE93 /* ORGIFController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFController.h; sourceTree = "<group>"; };
+		60EC307116A3306E00E9BE93 /* ORGIFController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFController.m; sourceTree = "<group>"; };
 		60ECD1AF16A1FA6400A0FB7A /* GIFs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		60ECD1B616A1FA6400A0FB7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */,
 				60EC306916A2097D00E9BE93 /* WebKit.framework in Frameworks */,
 				60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */,
 				60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */,
@@ -109,92 +113,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6041664D16BDA4A600CFBD2F /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				6041665316BDA54B00CFBD2F /* Networking */,
-				6041665216BDA53E00CFBD2F /* Util */,
-				6041665116BDA52300CFBD2F /* Models */,
-				6041665016BDA50300CFBD2F /* View Controllers */,
-				6041664F16BDA4F500CFBD2F /* App */,
-				6041664E16BDA4E700CFBD2F /* Views */,
-				60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */,
-				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
-			);
-			name = Code;
-			sourceTree = "<group>";
-		};
-		6041664E16BDA4E700CFBD2F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				60EC306516A2089500E9BE93 /* ORImageView.h */,
-				60EC306616A2089500E9BE93 /* ORImageView.m */,
-				60F8C00916AE3B2A00036609 /* DragDropImageView.h */,
-				60F8C00A16AE3B2A00036609 /* DragDropImageView.m */,
-				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
-				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		6041664F16BDA4F500CFBD2F /* App */ = {
-			isa = PBXGroup;
-			children = (
-				60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */,
-				60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */,
-			);
-			name = App;
-			sourceTree = "<group>";
-		};
-		6041665016BDA50300CFBD2F /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
-				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
-				60EC307016A3306E00E9BE93 /* ORGIFAppViewController.h */,
-				60EC307116A3306E00E9BE93 /* ORGIFAppViewController.m */,
-				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
-				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		6041665116BDA52300CFBD2F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				60EC306216A2020F00E9BE93 /* GIF.h */,
-				60EC306316A2020F00E9BE93 /* GIF.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		6041665216BDA53E00CFBD2F /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
-				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
-			);
-			name = Util;
-			sourceTree = "<group>";
-		};
-		6041665316BDA54B00CFBD2F /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				60EC306D16A3305A00E9BE93 /* ORSearchController.h */,
-				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
-				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
-				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
-				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
-				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
 		60ECD1A416A1FA6400A0FB7A = {
 			isa = PBXGroup;
 			children = (
+				60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */,
 				60ECD1B916A1FA6400A0FB7A /* GIFs */,
-				60ECD1BA16A1FA6400A0FB7A /* Supporting Files */,
 				60ECD1B216A1FA6400A0FB7A /* Frameworks */,
 				60ECD1B016A1FA6400A0FB7A /* Products */,
 				44059188DA724A85B6EA5694 /* Pods.xcconfig */,
@@ -235,8 +158,34 @@
 		60ECD1B916A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
-				6041664D16BDA4A600CFBD2F /* Code */,
 				60F8BFF516AE1E6B00036609 /* Resources */,
+				60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */,
+				60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */,
+				60F8C00916AE3B2A00036609 /* DragDropImageView.h */,
+				60F8C00A16AE3B2A00036609 /* DragDropImageView.m */,
+				60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */,
+				60ECD1BA16A1FA6400A0FB7A /* Supporting Files */,
+				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
+				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
+				60EC306216A2020F00E9BE93 /* GIF.h */,
+				60EC306316A2020F00E9BE93 /* GIF.m */,
+				60EC306516A2089500E9BE93 /* ORImageView.h */,
+				60EC306616A2089500E9BE93 /* ORImageView.m */,
+				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
+				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
+				60EC306D16A3305A00E9BE93 /* ORSearchController.h */,
+				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
+				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
+				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
+				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
+				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
+				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
+				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
+				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
+				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
+				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
+				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
+				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -251,12 +200,12 @@
 				60ECD1C216A1FA6400A0FB7A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
-			path = GIFs;
 			sourceTree = "<group>";
 		};
 		60F8BFF516AE1E6B00036609 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */,
 				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
 				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
 				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
@@ -371,7 +320,7 @@
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
 				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
-				60EC307216A3306E00E9BE93 /* ORGIFAppViewController.m in Sources */,
+				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,

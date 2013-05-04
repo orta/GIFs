@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ORGIFAppViewController.h"
+#import "ORGIFController.h"
 
 @class GIF;
 @interface ORRedditImageController : NSObject <ORGIFSource>
 
 - (void)setRedditURL:(NSString *)redditURL;
-@property (weak) IBOutlet ORGIFAppViewController *gifController;
+@property (weak) IBOutlet ORGIFController *gifController;
 
 @end

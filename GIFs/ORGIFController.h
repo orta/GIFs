@@ -19,12 +19,16 @@
 
 @end
 
-@interface ORGIFAppViewController : NSObject
+@interface ORGIFController : NSObject
 
 @property (weak) IBOutlet NSScrollView *imageScrollView;
 
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
 @property (weak) IBOutlet NSImageView *imageView;
+
+@property (weak) IBOutlet ORRedditImageController *redditController;
+@property (weak) IBOutlet ORSearchController *searchController;
+@property (weak) IBOutlet ORTumblrController *tumblrController;
 
 @property (strong) GIF *currentGIF;
 

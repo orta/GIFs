@@ -1,34 +1,14 @@
 
 PODS:
 - AFNetworking (1.1.0)
-- BFNavigationController (0.0.1)
-- DMSplitView (0.0.1)
 - INAppStoreWindow (1.2)
-- PullToRefresh (0.0.1)
-- RFOverlayScrollView (0.1)
 
 DEPENDENCIES:
 - AFNetworking
-- BFNavigationController (from `config/BFNavigationController.podspec')
-- DMSplitView (from `config/DMSplitView.podspec')
 - INAppStoreWindow
-- PullToRefresh (from `config/PullToRefresh.podspec')
-- RFOverlayScrollView (~> 0.1)
-
-EXTERNAL SOURCES:
-  BFNavigationController:
-    :podspec: config/BFNavigationController.podspec
-  DMSplitView:
-    :podspec: config/DMSplitView.podspec
-  PullToRefresh:
-    :podspec: config/PullToRefresh.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
-  BFNavigationController: b00dbeafafddde31b2cb5e594a64d6cc1d008ba2
-  DMSplitView: 4c048d09061e8026f685e4a4a9d272128c18bde5
   INAppStoreWindow: d00327caee47d951043169df9aaab952389defcb
-  PullToRefresh: 30d6a276074f2693d9a0253fef5a4321e5ef2633
-  RFOverlayScrollView: c24fab831435320ebb17ead76ffd6e8b9e42704e
 
 COCOAPODS: 0.16.1

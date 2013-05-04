@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ORGIFAppViewController.h"
+#import "ORGIFController.h"
 #import "GIF.h"
 #import "DragDropImageView.h"
 
 @interface ORSharingController : NSObject <NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 
-@property (weak) IBOutlet ORGIFAppViewController *gifController;
+@property (weak) IBOutlet ORGIFController *gifController;
 @property (unsafe_unretained) IBOutlet NSWindow *appWindow;
 
 @property (weak) IBOutlet NSButton *emailButton;
