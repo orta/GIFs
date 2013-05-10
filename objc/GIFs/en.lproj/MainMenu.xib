@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<dictionary class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<string key="com.apple.InterfaceBuilder.CocoaPlugin">2844</string>
-			<string key="com.apple.imagekit.ibplugin">1810</string>
+			<string key="com.apple.InterfaceBuilder.CocoaPlugin">3084</string>
+			<string key="com.apple.imagekit.ibplugin">2053</string>
 		</dictionary>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IKImageBrowserView</string>
@@ -1422,7 +1422,7 @@
 															<string key="NSFrameSize">{158, 349}</string>
 															<reference key="NSSuperview" ref="930744147"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="70573305"/>
+															<reference key="NSNextKeyView" ref="762540202"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1585,7 +1585,7 @@
 											<string key="NSFrameSize">{158, 366}</string>
 											<reference key="NSSuperview" ref="142109568"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="762540202"/>
+											<reference key="NSNextKeyView" ref="930744147"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133680</int>
 											<reference key="NSVScroller" ref="455788547"/>
@@ -1787,7 +1787,7 @@
 																	<string key="NSFrameSize">{192, 408}</string>
 																	<reference key="NSSuperview" ref="252642291"/>
 																	<reference key="NSWindow"/>
-																	<reference key="NSNextKeyView" ref="700190396"/>
+																	<reference key="NSNextKeyView" ref="552250822"/>
 																	<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 																	<string key="NSReuseIdentifierKey">_NS:24</string>
 																	<bool key="constrainsToOriginalSize">NO</bool>
@@ -1853,7 +1853,7 @@
 													<string key="NSFrameSize">{207, 408}</string>
 													<reference key="NSSuperview" ref="130505127"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="552250822"/>
+													<reference key="NSNextKeyView" ref="252642291"/>
 													<string key="NSReuseIdentifierKey">_NS:9</string>
 													<int key="NSsFlags">133136</int>
 													<reference key="NSVScroller" ref="700190396"/>
@@ -1876,6 +1876,16 @@
 											<reference key="NSNextResponder" ref="981983142"/>
 											<int key="NSvFlags">256</int>
 											<array class="NSMutableArray" key="NSSubviews">
+												<object class="NSCustomView" id="780807613">
+													<reference key="NSNextResponder" ref="249961265"/>
+													<int key="NSvFlags">301</int>
+													<string key="NSFrame">{{137, 206}, {150, 28}}</string>
+													<reference key="NSSuperview" ref="249961265"/>
+													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView" ref="172614746"/>
+													<string key="NSReuseIdentifierKey">_NS:9</string>
+													<string key="NSClassName">DDProgressView</string>
+												</object>
 												<object class="NSImageView" id="955895016">
 													<reference key="NSNextResponder" ref="249961265"/>
 													<int key="NSvFlags">274</int>
@@ -1887,10 +1897,10 @@
 														<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 														<string>NeXT TIFF v4.0 pasteboard type</string>
 													</set>
-													<string key="NSFrame">{{20, 52}, {384, 326}}</string>
+													<string key="NSFrame">{{20, 92}, {384, 281}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="172614746"/>
+													<reference key="NSNextKeyView" ref="780807613"/>
 													<string key="NSReuseIdentifierKey">_NS:9</string>
 													<bool key="NSEnabled">YES</bool>
 													<object class="NSImageCell" key="NSCell" id="396533463">
@@ -1990,7 +2000,6 @@
 													<string key="NSFrame">{{254, 11}, {30, 30}}</string>
 													<reference key="NSSuperview" ref="249961265"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:22</string>
 													<bool key="NSEnabled">YES</bool>
 													<object class="NSButtonCell" key="NSCell" id="81865561">
@@ -2044,7 +2053,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="776599714"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{800, 422}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName">mainWindow</string>
@@ -2087,7 +2096,6 @@
 						<string key="NSFrame">{{692, 12}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="467107722"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:945</string>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMaxValue">100</double>
@@ -2976,6 +2984,14 @@
 						<reference key="destination" ref="955895016"/>
 					</object>
 					<int key="connectionID">708</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">_progressView</string>
+						<reference key="source" ref="532003686"/>
+						<reference key="destination" ref="780807613"/>
+					</object>
+					<int key="connectionID">711</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4198,6 +4214,7 @@
 							<reference ref="169786364"/>
 							<reference ref="386049318"/>
 							<reference ref="172614746"/>
+							<reference ref="780807613"/>
 						</array>
 						<reference key="parent" ref="981983142"/>
 					</object>
@@ -4349,6 +4366,11 @@
 						<int key="objectID">707</int>
 						<reference key="object" ref="396533463"/>
 						<reference key="parent" ref="955895016"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">710</int>
+						<reference key="object" ref="780807613"/>
+						<reference key="parent" ref="249961265"/>
 					</object>
 				</array>
 			</object>
@@ -4546,6 +4568,7 @@
 				<string key="706.CustomClassName">DragDropImageView</string>
 				<string key="706.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="707.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="710.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4562,10 +4585,18 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">709</int>
+			<int key="maxID">711</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">DDProgressView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DDProgressView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">DragDropImageView</string>
 					<string key="superclassName">NSImageView</string>

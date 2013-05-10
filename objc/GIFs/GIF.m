@@ -46,7 +46,6 @@
     return self;
 }
 
-
 - (NSString *)imageUID {
     return _thumbnailURL;
 }

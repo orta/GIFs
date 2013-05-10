@@ -12,10 +12,15 @@
 #import "ORTumblrController.h"
 #import "GIF.h"
 #import "AFNetworking.h"
+#import <DDProgressView/DDProgressView.h>
 
 @implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
     NSString *_gifPath;
+
+    AFImageRequestOperation *_gifDownloadOp;
+    
+    __weak DDProgressView *_progressView;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
@@ -35,12 +40,15 @@
         _searchController.gifViewController = self;
         [_searchController setSearchQuery:string];
     }
+    
     [_imageBrowser reloadData];
 }
 
 - (void)awakeFromNib {
     [_imageBrowser setValue:[NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000] forKey:IKImageBrowserBackgroundColorKey];
     [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
+    _progressView.hidden = YES;
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
                                                  name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
@@ -95,14 +103,22 @@
 
         _imageView.image = nil;
         NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
-        __block AFImageRequestOperation *op =[AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
-            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
-
-            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
-            [op.responseData writeToFile:_gifPath atomically:YES];
-        }];
+        _progressView.hidden = YES;
+        if (_gifDownloadOp) [_gifDownloadOp cancel];
         
-        [op start];
+        _gifDownloadOp = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
+            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
+            _progressView.hidden = YES;
+            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
+            [_gifDownloadOp.responseData writeToFile:_gifPath atomically:YES];
+        }];
+
+        __block DDProgressView *progressView = _progressView;
+        [_gifDownloadOp setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+            progressView.progress = totalBytesRead / (CGFloat)totalBytesExpectedToRead;
+        }];
+
+        [_gifDownloadOp start];
     }
 }
 

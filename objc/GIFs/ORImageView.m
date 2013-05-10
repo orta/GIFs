@@ -8,8 +8,7 @@
 
 @implementation ORImageView
 
--(void)awakeFromNib
-{
+-(void)awakeFromNib {
     // create an overlay for the image (which is used to play animated gifs)
     // EDIT: well, don't do that here, due to some initialization orders
     //       problem, it might gives an error and not create the overlay
@@ -49,11 +48,9 @@
 
         // get the image representations, and iterate through them
         NSArray * reps = [image representations];
-        for (NSImageRep * rep in reps)
-        {
+        for (NSImageRep * rep in reps) {
             // find the bitmap representation
-            if ([rep isKindOfClass:[NSBitmapImageRep class]] == YES)
-            {
+            if ([rep isKindOfClass:[NSBitmapImageRep class]] == YES) {
                 // get the bitmap representation
                 NSBitmapImageRep * bitmapRep = (NSBitmapImageRep *)rep;
 

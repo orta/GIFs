@@ -1,0 +1,16 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - DDProgressView (0.1)
+  - INAppStoreWindow (1.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DDProgressView
+  - INAppStoreWindow
+
+SPEC CHECKSUMS:
+  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
+  DDProgressView: e255964e0f63115dd0b855f85a216cac3847d2f1
+  INAppStoreWindow: d00327caee47d951043169df9aaab952389defcb
+
+COCOAPODS: 0.19.1

@@ -24,7 +24,6 @@
     _emailSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
     _emailButton.image = _emailSharingService.image;
     _emailButton.alternateImage = _emailSharingService.alternateImage;
-
     
     _tweetSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
     _twitterButton.image = _tweetSharingService.image;
@@ -114,9 +113,7 @@
 }
 
 
-- (NSImage *)sharingService:(NSSharingService *)sharingService transitionImageForShareItem:(id<NSPasteboardWriting>)item contentRect:(NSRect *)contentRect
-{
-
+- (NSImage *)sharingService:(NSSharingService *)sharingService transitionImageForShareItem:(id<NSPasteboardWriting>)item contentRect:(NSRect *)contentRect {
         return [_mainImageView image];
 }
 @end
