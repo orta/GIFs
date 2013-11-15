@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
 #import "ORSimpleSourceListView.h"
+#import <WebKit/WebKit.h>
 
 @class GIF, ORRedditImageController, ORSearchController, ORTumblrController;
 @protocol ORGIFSource <NSObject>
@@ -25,6 +26,9 @@
 
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
 @property (weak) IBOutlet NSImageView *imageView;
+@property (weak) IBOutlet WebView *webView;
+
+@property (weak) IBOutlet NSPopover *createSourcePopover;
 
 @property (weak) IBOutlet ORRedditImageController *redditController;
 @property (weak) IBOutlet ORSearchController *searchController;

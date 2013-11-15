@@ -36,51 +36,6 @@ NSString *kPrivateDragUTI = @"com.github.orta.gif";
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
-    if (!self.allowDrop)
-        return NSDragOperationNone;
-    /*------------------------------------------------------
-        method called whenever a drag enters our drop zone
-     --------------------------------------------------------*/
-    
-            // Check if the pasteboard contains image data and source/user wants it copied
-    if ( [NSImage canInitWithPasteboard:[sender draggingPasteboard]] &&
-             [sender draggingSourceOperationMask] &
-             NSDragOperationCopy ) {
-            
-            //highlight our drop zone
-        highlight=YES;
-            
-        [self setNeedsDisplay: YES];
-    
-            /* When an image from one window is dragged over another, we want to resize the dragging item to
-             * preview the size of the image as it would appear if the user dropped it in. */
-        [sender enumerateDraggingItemsWithOptions:NSDraggingItemEnumerationConcurrent 
-            forView:self
-            classes:[NSArray arrayWithObject:[NSPasteboardItem class]] 
-            searchOptions:nil 
-            usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop) {
-                
-                    /* Only resize a fragging item if it originated from one of our windows.  To do this,
-                     * we declare a custom UTI that will only be assigned to dragging items we created.  Here
-                     * we check if the dragging item can represent our custom UTI.  If it can't we stop. */
-                if ( ![[[draggingItem item] types] containsObject:kPrivateDragUTI] ) {
-                    
-                    *stop = YES;
-                    
-                } else {
-                        /* In order for the dragging item to actually resize, we have to reset its contents.
-                         * The frame is going to be the destination view's bounds.  (Coordinates are local 
-                         * to the destination view here).
-                         * For the contents, we'll grab the old contents and use those again.  If you wanted
-                         * to perform other modifications in addition to the resize you could do that here. */
-                    [draggingItem setDraggingFrame:self.bounds contents:[[[draggingItem imageComponents] objectAtIndex:0] contents]];
-                }
-            }];
-        
-        //accept data as a copy operation
-        return NSDragOperationCopy;
-    }
-    
     return NSDragOperationNone;
 }
 
@@ -146,7 +101,7 @@ NSString *kPrivateDragUTI = @"com.github.orta.gif";
         }
         
             //if the drag comes from a file, set the window title to the filename
-        fileURL=[NSURL URLFromPasteboard: [sender draggingPasteboard]];
+        fileURL = [NSURL URLFromPasteboard: [sender draggingPasteboard]];
 //        [[self window] setTitle: fileURL!=NULL ? [fileURL absoluteString] : @"(no name)"];
         if ([self.delegate respondsToSelector:@selector(dropComplete:)]) {
             [self.delegate dropComplete:[fileURL path]];
@@ -183,6 +138,9 @@ NSString *kPrivateDragUTI = @"com.github.orta.gif";
         dragPosition.y -= 16;
         imageLocation.origin = dragPosition;
         imageLocation.size = NSMakeSize(32,32);
+
+
+
         [self dragPromisedFilesOfTypes:[NSArray arrayWithObject:NSPasteboardTypeTIFF] fromRect:imageLocation source:self slideBack:YES event:event];
     }
 }
@@ -216,6 +174,7 @@ NSString *kPrivateDragUTI = @"com.github.orta.gif";
                                                               usingType:NSGIFFileType properties:nil];
     }     
     [bitmapData writeToFile:[[dropDestination path] stringByAppendingPathComponent:@"test.gif"]  atomically:YES];
+
     return [NSArray arrayWithObjects:@"test.gif", nil];
 }
 

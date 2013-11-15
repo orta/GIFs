@@ -19,6 +19,7 @@
 @interface ORSourceListHeaderView : NSTableCellView
 - (id)initWithTitle:(NSString *)title;
 @end
+
 @interface ORSourceListItemView : NSTableCellView
 - (id)initWithSourceListItem:(ORSourceListItem *)item;
 @property (assign, nonatomic) BOOL selected;

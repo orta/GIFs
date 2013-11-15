@@ -36,6 +36,20 @@
 		60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C216A1FA6400A0FB7A /* Credits.rtf */; };
 		60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */; };
 		60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */; };
+		60F849E21835CC5E009A0F25 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E01835CC5E009A0F25 /* plus.png */; };
+		60F849E31835CC5E009A0F25 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E11835CC5E009A0F25 /* plus@2x.png */; };
+		60F849E61835CD05009A0F25 /* plus_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E41835CD05009A0F25 /* plus_active@2x.png */; };
+		60F849E71835CD05009A0F25 /* plus_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E51835CD05009A0F25 /* plus_active.png */; };
+		60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */; };
+		60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F849EC1835D19B009A0F25 /* ORSourcesController.m */; };
+		60F849F01835D451009A0F25 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849EE1835D451009A0F25 /* tick@2x.png */; };
+		60F849F11835D451009A0F25 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849EF1835D451009A0F25 /* tick.png */; };
+		60F849F41835D4F2009A0F25 /* tick_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F21835D4F2009A0F25 /* tick_active@2x.png */; };
+		60F849F51835D4F2009A0F25 /* tick_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F31835D4F2009A0F25 /* tick_active.png */; };
+		60F849FA1835DCF2009A0F25 /* tumblr_t_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F61835DCF2009A0F25 /* tumblr_t_active@2x.png */; };
+		60F849FB1835DCF2009A0F25 /* tumblr_t_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F71835DCF2009A0F25 /* tumblr_t_active.png */; };
+		60F849FC1835DCF2009A0F25 /* tumblr_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F81835DCF2009A0F25 /* tumblr_t@2x.png */; };
+		60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F91835DCF2009A0F25 /* tumblr_t.png */; };
 		60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFF216AE1E2600036609 /* ORTumblrController.m */; };
 		60F8C00B16AE3B2A00036609 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8C00A16AE3B2A00036609 /* DragDropImageView.m */; };
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
@@ -90,6 +104,22 @@
 		60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORAppDelegate.h; sourceTree = "<group>"; };
 		60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORAppDelegate.m; sourceTree = "<group>"; };
 		60ECD1C916A1FA6400A0FB7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		60F849E01835CC5E009A0F25 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		60F849E11835CC5E009A0F25 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		60F849E41835CD05009A0F25 /* plus_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_active@2x.png"; sourceTree = "<group>"; };
+		60F849E51835CD05009A0F25 /* plus_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_active.png; sourceTree = "<group>"; };
+		60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDarkBlueView.h; sourceTree = "<group>"; };
+		60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDarkBlueView.m; sourceTree = "<group>"; };
+		60F849EB1835D19B009A0F25 /* ORSourcesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSourcesController.h; sourceTree = "<group>"; };
+		60F849EC1835D19B009A0F25 /* ORSourcesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSourcesController.m; sourceTree = "<group>"; };
+		60F849EE1835D451009A0F25 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		60F849EF1835D451009A0F25 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		60F849F21835D4F2009A0F25 /* tick_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick_active@2x.png"; sourceTree = "<group>"; };
+		60F849F31835D4F2009A0F25 /* tick_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick_active.png; sourceTree = "<group>"; };
+		60F849F61835DCF2009A0F25 /* tumblr_t_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr_t_active@2x.png"; sourceTree = "<group>"; };
+		60F849F71835DCF2009A0F25 /* tumblr_t_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr_t_active.png; sourceTree = "<group>"; };
+		60F849F81835DCF2009A0F25 /* tumblr_t@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr_t@2x.png"; sourceTree = "<group>"; };
+		60F849F91835DCF2009A0F25 /* tumblr_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr_t.png; sourceTree = "<group>"; };
 		60F8BFF116AE1E2600036609 /* ORTumblrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORTumblrController.h; sourceTree = "<group>"; };
 		60F8BFF216AE1E2600036609 /* ORTumblrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORTumblrController.m; sourceTree = "<group>"; };
 		60F8C00916AE3B2A00036609 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropImageView.h; sourceTree = "<group>"; };
@@ -116,7 +146,6 @@
 		60ECD1A416A1FA6400A0FB7A = {
 			isa = PBXGroup;
 			children = (
-				60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */,
 				60ECD1B916A1FA6400A0FB7A /* GIFs */,
 				60ECD1B216A1FA6400A0FB7A /* Frameworks */,
 				60ECD1B016A1FA6400A0FB7A /* Products */,
@@ -135,6 +164,7 @@
 		60ECD1B216A1FA6400A0FB7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */,
 				60EC306816A2097D00E9BE93 /* WebKit.framework */,
 				60EC305816A1FB7A00E9BE93 /* Quartz.framework */,
 				60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */,
@@ -186,6 +216,10 @@
 				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
 				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
 				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
+				60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */,
+				60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */,
+				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
+				60F849EC1835D19B009A0F25 /* ORSourcesController.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -205,6 +239,18 @@
 		60F8BFF516AE1E6B00036609 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60F849F61835DCF2009A0F25 /* tumblr_t_active@2x.png */,
+				60F849F71835DCF2009A0F25 /* tumblr_t_active.png */,
+				60F849F81835DCF2009A0F25 /* tumblr_t@2x.png */,
+				60F849F91835DCF2009A0F25 /* tumblr_t.png */,
+				60F849F21835D4F2009A0F25 /* tick_active@2x.png */,
+				60F849F31835D4F2009A0F25 /* tick_active.png */,
+				60F849EE1835D451009A0F25 /* tick@2x.png */,
+				60F849EF1835D451009A0F25 /* tick.png */,
+				60F849E41835CD05009A0F25 /* plus_active@2x.png */,
+				60F849E51835CD05009A0F25 /* plus_active.png */,
+				60F849E01835CC5E009A0F25 /* plus.png */,
+				60F849E11835CC5E009A0F25 /* plus@2x.png */,
 				60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */,
 				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
 				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
@@ -247,8 +293,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OR;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Orta Therox";
+				TargetAttributes = {
+					60ECD1AE16A1FA6400A0FB7A = {
+						DevelopmentTeam = NETCV7NTVF;
+					};
+				};
 			};
 			buildConfigurationList = 60ECD1A916A1FA6400A0FB7A /* Build configuration list for PBXProject "GIFs" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -272,18 +323,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F849FB1835DCF2009A0F25 /* tumblr_t_active.png in Resources */,
+				60F849F51835D4F2009A0F25 /* tick_active.png in Resources */,
 				60ECD1BE16A1FA6400A0FB7A /* InfoPlist.strings in Resources */,
 				60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */,
 				60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */,
+				60F849FC1835DCF2009A0F25 /* tumblr_t@2x.png in Resources */,
+				60F849E71835CD05009A0F25 /* plus_active.png in Resources */,
 				60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */,
 				60238CD816AC7302002DC7CD /* Reddit@2x.png in Resources */,
+				60F849FA1835DCF2009A0F25 /* tumblr_t_active@2x.png in Resources */,
+				60F849E21835CC5E009A0F25 /* plus.png in Resources */,
 				60238CD916AC7302002DC7CD /* Reddit.png in Resources */,
 				60238CDD16AC76E2002DC7CD /* RedditWhite.png in Resources */,
+				60F849F41835D4F2009A0F25 /* tick_active@2x.png in Resources */,
 				60238CDE16AC76E2002DC7CD /* RedditWhite@2x.png in Resources */,
 				60238CF216ACB9E0002DC7CD /* Search.png in Resources */,
 				60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */,
+				60F849F11835D451009A0F25 /* tick.png in Resources */,
+				60F849E31835CC5E009A0F25 /* plus@2x.png in Resources */,
+				60F849F01835D451009A0F25 /* tick@2x.png in Resources */,
+				60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */,
 				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
 				60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */,
+				60F849E61835CD05009A0F25 /* plus_active@2x.png in Resources */,
 				60238D0116ACDACD002DC7CD /* more.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +379,9 @@
 				60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */,
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
 				60EC306116A2007900E9BE93 /* ORRedditImageController.m in Sources */,
+				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60EC306416A2020F00E9BE93 /* GIF.m in Sources */,
+				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
 				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
@@ -362,7 +427,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -392,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;

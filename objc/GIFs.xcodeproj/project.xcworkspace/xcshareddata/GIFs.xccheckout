@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>18C57799-D27F-48EA-A71E-4FA79879A9D6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GIFs</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</key>
+		<string>https://github.com/orta/GIFs.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>objc/GIFs.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/orta/GIFs.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GIFs</string>
+		</dict>
+	</array>
+</dict>
+</plist>

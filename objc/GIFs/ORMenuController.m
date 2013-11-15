@@ -8,6 +8,13 @@
 
 #import "ORMenuController.h"
 
+NS_ENUM(NSUInteger, ORMenuTitle){
+    ORMenuTitleSearch,
+    ORMenuTitleReddit,
+    ORMenuTitleTumblr,
+    ORMenuTitleStar
+};
+
 @interface ORMenuItem : NSObject
 + (id)itemWithName:(NSString *)name address:(NSString *)address;
 @property NSString *name;
@@ -24,7 +31,9 @@
 @end
 
 @implementation ORMenuController {
-    NSMutableArray *_sources;    
+    NSMutableArray *_redditSources;
+    NSMutableArray *_tumblrSources;
+
     NSMutableArray *_searches;
 }
 
@@ -34,7 +43,7 @@
 
     _searches = [@[] mutableCopy];
 
-    _sources = [@[
+    _redditSources = [@[
         [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
@@ -42,7 +51,11 @@
         [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
         [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
         [ORMenuItem itemWithName:@"/r/perfectloops" address:@"http://www.reddit.com/r/perfectloops.json"],
-        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"]
+    ] mutableCopy];
+
+    _tumblrSources = [@[
+        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"],
+        [ORMenuItem itemWithName:@"justinmezzell" address:@"http://justinmezzell.tumblr.com"]
 
     ] mutableCopy];
 
@@ -86,40 +99,77 @@
 #pragma mark ORSourceListDataSource
 
 - (NSString *)sourceList:(ORSimpleSourceListView *)sourceList titleOfHeaderForSection:(NSUInteger)section {
-    if (section) {
-        return @"REDDIT";
+    switch (section) {
+        case ORMenuTitleSearch:
+            return @"Search";
+
+        case ORMenuTitleReddit:
+            return @"Reddit";
+
+        case ORMenuTitleTumblr:
+            return @"Tumblr";
+
+        case ORMenuTitleStar:
+            return @"Starred";
     }
-    return @"SEARCH";
+
+    return @"";
 }
 
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section) {
-        ORSourceListItem *item = [[ORSourceListItem alloc] init];
-        ORMenuItem *menuItem = _sources[indexPath.row];
-        item.title = menuItem.name;
-        item.thumbnail = @"Reddit";
-        item.selectedThumbnail = @"RedditWhite";
-        return item;
-    } else {
-        ORSourceListItem *item = [[ORSourceListItem alloc] init];
-        item.title = _searches[indexPath.row];
-        item.thumbnail = @"Search";
-        item.selectedThumbnail = @"SearchWhite";
+    ORSourceListItem *item = [[ORSourceListItem alloc] init];
+    ORMenuItem *menuItem = nil;
 
-        return item;
+    switch (indexPath.section) {
+        case ORMenuTitleSearch:
+            item.title = _searches[indexPath.row];
+            item.thumbnail = @"Search";
+            item.selectedThumbnail = @"SearchWhite";
+            return item;
+
+        case ORMenuTitleReddit:
+            menuItem = _redditSources[indexPath.row];
+            item.title = [menuItem name];
+            item.thumbnail = @"Reddit";
+            item.selectedThumbnail = @"RedditWhite";
+            return item;
+
+        case ORMenuTitleTumblr:
+            menuItem = _tumblrSources[indexPath.row];
+            item.title = menuItem.name;
+            item.thumbnail = @"tumblr_t";
+            item.selectedThumbnail = @"tumblr_t_active";
+            return  item;
+
+        case ORMenuTitleStar:
+            item.title = @"⭐";
+            item.thumbnail = @"";
+            item.selectedThumbnail = @"";
+            return item;
     }
+
+    return nil;
 }
 
 - (NSUInteger)sourceList:(ORSimpleSourceListView *)sourceList numberOfRowsInSection:(NSUInteger)section {
-    if (section) {
-        return _sources.count;
-    } else {
-        return _searches.count;
+    switch (section) {
+        case ORMenuTitleSearch:
+            return _searches.count;
+
+        case ORMenuTitleReddit:
+            return _redditSources.count;
+
+        case ORMenuTitleTumblr:
+            return _tumblrSources.count;
+
+        case ORMenuTitleStar:
+            return 1;
     }
+    return 0;
 }
 
 - (NSUInteger)numberOfSectionsInSourceList:(ORSimpleSourceListView *)sourceList {
-    return 2;
+    return 4;
 }
 
 #pragma mark -
@@ -127,12 +177,25 @@
 
 - (void)sourceList:(ORSimpleSourceListView *)sourceList selectionDidChangeToIndexPath:(NSIndexPath *)indexPath {
     NSUInteger index = indexPath.row;
-    
-    if(indexPath.section){
-        ORMenuItem *item = _sources[index];
-        [_gifViewController getGIFsFromSourceString:[item address]];
-    } else {
-        [_gifViewController getGIFsFromSourceString:_searches[index]];
+    ORMenuItem *item = nil;
+
+    switch (indexPath.section) {
+        case ORMenuTitleSearch:
+            [_gifViewController getGIFsFromSourceString:_searches[index]];
+            break;
+
+        case ORMenuTitleReddit:
+            item = _redditSources[index];
+            [_gifViewController getGIFsFromSourceString:[item address]];
+            break;
+
+        case ORMenuTitleTumblr:
+            item = _tumblrSources[index];
+            [_gifViewController getGIFsFromSourceString:[item address]];
+            break;
+
+        case ORMenuTitleStar:
+            NSLog(@"nada");
     }
 }
 

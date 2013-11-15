@@ -100,30 +100,49 @@
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
         _currentGIF = gif;
+//
+//        _imageView.image = nil;
+//        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
+//        _progressView.hidden = YES;
+//        if (_gifDownloadOp) [_gifDownloadOp cancel];
+//        
+//        _gifDownloadOp = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
+//            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
+//            _progressView.hidden = YES;
+//            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
+//            [_gifDownloadOp.responseData writeToFile:_gifPath atomically:YES];
+//        }];
+//
+//        __block DDProgressView *progressView = _progressView;
+//        [_gifDownloadOp setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+//            progressView.progress = totalBytesRead / (CGFloat)totalBytesExpectedToRead;
+//        }];
+//
+//        [_gifDownloadOp start];
 
-        _imageView.image = nil;
-        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
-        _progressView.hidden = YES;
-        if (_gifDownloadOp) [_gifDownloadOp cancel];
-        
-        _gifDownloadOp = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
-            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
-            _progressView.hidden = YES;
-            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
-            [_gifDownloadOp.responseData writeToFile:_gifPath atomically:YES];
-        }];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
+        NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
+        html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
+        if (html) {
+            [[_webView mainFrame] loadHTMLString:html baseURL:nil];
+        }
 
-        __block DDProgressView *progressView = _progressView;
-        [_gifDownloadOp setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-            progressView.progress = totalBytesRead / (CGFloat)totalBytesExpectedToRead;
-        }];
-
-        [_gifDownloadOp start];
     }
 }
 
 - (NSString *)gifFilePath {
     return _gifPath;
+}
+
+- (IBAction)togglePopover:(NSButton *)sender
+{
+    if (!self.createSourcePopover.isShown) {
+        [self.createSourcePopover showRelativeToRect:[sender bounds]
+                                          ofView:sender
+                                   preferredEdge:NSMinYEdge];
+    } else {
+        [self.createSourcePopover close];
+    }
 }
 
 @end
