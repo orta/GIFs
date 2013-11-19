@@ -23,6 +23,7 @@
 @interface ORSourceListItemView : NSTableCellView
 - (id)initWithSourceListItem:(ORSourceListItem *)item;
 @property (assign, nonatomic) BOOL selected;
+@property (strong, nonatomic) NSButton *rightImageView;
 @end
 
 @interface ORSourceListItem : NSObject
@@ -43,13 +44,15 @@
 @end
 
 @protocol ORSourceListDelegate
+@optional
 - (void)sourceList:(ORSimpleSourceListView *)sourceList selectionDidChangeToIndexPath:(NSIndexPath *)indexPath;
+- (void)sourceList:(ORSimpleSourceListView *)sourceList didClickOnRightButtonForIndexPath:(NSIndexPath *)indexPath;
 @end
 
 
 @interface ORSimpleSourceListView : NSTableView <NSTableViewDataSource, NSTableViewDelegate>
-@property (weak) IBOutlet id <ORSourceListDelegate> sourceListDelegate;
-@property (weak) IBOutlet id <ORSourceListDataSource> sourceListDataSource;
+@property (weak) IBOutlet NSObject <ORSourceListDelegate> *sourceListDelegate;
+@property (weak) IBOutlet NSObject <ORSourceListDataSource> *sourceListDataSource;
 
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath;
 @end

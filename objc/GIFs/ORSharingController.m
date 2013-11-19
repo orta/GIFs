@@ -18,9 +18,7 @@
 }
 
 - (void)awakeFromNib {
-    _mainImageView.allowDrag = YES;
-    _mainImageView.allowDrop = NO;
-    
+
     _emailSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
     _emailButton.image = _emailSharingService.image;
     _emailButton.alternateImage = _emailSharingService.alternateImage;
@@ -43,11 +41,11 @@
 
 - (IBAction)miscClicked:(id)sender {
     NSMutableArray *shareItems = [@[@"HALLO I MADES IT"] mutableCopy];
-
-    NSImage *image = [_mainImageView image];
-    if (image) {
-        [shareItems addObject:image];
-    }
+//
+//    NSImage *image = [_mainImageView image];
+//    if (image) {
+//        [shareItems addObject:image];
+//    }
 
     NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:shareItems];
 
@@ -95,25 +93,25 @@
     [service performWithItems:shareItems];
 }
 
-
-- (NSWindow *)sharingService:(NSSharingService *)sharingService sourceWindowForShareItems:(NSArray *)items sharingContentScope:(NSSharingContentScope *)sharingContentScope {
-    return _mainImageView.window;
-}
-
-
-
-- (NSRect)sharingService:(NSSharingService *)sharingService sourceFrameOnScreenForShareItem:(id<NSPasteboardWriting>)item {
-        NSImageView *imageView = _mainImageView;
-        NSRect imageViewBounds = [imageView bounds];
-        NSSize imageSize = [[imageView image] size];
-        NSRect imageFrame = NSMakeRect((NSWidth(imageViewBounds) - imageSize.width) / 2.0, (NSHeight(imageViewBounds) - imageSize.height) / 2.0, imageSize.width, imageSize.height);
-        NSRect frame = [imageView convertRect:imageFrame toView:nil];
-        frame.origin = [[imageView window] convertBaseToScreen:frame.origin];
-        return frame;
-}
-
-
-- (NSImage *)sharingService:(NSSharingService *)sharingService transitionImageForShareItem:(id<NSPasteboardWriting>)item contentRect:(NSRect *)contentRect {
-        return [_mainImageView image];
-}
+//
+//- (NSWindow *)sharingService:(NSSharingService *)sharingService sourceWindowForShareItems:(NSArray *)items sharingContentScope:(NSSharingContentScope *)sharingContentScope {
+//    return _mainImageView.window;
+//}
+//
+//
+//
+//- (NSRect)sharingService:(NSSharingService *)sharingService sourceFrameOnScreenForShareItem:(id<NSPasteboardWriting>)item {
+//        NSImageView *imageView = _mainImageView;
+//        NSRect imageViewBounds = [imageView bounds];
+//        NSSize imageSize = [[imageView image] size];
+//        NSRect imageFrame = NSMakeRect((NSWidth(imageViewBounds) - imageSize.width) / 2.0, (NSHeight(imageViewBounds) - imageSize.height) / 2.0, imageSize.width, imageSize.height);
+//        NSRect frame = [imageView convertRect:imageFrame toView:nil];
+//        frame.origin = [[imageView window] convertBaseToScreen:frame.origin];
+//        return frame;
+//}
+//
+//
+//- (NSImage *)sharingService:(NSSharingService *)sharingService transitionImageForShareItem:(id<NSPasteboardWriting>)item contentRect:(NSRect *)contentRect {
+//        return [_mainImageView image];
+//}
 @end

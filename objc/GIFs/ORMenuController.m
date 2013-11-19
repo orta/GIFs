@@ -203,5 +203,26 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     }
 }
 
+- (void)sourceList:(ORSimpleSourceListView *)sourceList didClickOnRightButtonForIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger index = indexPath.row;
+
+    switch (indexPath.section) {
+        case ORMenuTitleSearch:
+            [_searches removeObjectAtIndex:index];
+            break;
+
+        case ORMenuTitleReddit:
+            break;
+
+        case ORMenuTitleTumblr:
+            break;
+
+        case ORMenuTitleStar:
+            NSLog(@"nada");
+    }
+
+    [sourceList reloadData];
+}
 
 @end

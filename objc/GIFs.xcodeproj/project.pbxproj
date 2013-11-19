@@ -51,7 +51,6 @@
 		60F849FC1835DCF2009A0F25 /* tumblr_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F81835DCF2009A0F25 /* tumblr_t@2x.png */; };
 		60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F91835DCF2009A0F25 /* tumblr_t.png */; };
 		60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFF216AE1E2600036609 /* ORTumblrController.m */; };
-		60F8C00B16AE3B2A00036609 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8C00A16AE3B2A00036609 /* DragDropImageView.m */; };
 		60FB8852183AE74600FC05CB /* close_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB884E183AE74600FC05CB /* close_active@2x.png */; };
 		60FB8853183AE74600FC05CB /* close_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB884F183AE74600FC05CB /* close_active.png */; };
 		60FB8854183AE74600FC05CB /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8850183AE74600FC05CB /* close@2x.png */; };
@@ -76,7 +75,6 @@
 		60238CFD16ACD600002DC7CD /* ORSharingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSharingController.h; sourceTree = "<group>"; };
 		60238CFE16ACD600002DC7CD /* ORSharingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSharingController.m; sourceTree = "<group>"; };
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
-		60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSystemPreferences.h; sourceTree = "<group>"; };
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -126,8 +124,6 @@
 		60F849F91835DCF2009A0F25 /* tumblr_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr_t.png; sourceTree = "<group>"; };
 		60F8BFF116AE1E2600036609 /* ORTumblrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORTumblrController.h; sourceTree = "<group>"; };
 		60F8BFF216AE1E2600036609 /* ORTumblrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORTumblrController.m; sourceTree = "<group>"; };
-		60F8C00916AE3B2A00036609 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropImageView.h; sourceTree = "<group>"; };
-		60F8C00A16AE3B2A00036609 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropImageView.m; sourceTree = "<group>"; };
 		60FB884E183AE74600FC05CB /* close_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_active@2x.png"; sourceTree = "<group>"; };
 		60FB884F183AE74600FC05CB /* close_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_active.png; sourceTree = "<group>"; };
 		60FB8850183AE74600FC05CB /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
@@ -196,38 +192,15 @@
 		60ECD1B916A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
+				60FB8859183AED9100FC05CB /* Misc */,
+				60FB8858183AED8400FC05CB /* Models */,
+				60FB8857183AED6A00FC05CB /* Controllers */,
+				60FB8856183AED5C00FC05CB /* Views */,
 				60F8BFF516AE1E6B00036609 /* Resources */,
 				60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */,
 				60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */,
-				60F8C00916AE3B2A00036609 /* DragDropImageView.h */,
-				60F8C00A16AE3B2A00036609 /* DragDropImageView.m */,
 				60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */,
 				60ECD1BA16A1FA6400A0FB7A /* Supporting Files */,
-				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
-				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
-				60EC306216A2020F00E9BE93 /* GIF.h */,
-				60EC306316A2020F00E9BE93 /* GIF.m */,
-				60EC306516A2089500E9BE93 /* ORImageView.h */,
-				60EC306616A2089500E9BE93 /* ORImageView.m */,
-				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
-				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
-				60EC306D16A3305A00E9BE93 /* ORSearchController.h */,
-				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
-				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
-				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
-				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
-				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
-				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
-				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
-				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
-				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
-				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
-				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
-				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
-				60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */,
-				60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */,
-				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
-				60F849EC1835D19B009A0F25 /* ORSourcesController.m */,
 			);
 			path = GIFs;
 			sourceTree = "<group>";
@@ -235,6 +208,7 @@
 		60ECD1BA16A1FA6400A0FB7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
 				60ECD1BB16A1FA6400A0FB7A /* GIFs-Info.plist */,
 				60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */,
 				60ECD1BF16A1FA6400A0FB7A /* main.m */,
@@ -263,7 +237,6 @@
 				60F849E51835CD05009A0F25 /* plus_active.png */,
 				60F849E01835CC5E009A0F25 /* plus.png */,
 				60F849E11835CC5E009A0F25 /* plus@2x.png */,
-				60238D0216ACDD57002DC7CD /* SBSystemPreferences.h */,
 				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
 				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
 				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
@@ -275,6 +248,58 @@
 				60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		60FB8856183AED5C00FC05CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */,
+				60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */,
+				60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */,
+				60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */,
+				60EC306516A2089500E9BE93 /* ORImageView.h */,
+				60EC306616A2089500E9BE93 /* ORImageView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		60FB8857183AED6A00FC05CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */,
+				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
+				60EC306D16A3305A00E9BE93 /* ORSearchController.h */,
+				60EC306E16A3305A00E9BE93 /* ORSearchController.m */,
+				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
+				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
+				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
+				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
+				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
+				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
+				60EC305F16A2007900E9BE93 /* ORRedditImageController.h */,
+				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
+				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
+				60F849EC1835D19B009A0F25 /* ORSourcesController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60FB8858183AED8400FC05CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60EC306216A2020F00E9BE93 /* GIF.h */,
+				60EC306316A2020F00E9BE93 /* GIF.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		60FB8859183AED9100FC05CB /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
+				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +430,6 @@
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
-				60F8C00B16AE3B2A00036609 /* DragDropImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -109,6 +109,11 @@ CGFloat ORCellImageDimensions = 16;
         ORSourceListItem *sourceListItem = (ORSourceListItem *)item;
         result = [[ORSourceListItemView alloc] initWithSourceListItem:sourceListItem];
 
+        NSButton *rightButton = [(ORSourceListItemView *)result rightImageView];
+        [rightButton setTarget:self];
+        [rightButton setAction:@selector(tappedOnRightButton:)];
+        [rightButton setTag:row];
+
         if (row == _currentSelectionIndex) {
             [(ORSourceListItemView *)result setSelected:YES];
         }
@@ -117,6 +122,7 @@ CGFloat ORCellImageDimensions = 16;
         NSString *headerString = (NSString *)item;
         result = [[ORSourceListHeaderView alloc] initWithTitle:headerString];
     }
+
     return result;
 }
 
@@ -216,6 +222,13 @@ CGFloat ORCellImageDimensions = 16;
 }
 
 
+- (void)tappedOnRightButton:(NSButton *)button {
+    if ([_sourceListDelegate respondsToSelector:@selector(sourceList:didClickOnRightButtonForIndexPath:)]) {
+        NSIndexPath *path = [self rowToIndexPath:button.tag];
+        [_sourceListDelegate  sourceList:self didClickOnRightButtonForIndexPath:path];
+    }
+}
+
 @end
 
 @implementation ORSourceListHeaderView
@@ -246,7 +259,6 @@ CGFloat ORCellImageDimensions = 16;
 @end
 
 @implementation ORSourceListItemView {
-    NSButton *_rightImageView;
 
     NSString *_thumbnail;
     NSString *_selectedThumbnail;
