@@ -40,6 +40,8 @@
 
 - (void)getGIFsFromSourceString:(NSString *)string;
 
+- (void)getGIFsFromStarred;
+
 - (NSString *)gifFilePath;
 
 @end

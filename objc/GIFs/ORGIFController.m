@@ -145,4 +145,9 @@
     }
 }
 
+- (void)getGIFsFromStarred
+{
+    
+}
+
 @end

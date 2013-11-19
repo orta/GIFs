@@ -12,7 +12,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     ORMenuTitleSearch,
     ORMenuTitleReddit,
     ORMenuTitleTumblr,
-    ORMenuTitleStar
+    ORMenuTitleStar 
 };
 
 @interface ORMenuItem : NSObject
@@ -55,8 +55,8 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
     _tumblrSources = [@[
         [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"],
-        [ORMenuItem itemWithName:@"justinmezzell" address:@"http://justinmezzell.tumblr.com"]
-
+        [ORMenuItem itemWithName:@"justinmezzell" address:@"http://justinmezzell.tumblr.com"],
+        [ORMenuItem itemWithName:@"beerlabelsinmotion" address:@"http://beerlabelsinmotion.tumblr.com"]
     ] mutableCopy];
 
     return self;
@@ -119,6 +119,8 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath {
     ORSourceListItem *item = [[ORSourceListItem alloc] init];
     ORMenuItem *menuItem = nil;
+    item.rightButtonImage = @"close";
+    item.rightButtonActiveImage = @"close_active";
 
     switch (indexPath.section) {
         case ORMenuTitleSearch:
@@ -132,6 +134,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             item.title = [menuItem name];
             item.thumbnail = @"Reddit";
             item.selectedThumbnail = @"RedditWhite";
+
             return item;
 
         case ORMenuTitleTumblr:
@@ -139,6 +142,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             item.title = menuItem.name;
             item.thumbnail = @"tumblr_t";
             item.selectedThumbnail = @"tumblr_t_active";
+
             return  item;
 
         case ORMenuTitleStar:

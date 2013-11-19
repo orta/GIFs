@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="3338"/>
-        <plugIn identifier="com.apple.imagekit.ibplugin" version="3338"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="5023"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="5023"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -666,14 +666,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="158" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="573">
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="573">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="366"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Saz-be-m64">
                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="349"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>

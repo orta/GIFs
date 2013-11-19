@@ -246,16 +246,22 @@ CGFloat ORCellImageDimensions = 16;
 @end
 
 @implementation ORSourceListItemView {
+    NSButton *_rightImageView;
+
     NSString *_thumbnail;
     NSString *_selectedThumbnail;
+    NSString *_rightImageName;
+    NSString *_rightImageActiveName;
 }
 
 - (id)initWithSourceListItem:(ORSourceListItem *)item {
     self = [super init];
     if(!self)return nil;
 
-    _thumbnail = item.thumbnail;
-    _selectedThumbnail = item.selectedThumbnail;
+    _thumbnail = item.thumbnail.copy;
+    _selectedThumbnail = item.selectedThumbnail.copy;
+    _rightImageName = item.rightButtonImage.copy;
+    _rightImageActiveName = item.rightButtonActiveImage.copy;
 
     NSTextField *titleTextField = [ORSimpleSourceListView textFieldForItems];
     self.textField = titleTextField;
@@ -265,6 +271,13 @@ CGFloat ORCellImageDimensions = 16;
     self.imageView = itemImage;
     [self addSubview:itemImage];
 
+    NSButton *rightImageView = [[NSButton alloc] init];
+    [rightImageView setButtonType:NSMomentaryPushButton];
+    [rightImageView setImagePosition:NSImageOnly];
+    [rightImageView setBordered:NO];
+    _rightImageView = rightImageView;
+    [self addSubview:rightImageView];
+
     self.textField.stringValue = item.title;
     self.imageView.image = [NSImage imageNamed:_thumbnail];
     return self;
@@ -272,8 +285,12 @@ CGFloat ORCellImageDimensions = 16;
 
 - (void)setFrame:(NSRect)frameRect {
     [super setFrame:frameRect];
+
     self.textField.frame = CGRectMake(ORCellItemLeftPadding, -ORCellItemTopPadding, CGRectGetWidth(frameRect) - ORCellItemLeftPadding, ORCellHeight);
+
     self.imageView.frame = CGRectMake(ORCellLeftPadding, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
+
+    _rightImageView.frame = CGRectMake(CGRectGetWidth(frameRect) - ORCellLeftPadding - ORCellImageDimensions, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -281,12 +298,15 @@ CGFloat ORCellImageDimensions = 16;
         [[NSColor colorWithCalibratedRed:0.206 green:0.449 blue:0.940 alpha:1.000] set];
         self.textField.textColor = [NSColor colorWithCalibratedRed:1 green:1 blue:1.000 alpha:1.000];
         self.imageView.image = [NSImage imageNamed:_selectedThumbnail];
+        _rightImageView.image = [NSImage imageNamed:_rightImageActiveName];
     } else {
+        _rightImageView.image = [NSImage imageNamed:_rightImageName];
         self.imageView.image = [NSImage imageNamed:_thumbnail];
         self.textField.textColor = [NSColor colorWithCalibratedRed:0.550 green:0.522 blue:0.598 alpha:1.000];
         [[NSColor colorWithCalibratedRed:0.150 green:0.140 blue:0.169 alpha:1.000] set];
-
     }
+
+    [_rightImageView.image setTemplate:NO];
     NSRectFill(dirtyRect);
 }
 

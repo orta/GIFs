@@ -29,6 +29,8 @@
 @property (strong) NSString *selectedThumbnail;
 @property (strong) NSString *thumbnail;
 @property (strong) NSString *title;
+@property (strong) NSString *rightButtonImage;
+@property (strong) NSString *rightButtonActiveImage;
 @end
 
 @protocol ORSourceListDataSource
