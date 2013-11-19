@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ORGIFController.h"
 #import "ORSimpleSourceListView.h"
-#import "INAppStoreWindow.h"
 
 @interface ORMenuController : NSObject <ORSourceListDataSource, ORSourceListDelegate, NSTextFieldDelegate, NSSplitViewDelegate>
 @property (weak) IBOutlet ORGIFController *gifViewController;
 @property (weak) IBOutlet ORSimpleSourceListView *menuTableView;
-@property (unsafe_unretained) IBOutlet INAppStoreWindow *window;
+@property (unsafe_unretained) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSView *windowToolbar;
 @property (weak) IBOutlet NSSplitView *mainSplitView;
 

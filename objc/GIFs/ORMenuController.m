@@ -7,6 +7,7 @@
 //
 
 #import "ORMenuController.h"
+#import <StandardPaths/StandardPaths.h>
 
 NS_ENUM(NSUInteger, ORMenuTitle){
     ORMenuTitleSearch,
@@ -15,19 +16,36 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     ORMenuTitleStar 
 };
 
-@interface ORMenuItem : NSObject
+@interface ORMenuItem : NSObject <NSCoding>
 + (id)itemWithName:(NSString *)name address:(NSString *)address;
-@property NSString *name;
-@property NSString *address;
+
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *address;
 @end
 
 @implementation ORMenuItem
+
 + (id)itemWithName:(NSString *)name address:(NSString *)address {
     ORMenuItem *item = [[ORMenuItem alloc] init];
     item.name = name;
     item.address = address;
     return item;
 }
+
+#define kNameKey       @"name"
+#define kAddressKey      @"address"
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_name forKey:kNameKey];
+    [encoder encodeObject:_address forKey:kAddressKey];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    NSString *name = [decoder decodeObjectForKey:kNameKey];
+    NSString *address = [decoder decodeObjectForKey:kAddressKey];
+    return [self.class itemWithName:name address:address];
+}
+
 @end
 
 @implementation ORMenuController {
@@ -43,31 +61,12 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
     _searches = [@[] mutableCopy];
 
-    _redditSources = [@[
-        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
-        [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
-        [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
-        [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
-        [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
-        [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
-        [ORMenuItem itemWithName:@"/r/perfectloops" address:@"http://www.reddit.com/r/perfectloops.json"],
-    ] mutableCopy];
-
-    _tumblrSources = [@[
-        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"],
-        [ORMenuItem itemWithName:@"justinmezzell" address:@"http://justinmezzell.tumblr.com"],
-        [ORMenuItem itemWithName:@"beerlabelsinmotion" address:@"http://beerlabelsinmotion.tumblr.com"]
-    ] mutableCopy];
+    [self loadReddit];
+    [self loadTumblr];
 
     return self;
 }
 
-- (void)awakeFromNib {
-    _window.titleBarHeight = 40;
-    _windowToolbar.frame = self.window.titleBarView.bounds;
-    _windowToolbar.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    [_window.titleBarView addSubview:_windowToolbar];
-}
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
     NSSearchField *searchField = (NSSearchField *)control;
@@ -213,9 +212,13 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             break;
 
         case ORMenuTitleReddit:
+            [_redditSources removeObjectAtIndex:index];
+            [self saveReddit];
             break;
 
         case ORMenuTitleTumblr:
+            [_tumblrSources removeObjectAtIndex:index];
+            [self saveTumblr];
             break;
 
         case ORMenuTitleStar:
@@ -223,6 +226,55 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     }
 
     [sourceList reloadData];
+}
+
+#pragma mark defaults
+
+- (NSArray *)defaultRedditSources {
+    return @[
+        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
+        [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
+        [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
+        [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
+        [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
+        [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
+        [ORMenuItem itemWithName:@"/r/perfectloops" address:@"http://www.reddit.com/r/perfectloops.json"],
+    ];
+}
+
+- (NSArray *)defaultTumblrSources {
+    return @[
+        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"],
+        [ORMenuItem itemWithName:@"justinmezzell" address:@"http://justinmezzell.tumblr.com"],
+        [ORMenuItem itemWithName:@"beerlabelsinmotion" address:@"http://beerlabelsinmotion.tumblr.com"]
+    ];
+}
+
+- (void)loadTumblr {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"tumblr.data"];
+    NSArray *data = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+
+    if (!data) data = [self defaultTumblrSources];
+    _tumblrSources = [data mutableCopy];
+}
+
+- (void)saveTumblr {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"tumblr.data"];
+    [NSKeyedArchiver archiveRootObject:_tumblrSources toFile:path];
+}
+
+
+- (void)loadReddit {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"reddit.data"];
+    NSArray *data = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+
+    if (!data) data = [self defaultRedditSources];
+    _redditSources = [data mutableCopy];
+}
+
+- (void)saveReddit {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"reddit.data"];
+    [NSKeyedArchiver archiveRootObject:_redditSources toFile:path];
 }
 
 @end

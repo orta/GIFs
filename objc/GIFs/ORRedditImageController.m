@@ -7,7 +7,7 @@
 //
 
 #import "ORRedditImageController.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "GIF.h"
 #import "ORAppDelegate.h"
 

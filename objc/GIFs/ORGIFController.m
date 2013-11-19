@@ -12,15 +12,12 @@
 #import "ORTumblrController.h"
 #import "GIF.h"
 #import "AFNetworking.h"
-#import <DDProgressView/DDProgressView.h>
 
 @implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
     NSString *_gifPath;
 
     AFImageRequestOperation *_gifDownloadOp;
-    
-    __weak DDProgressView *_progressView;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
@@ -47,7 +44,6 @@
 - (void)awakeFromNib {
     [_imageBrowser setValue:[NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000] forKey:IKImageBrowserBackgroundColorKey];
     [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
-    _progressView.hidden = YES;
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
