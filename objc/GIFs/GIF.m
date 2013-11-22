@@ -23,6 +23,7 @@
         if ([_downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
             _thumbnailURL = [_downloadURL stringByReplacingOccurrencesOfString:@".gif" withString:@"b.jpg"];
 
+
         } else {
             // ergh, this would take a while
             _thumbnailURL = _downloadURL;
@@ -30,6 +31,22 @@
     }
 
     _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
+
+    // http://imgur.com/download/a/1iZuu -> http://i.imgur.com/3r3yeIz.gif
+
+    if ([_downloadURL hasPrefix:@"http://imgur.com/download/a/"]) {
+        _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/download/a/" withString:@""];
+        _downloadURL = [NSString stringWithFormat:@"http://i.imgur.com/%@.gif", _downloadURL];
+    }
+
+    // http://gifsound.com/?gif=http%3A%2F%2Fi.imgur.com%2FWcpOt.gif&sound=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZii3FYWaE4I&start=0  ->  http://i.imgur.com/3r3yeIz.gif
+
+    if ([_downloadURL hasPrefix:@"http://gifsound.com/?gif="]) {
+        _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://gifsound.com/?gif=" withString:@""];
+        _downloadURL = [_downloadURL componentsSeparatedByString:@"&amp;sound="][0];
+        _downloadURL = [_downloadURL stringByRemovingPercentEncoding];
+    }
+
     if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound) {
         return nil;
     }

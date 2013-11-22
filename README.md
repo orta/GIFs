@@ -7,7 +7,5 @@ I like to use GIFs in day to day communication, and whilst being pretty bummed o
 
 This lets you search the net, and do an infinite scroll on a bunch of subreddits /tumblrs that are a good source for GIFs.
 
-BSD License
-
 [![Screenshot](https://raw.github.com/orta/GIFs/master/web/screenshot.png "screenshot")](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip)
 [Download app](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip)

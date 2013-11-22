@@ -67,7 +67,6 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     return self;
 }
 
-
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
     NSSearchField *searchField = (NSSearchField *)control;
     [_searches insertObject:searchField.stringValue atIndex:0];
@@ -263,6 +262,16 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     [NSKeyedArchiver archiveRootObject:_tumblrSources toFile:path];
 }
 
+- (void)addNewTumblr:(NSString *)tumblr {
+    NSString *name = [tumblr stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+    name = [name stringByReplacingOccurrencesOfString:@".tumblr.com" withString:@""];
+
+    ORMenuItem *item =[ORMenuItem itemWithName:name address:tumblr];
+    [_tumblrSources addObject:item];
+    [self.menuTableView reloadData];
+    [self saveTumblr];
+}
+
 
 - (void)loadReddit {
     NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"reddit.data"];
@@ -275,6 +284,15 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 - (void)saveReddit {
     NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"reddit.data"];
     [NSKeyedArchiver archiveRootObject:_redditSources toFile:path];
+}
+
+- (void)addNewSubreddit:(NSString *)subreddit {
+    NSString *address = [NSString stringWithFormat:@"http://www.reddit.com%@.json", subreddit];
+
+    ORMenuItem *item =[ORMenuItem itemWithName:subreddit address:address];
+    [_redditSources addObject:item];
+    [self.menuTableView reloadData];
+    [self saveTumblr];
 }
 
 @end

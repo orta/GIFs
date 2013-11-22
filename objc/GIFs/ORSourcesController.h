@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ORMenuController.h"
 
 @interface ORSourcesController : NSObject
+
+@property (nonatomic, weak) IBOutlet ORMenuController *menuController;
+@property (nonatomic, weak) IBOutlet NSPopover *sourcePopover;
 
 @property (weak) IBOutlet NSTextField *tumblrURLTextField;
 @property (weak) IBOutlet NSButton *tumblrSaveButton;

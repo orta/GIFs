@@ -11,10 +11,14 @@
 #import "ORSimpleSourceListView.h"
 
 @interface ORMenuController : NSObject <ORSourceListDataSource, ORSourceListDelegate, NSTextFieldDelegate, NSSplitViewDelegate>
+
 @property (weak) IBOutlet ORGIFController *gifViewController;
 @property (weak) IBOutlet ORSimpleSourceListView *menuTableView;
 @property (unsafe_unretained) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSView *windowToolbar;
 @property (weak) IBOutlet NSSplitView *mainSplitView;
+
+- (void)addNewSubreddit:(NSString *)subreddit;
+- (void)addNewTumblr:(NSString *)tumblr;
 
 @end

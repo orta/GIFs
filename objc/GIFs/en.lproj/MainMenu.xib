@@ -894,8 +894,10 @@
         </customView>
         <customObject id="r3L-u3-GrL" customClass="ORSourcesController">
             <connections>
+                <outlet property="menuController" destination="611" id="zhU-zs-wie"/>
                 <outlet property="redditSaveButton" destination="5J0-2X-Bpp" id="9qR-NZ-VHw"/>
                 <outlet property="redditTextField" destination="L2c-zw-Ww0" id="0qp-E5-VfP"/>
+                <outlet property="sourcePopover" destination="QID-Px-0jj" id="ocK-Nx-7OO"/>
                 <outlet property="tumblrSaveButton" destination="M1M-QJ-DPu" id="hfD-Qg-sjQ"/>
                 <outlet property="tumblrURLTextField" destination="7ra-Am-UaN" id="ETN-7d-6jU"/>
             </connections>
