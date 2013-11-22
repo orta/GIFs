@@ -47,7 +47,7 @@
         _downloadURL = [_downloadURL stringByRemovingPercentEncoding];
     }
 
-    if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound) {
+    if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound && [_downloadURL rangeOfString:@"media.tumblr.com"].location == NSNotFound) {
         return nil;
     }
 
