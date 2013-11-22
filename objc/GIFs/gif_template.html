@@ -5,38 +5,71 @@
   html, body { height: 100%; }
 
   body {
-  	width: 100%; /* needed for FF */
   	margin: 0;
 	  background-color: #ddd;
+    -webkit-user-select:none;
   	/* Flexbox hawtness */
     display: -webkit-box;
   	-webkit-box-align: center;
   	-webkit-box-pack: center;
   }
 
-  div {
-  	padding: 1em 1.5em;
-  	margin: 1em auto;
-  	background: #ccc;
-  	text-align: center;
-  	border-radius: .3em;
-  	color: #405060;
-  	font: bold 120% sans-serif;
-  	text-shadow: 0 2px 1px hsla(0,0%,100%,.2);
-    max-width:90%;
+  header {
+  	background: rgba(0,0,0,0.15);
+    height:44px;
+    display:block;
+    width:100%;
+    position:fixed;
+    top:0;
   }
-    
+  
+  footer {
+  	background: rgba(0,0,0,0.15);
+    height:44px;
+    display:block;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+  }
+      
   img {
     max-width:100%;
+        -webkit-user-select:auto;
+  }
+  
+  h4 {
+    margin-top:15px;
+    text-shadow: 0 2px 1px hsla(0,0%,100%,.3);
+    margin-left:20px;
+    max-width: 78%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family:sans-serif;
+    -webkit-user-select:text;
+    
+  }
+  
+  a {
+    display:block;
+    position:fixed;
+    bottom:8px;
+    right:20px;
+    background-color:red;
+    height:24px;
+    width:24px;
   }
   
 </style></head>
 
 <body>
-<div>
-  <img id="image" src="{{OR_IMAGE_URL}}" />
+<header></header>
+  <img src="{{OR_IMAGE_URL}}" />
+<footer>
   <h4>{{OR_IMAGE_URL}}</h4>
-</div>
+  <a href="#"></a>
+</footer>
 
 </body>
 </html>

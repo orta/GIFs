@@ -14,43 +14,43 @@
 }
 
 - (id)initWithRedditDictionary:(NSDictionary *)dictionary {
-    self = [super init];
 
-    _thumbnailURL = dictionary[@"data"][@"thumbnail"];
-    _downloadURL = dictionary[@"data"][@"url"];
+    NSString *thumbnailURL = dictionary[@"data"][@"thumbnail"];
+   NSString *downloadURL = dictionary[@"data"][@"url"];
 
-    if (_thumbnailURL.length == 0) {
-        if ([_downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
-            _thumbnailURL = [_downloadURL stringByReplacingOccurrencesOfString:@".gif" withString:@"b.jpg"];
+    if (thumbnailURL.length == 0) {
+        if ([downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
+            thumbnailURL = [downloadURL stringByReplacingOccurrencesOfString:@".gif" withString:@"b.jpg"];
 
 
         } else {
             // ergh, this would take a while
-            _thumbnailURL = _downloadURL;
+            thumbnailURL = downloadURL;
         }
     }
 
-    _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
+    downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
 
     // http://imgur.com/download/a/1iZuu -> http://i.imgur.com/3r3yeIz.gif
 
-    if ([_downloadURL hasPrefix:@"http://imgur.com/download/a/"]) {
-        _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/download/a/" withString:@""];
-        _downloadURL = [NSString stringWithFormat:@"http://i.imgur.com/%@.gif", _downloadURL];
+    if ([downloadURL hasPrefix:@"http://imgur.com/download/a/"]) {
+        downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/download/a/" withString:@""];
+        downloadURL = [NSString stringWithFormat:@"http://i.imgur.com/%@.gif", downloadURL];
     }
 
     // http://gifsound.com/?gif=http%3A%2F%2Fi.imgur.com%2FWcpOt.gif&sound=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZii3FYWaE4I&start=0  ->  http://i.imgur.com/3r3yeIz.gif
 
-    if ([_downloadURL hasPrefix:@"http://gifsound.com/?gif="]) {
-        _downloadURL = [_downloadURL stringByReplacingOccurrencesOfString:@"http://gifsound.com/?gif=" withString:@""];
-        _downloadURL = [_downloadURL componentsSeparatedByString:@"&amp;sound="][0];
-        _downloadURL = [_downloadURL stringByRemovingPercentEncoding];
+    if ([downloadURL hasPrefix:@"http://gifsound.com/?gif="]) {
+        downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@"http://gifsound.com/?gif=" withString:@""];
+        downloadURL = [downloadURL componentsSeparatedByString:@"&amp;sound="][0];
+        downloadURL = [downloadURL stringByRemovingPercentEncoding];
     }
 
-    if ([_downloadURL rangeOfString:@"imgur"].location == NSNotFound && [_downloadURL rangeOfString:@"media.tumblr.com"].location == NSNotFound) {
+    if ([downloadURL rangeOfString:@"imgur"].location == NSNotFound && [downloadURL rangeOfString:@"media.tumblr.com"].location == NSNotFound) {
         return nil;
     }
 
+    self = [self initWithDownloadURL:downloadURL andThumbnail:thumbnailURL];
     return self;
 }
 
