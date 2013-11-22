@@ -83,9 +83,20 @@
     NSString *thumbnail = [[appleURL componentsSeparatedByString:@"***thumb="] lastObject];
 
     GIF *gif = [[GIF alloc] initWithDownloadURL:download andThumbnail:thumbnail];
-    _starred = [_starred setByAddingObject:gif];
+    gif.dateAdded = [NSDate date];
+
+    if([_starred containsObject:gif]){
+        NSMutableSet *mutableSet = [NSMutableSet setWithSet:_starred];
+        [mutableSet removeObject:gif];
+        _starred = mutableSet;
+
+    } else {
+        _starred = [_starred setByAddingObject:gif];
+    }
 
     [self saveStarred];
+    [_starredController reloadData];
+    [_imageBrowser reloadData];
 }
 
 

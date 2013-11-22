@@ -19,7 +19,7 @@
     NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"starred.data"];
     NSSet *data = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     if (data) {
-        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"dateAdded" ascending:YES];
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"dateAdded" ascending:NO];
         _starred = [data sortedArrayUsingDescriptors:@[descriptor]];
         done = NO;
     }
