@@ -10,11 +10,15 @@
 #import "ORRedditImageController.h"
 #import "ORSearchController.h"
 #import "ORTumblrController.h"
+#import "ORStarredSourceController.h"
 #import "GIF.h"
 #import "AFNetworking.h"
+#import <StandardPaths/StandardPaths.h>
+#import "NSString+StringBetweenStrings.h"
 
 @implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
+    NSSet *_starred;
     NSString *_gifPath;
 
     AFImageRequestOperation *_gifDownloadOp;
@@ -32,6 +36,11 @@
         _searchController.gifViewController = self;
         [_tumblrController setTumblrURL:string];
 
+    } else if([string isEqualToString:@"STARRED"]){
+        _currentSource = _starredController;
+        _starredController.gifController = self;
+        [_starredController reloadData];
+
     } else {
         _currentSource = _searchController;
         _searchController.gifViewController = self;
@@ -45,10 +54,40 @@
     [_imageBrowser setValue:[NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000] forKey:IKImageBrowserBackgroundColorKey];
     [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
 
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
                                                  name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
+
+    [self loadStarred];
 }
+
+- (void)loadStarred {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"starred.data"];
+    NSSet *data = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+
+    if (!data) data = [NSSet set];
+    _starred = [data mutableCopy];
+}
+
+- (void)saveStarred {
+    NSString *path = [[NSFileManager defaultManager] pathForPrivateFile:@"starred.data"];
+    [NSKeyedArchiver archiveRootObject:_starred toFile:path];
+}
+
+- (void)handleURLEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent
+{
+    NSString *appleURL = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    NSString *download = [appleURL substringBetween:@"?dl=" and:@"***thumb"];
+    NSString *thumbnail = [[appleURL componentsSeparatedByString:@"***thumb="] lastObject];
+
+    GIF *gif = [[GIF alloc] initWithDownloadURL:download andThumbnail:thumbnail];
+    _starred = [_starred setByAddingObject:gif];
+
+    [self saveStarred];
+}
+
 
 - (void)myTableClipBoundsChanged:(NSNotification *)notification {
     NSClipView *clipView = [notification object];
@@ -119,6 +158,8 @@
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
         NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
+        html = [html stringByReplacingOccurrencesOfString:@"{{OR_THUMB_URL}}" withString:[gif.imageRepresentation absoluteString]];
+
         if (html) {
             [[_webView mainFrame] loadHTMLString:html baseURL:nil];
         }

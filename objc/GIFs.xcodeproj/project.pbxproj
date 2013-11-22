@@ -20,6 +20,8 @@
 		60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CFE16ACD600002DC7CD /* ORSharingController.m */; };
 		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
 		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
+		60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */; };
+		60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDE183F17BE0067F321 /* NSString+StringBetweenStrings.m */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
 		60EC305B16A1FB7A00E9BE93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */; };
 		60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */; };
@@ -76,6 +78,10 @@
 		60238CFE16ACD600002DC7CD /* ORSharingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSharingController.m; sourceTree = "<group>"; };
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		60CBFBDA183F11EE0067F321 /* ORStarredSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORStarredSourceController.h; sourceTree = "<group>"; };
+		60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORStarredSourceController.m; sourceTree = "<group>"; };
+		60CBFBDD183F17BE0067F321 /* NSString+StringBetweenStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringBetweenStrings.h"; sourceTree = "<group>"; };
+		60CBFBDE183F17BE0067F321 /* NSString+StringBetweenStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringBetweenStrings.m"; sourceTree = "<group>"; };
 		60EC305816A1FB7A00E9BE93 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		60EC305916A1FB7A00E9BE93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60EC305C16A1FC6C00E9BE93 /* ORMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMenuController.h; sourceTree = "<group>"; };
@@ -280,6 +286,8 @@
 				60EC306016A2007900E9BE93 /* ORRedditImageController.m */,
 				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
 				60F849EC1835D19B009A0F25 /* ORSourcesController.m */,
+				60CBFBDA183F11EE0067F321 /* ORStarredSourceController.h */,
+				60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				60EC306A16A22CA300E9BE93 /* ORWebViewDelegateStuff.h */,
+				60CBFBDD183F17BE0067F321 /* NSString+StringBetweenStrings.h */,
+				60CBFBDE183F17BE0067F321 /* NSString+StringBetweenStrings.m */,
 				60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */,
 			);
 			name = Misc;
@@ -424,12 +434,14 @@
 				60EC306416A2020F00E9BE93 /* GIF.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
+				60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */,
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
 				60EC306F16A3305A00E9BE93 /* ORSearchController.m in Sources */,
 				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
+				60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

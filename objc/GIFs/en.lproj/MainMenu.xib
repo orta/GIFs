@@ -862,6 +862,7 @@
                 <outlet property="imageScrollView" destination="637" id="651"/>
                 <outlet property="redditController" destination="616" id="655"/>
                 <outlet property="searchController" destination="656" id="657"/>
+                <outlet property="starredController" destination="rG7-qJ-RqL" id="1Sf-rc-4dp"/>
                 <outlet property="tumblrController" destination="703" id="705"/>
                 <outlet property="webView" destination="Q2C-jo-PUZ" id="Lfl-gD-8pa"/>
             </connections>
@@ -900,6 +901,11 @@
                 <outlet property="sourcePopover" destination="QID-Px-0jj" id="ocK-Nx-7OO"/>
                 <outlet property="tumblrSaveButton" destination="M1M-QJ-DPu" id="hfD-Qg-sjQ"/>
                 <outlet property="tumblrURLTextField" destination="7ra-Am-UaN" id="ETN-7d-6jU"/>
+            </connections>
+        </customObject>
+        <customObject id="rG7-qJ-RqL" customClass="ORStarredSourceController">
+            <connections>
+                <outlet property="gifController" destination="648" id="3KU-W6-670"/>
             </connections>
         </customObject>
         <viewController id="gpJ-SU-huq" userLabel="Popover View Controller">

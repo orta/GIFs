@@ -46,6 +46,10 @@
         downloadURL = [downloadURL stringByRemovingPercentEncoding];
     }
 
+    if ([downloadURL hasPrefix:@"http://imgur.com/download/gallery/"]) {
+        return nil;
+    }
+
     if ([downloadURL rangeOfString:@"imgur"].location == NSNotFound && [downloadURL rangeOfString:@"media.tumblr.com"].location == NSNotFound) {
         return nil;
     }
@@ -61,6 +65,26 @@
     _downloadURL = downloadURL;
 
     return self;
+}
+
+#define downloadKey       @"download"
+#define thumbnailKey      @"thumbnail"
+#define dateAddedKey      @"dateAdded"
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_thumbnailURL forKey:thumbnailKey];
+    [encoder encodeObject:_downloadURL forKey:downloadKey];
+    [encoder encodeObject:_dateAdded forKey:dateAddedKey];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    NSString *thumbnail = [decoder decodeObjectForKey:thumbnailKey];
+    NSString *download = [decoder decodeObjectForKey:downloadKey];
+    NSDate *date = [decoder decodeObjectForKey:dateAddedKey];
+
+    GIF *gif = [[self.class  alloc] initWithDownloadURL:download andThumbnail:thumbnail];
+    gif.dateAdded = date;
+    return gif;
 }
 
 - (NSString *)imageUID {

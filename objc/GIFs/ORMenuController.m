@@ -197,7 +197,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             break;
 
         case ORMenuTitleStar:
-            NSLog(@"nada");
+            [_gifViewController getGIFsFromSourceString:@"STARRED"];
     }
 }
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
 
-@interface GIF : NSObject
+@interface GIF : NSObject <NSCoding>
 
 - (id)initWithRedditDictionary:(NSDictionary *)dictionary;
 - (id)initWithDownloadURL:(NSString *)downloadURL andThumbnail:(NSString *)thumbnail;
@@ -18,5 +18,7 @@
 - (NSString *)imageRepresentationType;
 - (id) imageRepresentation;
 - (NSURL *)downloadURL;
+
+@property (strong) NSDate *dateAdded;
 
 @end
