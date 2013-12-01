@@ -8,6 +8,7 @@
 
 #import "ORStarredSourceController.h"
 #import <StandardPaths/StandardPaths.h>
+#import "GIF.h"
 
 @implementation ORStarredSourceController {
     NSArray *_starred;
@@ -37,6 +38,16 @@
 
 - (GIF *)gifAtIndex:(NSInteger)index {
     return _starred[index];
+}
+
+- (BOOL)hasGIFWithDownloadAddress:(NSString *)address
+{
+    for (GIF *gif in _starred) {
+        if ([gif.imageUID isEqualToString:address]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

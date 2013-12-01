@@ -57,7 +57,7 @@
 
                 if ([url.absoluteString rangeOfString:@".gif"].location != NSNotFound) {
                     NSString *address = [url.absoluteString stringByReplacingOccurrencesOfString:@"%5C" withString:@""];
-                    GIF *gif = [[GIF alloc] initWithDownloadURL:address andThumbnail:address];
+                    GIF *gif = [[GIF alloc] initWithDownloadURL:address thumbnail:address andSource:nil];
                     [newGIFs addObject:gif];
                 }
             }

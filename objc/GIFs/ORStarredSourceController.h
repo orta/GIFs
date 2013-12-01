@@ -14,6 +14,8 @@
 @interface ORStarredSourceController : NSObject <ORGIFSource>
 
 @property (weak) IBOutlet ORGIFController *gifController;
+
 - (void)reloadData;
+- (BOOL)hasGIFWithDownloadAddress:(NSString *)address;
 
 @end

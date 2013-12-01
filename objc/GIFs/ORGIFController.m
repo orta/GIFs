@@ -82,9 +82,10 @@
 {
     NSString *appleURL = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     NSString *download = [appleURL substringBetween:@"?dl=" and:@"***thumb"];
-    NSString *thumbnail = [[appleURL componentsSeparatedByString:@"***thumb="] lastObject];
+    NSString *thumbnail = [appleURL substringBetween:@"***thumb" and:@"&***source"];
+    NSString *source = [[appleURL componentsSeparatedByString:@"&***source"] lastObject];
 
-    GIF *gif = [[GIF alloc] initWithDownloadURL:download andThumbnail:thumbnail];
+    GIF *gif = [[GIF alloc] initWithDownloadURL:download thumbnail:thumbnail andSource:source];
     gif.dateAdded = [NSDate date];
 
     if([_starred containsObject:gif]){
@@ -132,14 +133,32 @@
 - (void)imageBrowser:(IKImageBrowserView *)aBrowser cellWasRightClickedAtIndex:(NSUInteger)index withEvent:(NSEvent *)event {
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"menu"];
     [menu setAutoenablesItems:NO];
+
     NSMenuItem *item = [menu addItemWithTitle:@"Copy URL to Clipboard" action: @selector(copyURL) keyEquivalent:@""];
     [item setTarget:self];
+
+    item = [menu addItemWithTitle:@"Open GIF in Browser" action:@selector(openInBrowser) keyEquivalent:@""];
+    item.target = self;
+
+    if (_currentGIF.sourceURL) {
+        item = [menu addItemWithTitle:@"Open GIF context" action:@selector(openContext) keyEquivalent:@""];
+        item.target = self;
+    }
+
     [NSMenu popUpContextMenu:menu withEvent:event forView:aBrowser];
 }
 
 - (void)copyURL {
     [[NSPasteboard generalPasteboard] clearContents];
     [[NSPasteboard generalPasteboard] writeObjects:@[_currentGIF.downloadURL]];
+}
+
+- (void)openInBrowser {
+    [[NSWorkspace sharedWorkspace] openURL:_currentGIF.downloadURL];
+}
+
+- (void)openContext {
+    [[NSWorkspace sharedWorkspace] openURL:_currentGIF.sourceURL];
 }
 
 - (id) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
@@ -156,13 +175,17 @@
 
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
         NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];
-        html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:gif.downloadURL.absoluteString];
+        NSString *address = gif.downloadURL.absoluteString;
+        html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:address];
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_THUMB_URL}}" withString:[gif.imageRepresentation absoluteString]];
+
+        if ([_starredController hasGIFWithDownloadAddress:address]) {
+            html = [html stringByReplacingOccurrencesOfString:@" id='star' " withString:@" id='star' class='active' "];
+        }
 
         if (html) {
             [[_webView mainFrame] loadHTMLString:html baseURL:nil];
         }
-
     }
 }
 

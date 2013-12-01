@@ -11,12 +11,15 @@
 @implementation GIF {
     NSString *_thumbnailURL;
     NSString *_downloadURL;
+    NSString *_sourceURL;
+
 }
 
 - (id)initWithRedditDictionary:(NSDictionary *)dictionary {
 
     NSString *thumbnailURL = dictionary[@"data"][@"thumbnail"];
-   NSString *downloadURL = dictionary[@"data"][@"url"];
+    NSString *downloadURL = dictionary[@"data"][@"url"];
+    NSString *sourceURL = [NSString stringWithFormat:@"http://reddit.com%@", dictionary[@"data"][@"permalink"]];
 
     if (thumbnailURL.length == 0) {
         if ([downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
@@ -54,15 +57,16 @@
         return nil;
     }
 
-    self = [self initWithDownloadURL:downloadURL andThumbnail:thumbnailURL];
+    self = [self initWithDownloadURL:downloadURL thumbnail:thumbnailURL andSource:sourceURL];
     return self;
 }
 
-- (id)initWithDownloadURL:(NSString *)downloadURL andThumbnail:(NSString *)thumbnail {
+- (id)initWithDownloadURL:(NSString *)downloadURL thumbnail:(NSString *)thumbnail andSource:(NSString *)source {
     self = [super init];
 
     _thumbnailURL = thumbnail;
     _downloadURL = downloadURL;
+    _sourceURL = source;
 
     return self;
 }
@@ -70,19 +74,23 @@
 #define downloadKey       @"download"
 #define thumbnailKey      @"thumbnail"
 #define dateAddedKey      @"dateAdded"
+#define sourceKey         @"source"
+
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:_thumbnailURL forKey:thumbnailKey];
     [encoder encodeObject:_downloadURL forKey:downloadKey];
     [encoder encodeObject:_dateAdded forKey:dateAddedKey];
+    [encoder encodeObject:_sourceURL forKey:sourceKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     NSString *thumbnail = [decoder decodeObjectForKey:thumbnailKey];
     NSString *download = [decoder decodeObjectForKey:downloadKey];
+    NSString *source = [decoder decodeObjectForKey:sourceKey];
     NSDate *date = [decoder decodeObjectForKey:dateAddedKey];
 
-    GIF *gif = [[self.class  alloc] initWithDownloadURL:download andThumbnail:thumbnail];
+    GIF *gif = [[self.class  alloc] initWithDownloadURL:download thumbnail:thumbnail andSource:source];
     gif.dateAdded = date;
     return gif;
 }
@@ -103,13 +111,17 @@
     return  [NSURL URLWithString:_downloadURL];
 }
 
+- (NSURL *)sourceURL {
+    if (!_sourceURL) return nil;
+    return  [NSURL URLWithString:_sourceURL];
+}
+
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - %@", NSStringFromClass(self.class), self.imageUID];
 }
 
 - (BOOL)isEqual:(id)object {
-    NSLog(@"%@ == %@", self, object);
-
     if ([object isKindOfClass:self.class]) {
         return [self.imageUID isEqualToString:[object imageUID]];
     }

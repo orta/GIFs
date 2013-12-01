@@ -18,9 +18,11 @@
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems {
     if (element[WebElementImageURLKey]) {
+
         currentAddress = element[WebElementImageURLKey];
-        NSMenuItem *item =[[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
         item.target = self;
+
         return @[item];
     }
     
