@@ -55,4 +55,5 @@
 @property (weak) IBOutlet NSObject <ORSourceListDataSource> *sourceListDataSource;
 
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath;
+- (void)selectTopItem;
 @end

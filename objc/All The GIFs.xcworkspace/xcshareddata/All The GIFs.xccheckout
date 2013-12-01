@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>46430F97-54B0-45F5-9B3D-A7E073C00105</string>
+	<string>70751E6E-F6C1-473A-8D4F-29D59DB06025</string>
 	<key>IDESourceControlProjectName</key>
-	<string>GIFs</string>
+	<string>All The GIFs</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</key>
 		<string>https://github.com/orta/GIFs.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>objc/GIFs.xcworkspace</string>
+	<string>objc/All The GIFs.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9D352ECE-BDB8-47FB-ACC6-8421F7FCFF26</key>

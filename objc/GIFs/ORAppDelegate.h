@@ -8,10 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class ORMenuController;
 @interface ORAppDelegate : NSObject <NSApplicationDelegate>
-@property (weak) IBOutlet NSProgressIndicator *networkProgress;
 
+@property (weak) IBOutlet NSProgressIndicator *networkProgress;
 @property (assign) IBOutlet NSWindow *window;
+@property (strong) IBOutlet ORMenuController *menuController;
 
 + (void)setNetworkActivity:(BOOL)activity;
 

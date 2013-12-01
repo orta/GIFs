@@ -131,6 +131,12 @@ CGFloat ORCellImageDimensions = 16;
     return [item isKindOfClass:[ORSourceListItem class]];
 }
 
+- (void)selectTopItem
+{
+    NSIndexSet *set = [NSIndexSet indexSetWithIndex:2];
+    [self selectRowIndexes:set byExtendingSelection:NO];
+}
+
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath {
     NSInteger index = [self indexPathToRow:indexPath];
     if (index != NSNotFound) {

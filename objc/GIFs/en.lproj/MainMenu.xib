@@ -16,10 +16,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="GIFs" id="56">
-                    <menu key="submenu" title="GIFs" systemMenu="apple" id="57">
+                <menuItem title="All The GIFs" id="56">
+                    <menu key="submenu" title="All The GIFs" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About GIFs" id="58">
+                            <menuItem title="About All The GIFs" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -38,7 +38,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide GIFs" keyEquivalent="h" id="134">
+                            <menuItem title="Hide All The GIFs" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -57,7 +57,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit GIFs" keyEquivalent="q" id="136">
+                            <menuItem title="Quit All The GIFs" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -639,7 +639,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="491">
                         <items>
-                            <menuItem title="GIFs Help" keyEquivalent="?" id="492">
+                            <menuItem title="All The GIFs Help" keyEquivalent="?" id="492">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
@@ -649,7 +649,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="GIFs" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="371" customClass="INAppStoreWindow">
+        <window title="All The GIFs" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="371" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="801" y="515" width="800" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
@@ -738,7 +738,7 @@
                                     <searchField verticalHuggingPriority="750" id="641">
                                         <rect key="frame" x="5" y="372" width="148" height="22"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Search for GIFs" usesSingleLineMode="YES" bezelStyle="round" id="642">
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Search for All The GIFs" usesSingleLineMode="YES" bezelStyle="round" id="642">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" red="1" green="0.43017173237286643" blue="0.23361688533963021" alpha="1" colorSpace="calibratedRGB"/>
@@ -834,6 +834,7 @@
         </window>
         <customObject id="494" customClass="ORAppDelegate">
             <connections>
+                <outlet property="menuController" destination="611" id="E7N-Sa-vfT"/>
                 <outlet property="networkProgress" destination="672" id="674"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>

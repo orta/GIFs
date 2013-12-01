@@ -1,13 +1,21 @@
 PODS:
   - AFNetworking (1.3.3)
+  - ARAnalytics/CoreMac (2.3.2)
+  - ARAnalytics/MixpanelOSX (2.3.2):
+    - ARAnalytics/CoreMac
+    - Mixpanel-OSX-Community
+  - Mixpanel-OSX-Community (2.0.0)
   - StandardPaths (1.5.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.0)
+  - ARAnalytics/MixpanelOSX
   - StandardPaths (~> 1.5.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 0700ec7a58c36ad217173e167f6e4df7270df66b
+  ARAnalytics: 515ad1919672a65f9e6ccaee38a5239626866acb
+  Mixpanel-OSX-Community: b829ac6c8ea601849a2ce74a478b046ee661d3f1
   StandardPaths: 3251b6aac8bf4e8a32e980f53e4de6d558617353
 
 COCOAPODS: 0.28.0
