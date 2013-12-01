@@ -88,7 +88,7 @@
 }
 
 - (NSString *)imageUID {
-    return _thumbnailURL;
+    return _downloadURL;
 }
 
 - (NSString *)imageRepresentationType {
@@ -103,9 +103,15 @@
     return  [NSURL URLWithString:_downloadURL];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ - %@", NSStringFromClass(self.class), self.imageUID];
+}
+
 - (BOOL)isEqual:(id)object {
+    NSLog(@"%@ == %@", self, object);
+
     if ([object isKindOfClass:self.class]) {
-        return [self.imageUID isEqual:[object imageUID]];
+        return [self.imageUID isEqualToString:[object imageUID]];
     }
     return  [super isEqual:object];
 }

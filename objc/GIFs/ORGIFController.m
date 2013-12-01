@@ -15,6 +15,8 @@
 #import "AFNetworking.h"
 #import <StandardPaths/StandardPaths.h>
 #import "NSString+StringBetweenStrings.h"
+#import "ORMenuController.h"
+#import <ARAnalytics/ARAnalytics.h>
 
 @implementation ORGIFController {
     NSObject <ORGIFSource> *_currentSource;
@@ -90,12 +92,17 @@
         [mutableSet removeObject:gif];
         _starred = mutableSet;
 
+        [ARAnalytics event:@"Saved GIF" withProperties:@{
+            @"url" : download
+        }];
+
     } else {
         _starred = [_starred setByAddingObject:gif];
     }
 
     [self saveStarred];
     [_starredController reloadData];
+    [_menuController.menuTableView reloadData];
     [_imageBrowser reloadData];
 }
 
@@ -146,25 +153,6 @@
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
         _currentGIF = gif;
-//
-//        _imageView.image = nil;
-//        NSURLRequest *request = [NSURLRequest requestWithURL:gif.downloadURL];
-//        _progressView.hidden = YES;
-//        if (_gifDownloadOp) [_gifDownloadOp cancel];
-//        
-//        _gifDownloadOp = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(NSImage *image) {
-//            [_imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO ];
-//            _progressView.hidden = YES;
-//            _gifPath = [NSTemporaryDirectory() stringByAppendingString:@"gif-app.gif"];
-//            [_gifDownloadOp.responseData writeToFile:_gifPath atomically:YES];
-//        }];
-//
-//        __block DDProgressView *progressView = _progressView;
-//        [_gifDownloadOp setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-//            progressView.progress = totalBytesRead / (CGFloat)totalBytesExpectedToRead;
-//        }];
-//
-//        [_gifDownloadOp start];
 
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gif_template" ofType:@"html"];
         NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil];

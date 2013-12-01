@@ -11,7 +11,10 @@
 
 @implementation ORStarredSourceController {
     NSArray *_starred;
-    BOOL done;
+}
+
+- (void)awakeFromNib {
+    [self reloadData];
 }
 
 - (void)reloadData
@@ -21,15 +24,10 @@
     if (data) {
         NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"dateAdded" ascending:NO];
         _starred = [data sortedArrayUsingDescriptors:@[descriptor]];
-        done = NO;
     }
 }
 
 - (void)getNextGIFs {
-//    if(done) return;
-//
-//    done = YES;
-//    [_gifController gotNewGIFs];
 }
 
 

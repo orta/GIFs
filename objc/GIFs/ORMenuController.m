@@ -8,6 +8,7 @@
 
 #import "ORMenuController.h"
 #import <StandardPaths/StandardPaths.h>
+#import "ORStarredSourceController.h"
 
 NS_ENUM(NSUInteger, ORMenuTitle){
     ORMenuTitleSearch,
@@ -144,13 +145,32 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             return  item;
 
         case ORMenuTitleStar:
-            item.title = @"⭐";
-            item.thumbnail = @"";
-            item.selectedThumbnail = @"";
+            item.title = [self titleForStars];
             return item;
     }
 
     return nil;
+}
+
+- (NSString *)titleForStars
+{
+    NSInteger count = [self.starredController numberOfGifs];
+    switch (count) {
+        case 0:
+            return @"No ⭐s";
+        case 1:
+            return @"⭐";
+        case 2:
+            return @"⭐⭐";
+        case 3:
+            return @"⭐⭐⭐";
+        case 4:
+            return @"⭐⭐⭐⭐";
+        case 5:
+            return @"⭐⭐⭐⭐⭐";
+        default:
+            return [NSString stringWithFormat:@"%li ⭐s", (long)count];
+    }
 }
 
 - (NSUInteger)sourceList:(ORSimpleSourceListView *)sourceList numberOfRowsInSection:(NSUInteger)section {
@@ -221,7 +241,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             break;
 
         case ORMenuTitleStar:
-            NSLog(@"nada");
+            break;
     }
 
     [sourceList reloadData];

@@ -18,6 +18,8 @@ static ORAppDelegate *_sharedInstance = nil;
     _sharedInstance = self;
 
     [ARAnalytics setupMixpanelWithToken:@"945fc6ab6cbf250f29b964b035dfd074"];
+
+    [self.menuController.menuTableView reloadData];
     [self.menuController.menuTableView selectTopItem];
 }
 
