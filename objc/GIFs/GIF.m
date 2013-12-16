@@ -46,7 +46,7 @@
     if ([downloadURL hasPrefix:@"http://gifsound.com/?gif="]) {
         downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@"http://gifsound.com/?gif=" withString:@""];
         downloadURL = [downloadURL componentsSeparatedByString:@"&amp;sound="][0];
-        downloadURL = [downloadURL stringByRemovingPercentEncoding];
+        downloadURL = [downloadURL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }
 
     if ([downloadURL hasPrefix:@"http://imgur.com/download/gallery/"]) {
