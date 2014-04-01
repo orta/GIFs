@@ -136,6 +136,9 @@
 
     NSMenuItem *item = [menu addItemWithTitle:@"Copy URL to Clipboard" action: @selector(copyURL) keyEquivalent:@""];
     [item setTarget:self];
+    
+    item = [menu addItemWithTitle:@"Copy Markdown" action: @selector(copyMarkdown) keyEquivalent:@""];
+    [item setTarget:self];
 
     item = [menu addItemWithTitle:@"Open GIF in Browser" action:@selector(openInBrowser) keyEquivalent:@""];
     item.target = self;
@@ -151,6 +154,12 @@
 - (void)copyURL {
     [[NSPasteboard generalPasteboard] clearContents];
     [[NSPasteboard generalPasteboard] writeObjects:@[_currentGIF.downloadURL]];
+}
+
+- (void)copyMarkdown {
+    [[NSPasteboard generalPasteboard] clearContents];
+    NSString *markdown = [NSString stringWithFormat:@"![gif](%@)", _currentGIF.downloadURL];
+    [[NSPasteboard generalPasteboard] writeObjects:@[markdown]];
 }
 
 - (void)openInBrowser {
