@@ -13,9 +13,9 @@ DEPENDENCIES:
   - StandardPaths (~> 1.5.4)
 
 SPEC CHECKSUMS:
-  AFNetworking: 0700ec7a58c36ad217173e167f6e4df7270df66b
-  ARAnalytics: 515ad1919672a65f9e6ccaee38a5239626866acb
+  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  ARAnalytics: b2892f469e80d40b7d1431fd7a7a8125966faaa9
   Mixpanel-OSX-Community: b829ac6c8ea601849a2ce74a478b046ee661d3f1
   StandardPaths: 3251b6aac8bf4e8a32e980f53e4de6d558617353
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.31.1
