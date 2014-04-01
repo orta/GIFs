@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E59DFC3918EB20C90014EDA0 /* Install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E59DFC3A18EB20C90014EDA0 /* Build configuration list for PBXAggregateTarget "Install" */;
+			buildPhases = (
+				E59DFC3F18EB20D20014EDA0 /* ShellScript */,
+			);
+			dependencies = (
+				E59DFC3E18EB20CF0014EDA0 /* PBXTargetDependency */,
+			);
+			name = Install;
+			productName = Install;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 60238CBD16ABC7C6002DC7CD /* gif_template.html */; };
 		60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */; };
@@ -60,6 +75,16 @@
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
 		E5C7A1CC18EB1B9900BC180A /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C7A1CB18EB1B9900BC180A /* Resources.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E59DFC3D18EB20CF0014EDA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60ECD1A616A1FA6400A0FB7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60ECD1AE16A1FA6400A0FB7A;
+			remoteInfo = "All The GIFs";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		44059188DA724A85B6EA5694 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -364,6 +389,7 @@
 			projectRoot = "";
 			targets = (
 				60ECD1AE16A1FA6400A0FB7A /* All The GIFs */,
+				E59DFC3918EB20C90014EDA0 /* Install */,
 			);
 		};
 /* End PBXProject section */
@@ -423,6 +449,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		E59DFC3F18EB20D20014EDA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nrm -rf \"/Applications/All The Gifs.app\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/All The Gifs.app\" \"/Applications/All The Gifs.app\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -450,6 +489,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E59DFC3E18EB20CF0014EDA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60ECD1AE16A1FA6400A0FB7A /* All The GIFs */;
+			targetProxy = E59DFC3D18EB20CF0014EDA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */ = {
@@ -558,6 +605,20 @@
 			};
 			name = Release;
 		};
+		E59DFC3B18EB20C90014EDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E59DFC3C18EB20C90014EDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +639,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E59DFC3A18EB20C90014EDA0 /* Build configuration list for PBXAggregateTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E59DFC3B18EB20C90014EDA0 /* Debug */,
+				E59DFC3C18EB20C90014EDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

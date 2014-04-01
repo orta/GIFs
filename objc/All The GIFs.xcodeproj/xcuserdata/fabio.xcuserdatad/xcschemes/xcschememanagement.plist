@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Install.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>60ECD1AE16A1FA6400A0FB7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E59DFC3518EB20980014EDA0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E59DFC3918EB20C90014EDA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
