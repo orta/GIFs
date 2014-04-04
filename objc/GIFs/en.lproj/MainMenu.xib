@@ -758,6 +758,10 @@
                                             <action selector="togglePopover:" target="648" id="NVd-x1-53f"/>
                                         </connections>
                                     </button>
+                                    <progressIndicator hidden="YES" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="bar" id="qeq-86-FGr">
+                                        <rect key="frame" x="43" y="11" width="110" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </progressIndicator>
                                 </subviews>
                             </customView>
                             <splitView autosaveName="ContentPanel" dividerStyle="paneSplitter" vertical="YES" id="558">
@@ -860,6 +864,7 @@
         <customObject id="648" customClass="ORGIFController">
             <connections>
                 <outlet property="createSourcePopover" destination="QID-Px-0jj" id="6Jh-Hp-qK7"/>
+                <outlet property="downloadProgressIndicator" destination="qeq-86-FGr" id="wDh-12-UmF"/>
                 <outlet property="imageBrowser" destination="536" id="649"/>
                 <outlet property="imageScrollView" destination="637" id="651"/>
                 <outlet property="menuController" destination="611" id="WSU-qX-H0I"/>

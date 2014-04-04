@@ -30,6 +30,8 @@
 
 @property (weak) IBOutlet NSPopover *createSourcePopover;
 
+@property (weak) IBOutlet NSProgressIndicator *downloadProgressIndicator;
+
 @property (weak) IBOutlet ORRedditImageController *redditController;
 @property (weak) IBOutlet ORSearchController *searchController;
 @property (weak) IBOutlet ORTumblrController *tumblrController;
