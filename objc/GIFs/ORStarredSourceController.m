@@ -29,7 +29,7 @@
 }
 
 - (void)getNextGIFs {
-    
+
 }
 
 
