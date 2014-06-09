@@ -273,7 +273,7 @@ CGFloat ORCellImageDimensions = 16;
 
 - (id)initWithSourceListItem:(ORSourceListItem *)item {
     self = [super init];
-    if(!self)return nil;
+    if (!self)return nil;
 
     _thumbnail = item.thumbnail.copy;
     _selectedThumbnail = item.selectedThumbnail.copy;
@@ -289,7 +289,7 @@ CGFloat ORCellImageDimensions = 16;
     [self addSubview:itemImage];
 
     NSButton *rightImageView = [[NSButton alloc] init];
-    [rightImageView setButtonType:NSMomentaryPushButton];
+    [rightImageView setButtonType:NSMomentaryChangeButton];
     [rightImageView setImagePosition:NSImageOnly];
     [rightImageView setBordered:NO];
     _rightImageView = rightImageView;
@@ -310,22 +310,20 @@ CGFloat ORCellImageDimensions = 16;
     _rightImageView.frame = CGRectMake(CGRectGetWidth(frameRect) - ORCellLeftPadding - ORCellImageDimensions, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
 }
 
-//- (void)drawRect:(NSRect)dirtyRect {
-//    if (_selected) {
-//        [[NSColor colorWithCalibratedRed:0.206 green:0.449 blue:0.940 alpha:1.000] set];
-//        self.textField.textColor = [NSColor colorWithCalibratedRed:1 green:1 blue:1.000 alpha:1.000];
-//        self.imageView.image = [NSImage imageNamed:_selectedThumbnail];
-//        _rightImageView.image = [NSImage imageNamed:_rightImageActiveName];
-//    } else {
-//        _rightImageView.image = [NSImage imageNamed:_rightImageName];
-//        self.imageView.image = [NSImage imageNamed:_thumbnail];
-//        self.textField.textColor = [NSColor colorWithCalibratedRed:0.550 green:0.522 blue:0.598 alpha:1.000];
-//        [[NSColor colorWithCalibratedRed:0.150 green:0.140 blue:0.169 alpha:1.000] set];
-//    }
-//
-//    [_rightImageView.image setTemplate:NO];
-//    NSRectFill(dirtyRect);
-//}
+- (void)drawRect:(NSRect)dirtyRect {
+    if (_selected) {
+        [[NSColor colorWithCalibratedRed:0.206 green:0.449 blue:0.940 alpha:1.000] set];
+        self.textField.textColor = [NSColor colorWithCalibratedRed:1 green:1 blue:1.000 alpha:1.000];
+        self.imageView.image = [NSImage imageNamed:_selectedThumbnail];
+        _rightImageView.image = [NSImage imageNamed:_rightImageActiveName];
+    } else {
+        _rightImageView.image = [NSImage imageNamed:_rightImageName];
+        self.imageView.image = [NSImage imageNamed:_thumbnail];
+        self.textField.textColor = [NSColor colorWithCalibratedRed:0.550 green:0.522 blue:0.598 alpha:1.000];
+    }
+
+    [_rightImageView.image setTemplate:NO];
+}
 
 - (void)setSelected:(BOOL)selected {
     _selected = selected;
