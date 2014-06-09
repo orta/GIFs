@@ -17,6 +17,8 @@ static ORAppDelegate *_sharedInstance = nil;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     _sharedInstance = self;
 
+    self.window.titleVisibility = NSWindowTitleHidden;
+
     [ARAnalytics setupMixpanelWithToken:@"945fc6ab6cbf250f29b964b035dfd074"];
 
     [self.menuController.menuTableView reloadData];

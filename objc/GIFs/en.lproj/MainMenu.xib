@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="5023"/>
-        <plugIn identifier="com.apple.imagekit.ibplugin" version="5023"/>
+        <deployment defaultVersion="101000" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="6154.17"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="6154.17"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -650,7 +650,7 @@
             </items>
         </menu>
         <window title="All The GIFs" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="371" customClass="INAppStoreWindow">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
             <rect key="contentRect" x="801" y="515" width="800" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="800" height="400"/>
@@ -666,15 +666,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="158" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="573">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="366"/>
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="573">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="401"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="Saz-be-m64">
                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="349"/>
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -735,18 +734,6 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
-                                    <searchField verticalHuggingPriority="750" id="641">
-                                        <rect key="frame" x="5" y="372" width="148" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Search for All The GIFs" usesSingleLineMode="YES" bezelStyle="round" id="642">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" red="1" green="0.43017173237286643" blue="0.23361688533963021" alpha="1" colorSpace="calibratedRGB"/>
-                                        </searchFieldCell>
-                                        <connections>
-                                            <outlet property="delegate" destination="611" id="661"/>
-                                        </connections>
-                                    </searchField>
                                     <button id="Bot-TJ-mSC">
                                         <rect key="frame" x="6" y="6" width="29" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -831,6 +818,31 @@
                     </splitView>
                 </subviews>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="7C9B8786-5DEF-4FE3-A46D-3C1C62F211E6" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="Wv1-pI-noN">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="25AAC217-6DBD-4039-BDA7-0C8A7246FD51" label="" paletteLabel="Seach" id="x5E-qx-S8y">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="96" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="T5f-i0-Dsb">
+                            <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="kMe-oB-CZU">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <outlet property="delegate" destination="611" id="ekT-KB-LJB"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="x5E-qx-S8y"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="323" y="252"/>
         </window>
         <customObject id="494" customClass="ORAppDelegate">
             <connections>

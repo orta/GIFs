@@ -15,7 +15,7 @@
 
 }
 
-- (id)initWithRedditDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithRedditDictionary:(NSDictionary *)dictionary {
 
     NSString *thumbnailURL = dictionary[@"data"][@"thumbnail"];
     NSString *downloadURL = dictionary[@"data"][@"url"];
@@ -61,7 +61,7 @@
     return self;
 }
 
-- (id)initWithDownloadURL:(NSString *)downloadURL thumbnail:(NSString *)thumbnail andSource:(NSString *)source {
+- (instancetype)initWithDownloadURL:(NSString *)downloadURL thumbnail:(NSString *)thumbnail andSource:(NSString *)source {
     self = [super init];
 
     _thumbnailURL = thumbnail;
