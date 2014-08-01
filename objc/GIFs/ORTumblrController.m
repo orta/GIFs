@@ -45,10 +45,10 @@
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     AFHTTPRequestOperation *op = [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-        
+
         [ORAppDelegate setNetworkActivity:NO];
         _offset += 25;
-        
+
         NSError *error = nil;
         NSString *string = [operation.responseString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
         NSDataDetector *linkDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:&error];
@@ -63,7 +63,7 @@
 
                 if ([url.absoluteString rangeOfString:@".gif"].location != NSNotFound) {
                     NSString *address = [url.absoluteString stringByReplacingOccurrencesOfString:@"%5C" withString:@""];
-                    GIF *gif = [[GIF alloc] initWithDownloadURL:address thumbnail:address andSource:nil];
+                    GIF *gif = [[GIF alloc] initWithDownloadURL:address thumbnail:address source:_url sourceTitle:_url ];
                     if (gif) { [newGIFs addObject:gif]; }
                 }
             }
@@ -72,7 +72,7 @@
         _gifs = [_gifs arrayByAddingObjectsFromArray:newGIFs.allObjects];
         _downloading = NO;
         if (completion) completion(newGIFs.allObjects, nil);
-        
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) completion(nil, error);
     }];

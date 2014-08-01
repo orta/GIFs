@@ -50,7 +50,7 @@
         _currentSource = _searchController;
         [_searchController setSearchQuery:string];
     }
-    
+
     [self getNextGIFs];
     [_imageBrowser reloadData];
 }
@@ -85,10 +85,11 @@
 {
     NSString *appleURL = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     NSString *download = [appleURL substringBetween:@"?dl=" and:@"***thumb"];
-    NSString *thumbnail = [appleURL substringBetween:@"***thumb" and:@"&***source"];
+    NSString *thumbnail = [appleURL substringBetween:@"***thumb" and:@"&***source_title"];
+    NSString *sourceTitle = [appleURL substringBetween:@"***source_title" and:@"&***source"];
     NSString *source = [[appleURL componentsSeparatedByString:@"&***source"] lastObject];
 
-    GIF *gif = [[GIF alloc] initWithDownloadURL:download thumbnail:thumbnail andSource:source];
+    GIF *gif = [[GIF alloc] initWithDownloadURL:download thumbnail:thumbnail source:source sourceTitle:sourceTitle];
     gif.dateAdded = [NSDate date];
 
     if([_starred containsObject:gif]){
@@ -144,7 +145,7 @@
 
     NSMenuItem *item = [menu addItemWithTitle:@"Copy URL to Clipboard" action: @selector(copyURL) keyEquivalent:@""];
     [item setTarget:self];
-    
+
     item = [menu addItemWithTitle:@"Copy Markdown" action: @selector(copyMarkdown) keyEquivalent:@""];
     [item setTarget:self];
 
@@ -250,6 +251,8 @@
         }
 
         if (html) {
+            NSString *title = [@" " stringByAppendingString:gif.sourceTitle];
+            [self.openGIFContextButton setTitle:title];
             [[_webView mainFrame] loadHTMLString:html baseURL:nil];
         }
     }
@@ -257,6 +260,11 @@
 
 - (NSString *)gifFilePath {
     return _gifPath;
+}
+
+- (IBAction)openCurrentGIF:(NSButton *)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:self.currentGIF.sourceURL];
 }
 
 - (IBAction)togglePopover:(NSButton *)sender
@@ -272,7 +280,7 @@
 
 - (void)getGIFsFromStarred
 {
-    
+
 }
 
 @end

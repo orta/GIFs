@@ -281,6 +281,7 @@ CGFloat ORCellImageDimensions = 16;
     _rightImageActiveName = item.rightButtonActiveImage.copy;
 
     NSTextField *titleTextField = [ORSimpleSourceListView textFieldForItems];
+    titleTextField.lineBreakMode = NSLineBreakByTruncatingHead;
     self.textField = titleTextField;
     [self addSubview:titleTextField];
 

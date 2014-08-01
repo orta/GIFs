@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
-               BuildableName = "All The GIFs.app"
-               BlueprintName = "All The GIFs"
+               BuildableName = "GIFs.app"
+               BlueprintName = "GIFs"
                ReferencedContainer = "container:All The GIFs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
             BuildableName = "All The GIFs.app"
-            BlueprintName = "All The GIFs"
+            BlueprintName = "GIFs"
             ReferencedContainer = "container:All The GIFs.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
-            BuildableName = "All The GIFs.app"
-            BlueprintName = "All The GIFs"
+            BuildableName = "GIFs.app"
+            BlueprintName = "GIFs"
             ReferencedContainer = "container:All The GIFs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,7 +71,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
             BuildableName = "All The GIFs.app"
-            BlueprintName = "All The GIFs"
+            BlueprintName = "GIFs"
             ReferencedContainer = "container:All The GIFs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

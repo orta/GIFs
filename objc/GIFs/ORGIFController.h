@@ -21,6 +21,7 @@
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
 @property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet WebView *webView;
+@property (weak) IBOutlet NSButton *openGIFContextButton;
 
 @property (weak) IBOutlet NSPopover *createSourcePopover;
 
@@ -41,5 +42,7 @@
 - (void)getGIFsFromStarred;
 
 - (NSString *)gifFilePath;
+
+- (IBAction)openCurrentGIF:(NSButton *)sender;
 
 @end

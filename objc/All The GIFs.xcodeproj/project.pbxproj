@@ -119,7 +119,7 @@
 		60EC306B16A22CA300E9BE93 /* ORWebViewDelegateStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORWebViewDelegateStuff.m; sourceTree = "<group>"; };
 		60EC307016A3306E00E9BE93 /* ORGIFController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFController.h; sourceTree = "<group>"; };
 		60EC307116A3306E00E9BE93 /* ORGIFController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFController.m; sourceTree = "<group>"; };
-		60ECD1AF16A1FA6400A0FB7A /* All The GIFs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All The GIFs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60ECD1AF16A1FA6400A0FB7A /* GIFs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECD1B316A1FA6400A0FB7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		60ECD1B616A1FA6400A0FB7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		60ECD1B716A1FA6400A0FB7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -187,7 +187,7 @@
 		60ECD1B016A1FA6400A0FB7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60ECD1AF16A1FA6400A0FB7A /* All The GIFs.app */,
+				60ECD1AF16A1FA6400A0FB7A /* GIFs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,9 +333,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		60ECD1AE16A1FA6400A0FB7A /* All The GIFs */ = {
+		60ECD1AE16A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60ECD1CD16A1FA6400A0FB7A /* Build configuration list for PBXNativeTarget "All The GIFs" */;
+			buildConfigurationList = 60ECD1CD16A1FA6400A0FB7A /* Build configuration list for PBXNativeTarget "GIFs" */;
 			buildPhases = (
 				60ECD1AB16A1FA6400A0FB7A /* Sources */,
 				60ECD1AC16A1FA6400A0FB7A /* Frameworks */,
@@ -346,9 +346,9 @@
 			);
 			dependencies = (
 			);
-			name = "All The GIFs";
+			name = GIFs;
 			productName = GIFs;
-			productReference = 60ECD1AF16A1FA6400A0FB7A /* All The GIFs.app */;
+			productReference = 60ECD1AF16A1FA6400A0FB7A /* GIFs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -378,7 +378,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60ECD1AE16A1FA6400A0FB7A /* All The GIFs */,
+				60ECD1AE16A1FA6400A0FB7A /* GIFs */,
 				E59DFC3918EB20C90014EDA0 /* Install */,
 			);
 		};
@@ -481,7 +481,7 @@
 /* Begin PBXTargetDependency section */
 		E59DFC3E18EB20CF0014EDA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 60ECD1AE16A1FA6400A0FB7A /* All The GIFs */;
+			target = 60ECD1AE16A1FA6400A0FB7A /* GIFs */;
 			targetProxy = E59DFC3D18EB20CF0014EDA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -575,7 +575,7 @@
 				GCC_PREFIX_HEADER = "GIFs/All The GIFs-Prefix.pch";
 				INFOPLIST_FILE = "GIFs/All The GIFs-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "All The GIFs";
+				PRODUCT_NAME = GIFs;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -590,7 +590,7 @@
 				GCC_PREFIX_HEADER = "GIFs/All The GIFs-Prefix.pch";
 				INFOPLIST_FILE = "GIFs/All The GIFs-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "All The GIFs";
+				PRODUCT_NAME = GIFs;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -621,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		60ECD1CD16A1FA6400A0FB7A /* Build configuration list for PBXNativeTarget "All The GIFs" */ = {
+		60ECD1CD16A1FA6400A0FB7A /* Build configuration list for PBXNativeTarget "GIFs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60ECD1CE16A1FA6400A0FB7A /* Debug */,
