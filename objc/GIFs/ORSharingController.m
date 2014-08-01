@@ -18,21 +18,33 @@
 }
 
 - (void)awakeFromNib {
+    NSMutableArray* services = [@[] mutableCopy];
 
     _emailSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
     _emailButton.image = _emailSharingService.image;
     _emailButton.alternateImage = _emailSharingService.alternateImage;
+
+    if (_emailSharingService) {
+        [services addObject:_emailSharingService];
+    }
     
     _tweetSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
     _twitterButton.image = _tweetSharingService.image;
     _twitterButton.alternateImage = _tweetSharingService.alternateImage;
 
+    if (_tweetSharingService) {
+        [services addObject:_tweetSharingService];
+    }
 
     _facebookSharingService = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnFacebook];
     _facebookButton.image = _facebookSharingService.image;
     _facebookButton.alternateImage = _facebookSharingService.alternateImage;
 
-    [@[_emailSharingService, _tweetSharingService, _facebookSharingService] enumerateObjectsUsingBlock:^(NSSharingService *obj, NSUInteger idx, BOOL *stop) {
+    if (_facebookSharingService) {
+        [services addObject:_facebookSharingService];
+    }
+
+    [services enumerateObjectsUsingBlock:^(NSSharingService *obj, NSUInteger idx, BOOL *stop) {
         [obj setDelegate:self];
     }];
 

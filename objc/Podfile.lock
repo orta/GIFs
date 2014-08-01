@@ -38,6 +38,7 @@ SPEC CHECKSUMS:
   GIFKit: 8eff65a70467e08a9a5ea2d7e425c0e90a7f392e
   JNWCollectionView: 879df2734740bdad82806dc381de2090d6c08a58
   JNWScrollView: 1c343fd858ab1d7826f83cb9d6dc0d1753f0bdea
+  AFNetworking: 5f5b2a731d6fc2082b8abc63d40fcaed5482c42f
   StandardPaths: 0e0c5da1aaf26140fcee9add0024bfe078c07d25
 
 COCOAPODS: 0.33.1
