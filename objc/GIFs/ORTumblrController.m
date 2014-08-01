@@ -11,6 +11,14 @@
 #import "ORAppDelegate.h"
 #import "GIF.h"
 
+@interface TumblrGIF : GIF
+
+@property (copy, nonatomic, readwrite) NSString *representedURL;
+@property (assign, nonatomic, readwrite) NSInteger size;
+@end
+
+@implementation TumblrGIF @end
+
 @implementation ORTumblrController {
     NSString *_url;
     NSArray *_gifs;
@@ -25,8 +33,6 @@
     _gifs = @[];
     _offset = 0;
     _downloading = NO;
-
-    [self getNextGIFs:nil];
 }
 
 - (void)getNextGIFs:(void (^)(NSArray *newGIFs, NSError *error))completion;
@@ -38,13 +44,13 @@
     NSString *address = [_url stringByAppendingFormat:@"/api/read/json?start=%@", @(_offset)];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-
+    AFHTTPRequestOperation *op = [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        
         [ORAppDelegate setNetworkActivity:NO];
         _offset += 25;
-
-        NSString *string = [operation.responseString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
+        
         NSError *error = nil;
+        NSString *string = [operation.responseString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
         NSDataDetector *linkDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:&error];
         NSMutableSet *newGIFs = [NSMutableSet set];
 
@@ -65,12 +71,12 @@
 
         _gifs = [_gifs arrayByAddingObjectsFromArray:newGIFs.allObjects];
         _downloading = NO;
-        [_gifController gotNewGIFs];
-
         if (completion) completion(newGIFs.allObjects, nil);
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) completion(nil, error);
     }];
+    op.responseSerializer = [[AFHTTPResponseSerializer alloc] init];
 
     _downloading = YES;
     [ORAppDelegate setNetworkActivity:YES];

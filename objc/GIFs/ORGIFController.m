@@ -51,6 +51,7 @@
         [_searchController setSearchQuery:string];
     }
     
+    [self getNextGIFs];
     [_imageBrowser reloadData];
 }
 

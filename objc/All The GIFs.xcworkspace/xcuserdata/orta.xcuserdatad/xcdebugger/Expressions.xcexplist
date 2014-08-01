@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[GIF(RedditDictionary) initWithRedditDictionary:]:GIF+RedditDictionary.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
