@@ -67,9 +67,9 @@
         _downloading = NO;
         [_gifController gotNewGIFs];
 
-        completion(newGIFs.allObjects, nil);
+        if (completion) completion(newGIFs.allObjects, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(nil, error);
+        if (completion) completion(nil, error);
     }];
 
     _downloading = YES;

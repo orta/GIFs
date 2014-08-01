@@ -856,7 +856,6 @@
                 <outlet property="gifViewController" destination="648" id="659"/>
                 <outlet property="mainSplitView" destination="644" id="675"/>
                 <outlet property="menuTableView" destination="574" id="662"/>
-                <outlet property="redditController" destination="616" id="621"/>
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="jpQ-rv-8Na"/>
                 <outlet property="window" destination="371" id="670"/>
                 <outlet property="windowToolbar" destination="671" id="673"/>

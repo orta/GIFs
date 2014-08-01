@@ -177,21 +177,18 @@
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:_currentGIF.downloadURL];
     AFHTTPRequestOperation *afhttpRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     [afhttpRequestOperation
-        setDownloadProgressBlock:^(NSUInteger bytesRead, long long int totalBytesRead, long long int totalBytesExpectedToRead)
-        {
+        setDownloadProgressBlock:^(NSUInteger bytesRead, long long int totalBytesRead, long long int totalBytesExpectedToRead) {
             [self.downloadProgressIndicator setIndeterminate:NO];
             double doubleValue = (double) totalBytesRead / totalBytesExpectedToRead * 100.0;
             [self.downloadProgressIndicator setDoubleValue:doubleValue];
         }];
 
-    [savePanel beginWithCompletionHandler:^(NSInteger result)
-    {
+    [savePanel beginWithCompletionHandler:^(NSInteger result) {
         if (result) {
             self.userSelectedDirectory = savePanel.directoryURL;
             [self.downloadProgressIndicator setHidden:NO];
 
-            [afhttpRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, NSData * responseObject)
-            {
+            [afhttpRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, NSData * responseObject) {
                 BOOL success = [responseObject writeToURL:savePanel.URL atomically:YES];
                 if (!success) {
                     NSLog(@"Failed to write file");
