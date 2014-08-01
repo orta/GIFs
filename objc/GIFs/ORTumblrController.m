@@ -26,20 +26,20 @@
     _offset = 0;
     _downloading = NO;
 
-    [self getNextGIFs];
+    [self getNextGIFs:nil];
 }
 
-- (void)getNextGIFs {
+- (void)getNextGIFs:(void (^)(NSArray *newGIFs, NSError *error))completion;
+{
     if (_downloading) return;
 
     // http://whatshouldwecallme.tumblr.com/api/read/json
 
     NSString *address = [_url stringByAppendingFormat:@"/api/read/json?start=%@", @(_offset)];
 
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
 
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [ORAppDelegate setNetworkActivity:NO];
         _offset += 25;
 
@@ -58,7 +58,7 @@
                 if ([url.absoluteString rangeOfString:@".gif"].location != NSNotFound) {
                     NSString *address = [url.absoluteString stringByReplacingOccurrencesOfString:@"%5C" withString:@""];
                     GIF *gif = [[GIF alloc] initWithDownloadURL:address thumbnail:address andSource:nil];
-                    [newGIFs addObject:gif];
+                    if (gif) { [newGIFs addObject:gif]; }
                 }
             }
         }];
@@ -67,15 +67,14 @@
         _downloading = NO;
         [_gifController gotNewGIFs];
 
+        completion(newGIFs.allObjects, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
+        completion(nil, error);
     }];
 
     _downloading = YES;
-    [op start];
     [ORAppDelegate setNetworkActivity:YES];
 }
-
 
 - (NSInteger)numberOfGifs {
     return _gifs.count;

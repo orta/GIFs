@@ -7,7 +7,6 @@
 //
 
 #import "ORAppDelegate.h"
-#import <ARAnalytics/ARAnalytics.h>
 #import "ORMenuController.h"
 
 @implementation ORAppDelegate
@@ -17,9 +16,11 @@ static ORAppDelegate *_sharedInstance = nil;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     _sharedInstance = self;
 
-    self.window.titleVisibility = NSWindowTitleHidden;
-
-    [ARAnalytics setupMixpanelWithToken:@"945fc6ab6cbf250f29b964b035dfd074"];
+    self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
+    self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
+    self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
+    self.window.titlebarAppearsTransparent = YES;
+    self.window.movableByWindowBackground = YES;
 
     [self.menuController.menuTableView reloadData];
     [self.menuController.menuTableView selectTopItem];

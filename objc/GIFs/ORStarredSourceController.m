@@ -28,8 +28,8 @@
     }
 }
 
-- (void)getNextGIFs {
-
+- (void)getNextGIFs:(void (^)(NSArray *, NSError *))completion {
+    
 }
 
 

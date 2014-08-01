@@ -251,13 +251,13 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
 - (NSArray *)defaultRedditSources {
     return @[
-        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
-        [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
-        [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
-        [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
-        [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
-        [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
-        [ORMenuItem itemWithName:@"/r/perfectloops" address:@"http://www.reddit.com/r/perfectloops.json"],
+        [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"reactiongifs"],
+        [ORMenuItem itemWithName:@"/r/GIFs" address:@"gifs"],
+        [ORMenuItem itemWithName:@"/r/GIF" address:@"gif"],
+        [ORMenuItem itemWithName:@"/r/aww" address:@"aww"],
+        [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"cinemagraphs"],
+        [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"chemicalreactiongifs"],
+        [ORMenuItem itemWithName:@"/r/perfectloops" address:@"perfectloops"],
     ];
 }
 
@@ -307,7 +307,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 }
 
 - (void)addNewSubreddit:(NSString *)subreddit {
-    NSString *address = [NSString stringWithFormat:@"http://www.reddit.com%@.json", subreddit];
+    NSString *address = [subreddit stringByReplacingOccurrencesOfString:@"/r/" withString:@""];
 
     ORMenuItem *item =[ORMenuItem itemWithName:subreddit address:address];
     [_redditSources addObject:item];

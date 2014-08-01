@@ -10,15 +10,9 @@
 #import <Quartz/Quartz.h>
 #import "ORSimpleSourceListView.h"
 #import <WebKit/WebKit.h>
+#import <GIFKit/ORGIFSource.h>
 
-@class GIF, ORRedditImageController, ORSearchController, ORTumblrController, ORStarredSourceController, ORMenuController;
-@protocol ORGIFSource <NSObject>
-
-- (void)getNextGIFs;
-- (NSInteger)numberOfGifs;
-- (GIF *)gifAtIndex:(NSInteger)index;
-
-@end
+@class GIF, ORSubredditNetworkModel, ORRedditSearchNetworkModel, ORTumblrController, ORStarredSourceController, ORMenuController;
 
 @interface ORGIFController : NSObject
 
@@ -32,8 +26,8 @@
 
 @property (weak) IBOutlet NSProgressIndicator *downloadProgressIndicator;
 
-@property (weak) IBOutlet ORRedditImageController *redditController;
-@property (weak) IBOutlet ORSearchController *searchController;
+@property (weak) IBOutlet ORSubredditNetworkModel *redditController;
+@property (weak) IBOutlet ORRedditSearchNetworkModel *searchController;
 @property (weak) IBOutlet ORTumblrController *tumblrController;
 @property (weak) IBOutlet ORStarredSourceController *starredController;
 @property (weak) IBOutlet ORMenuController *menuController;

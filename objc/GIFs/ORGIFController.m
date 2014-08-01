@@ -7,8 +7,8 @@
 //
 
 #import "ORGIFController.h"
-#import "ORRedditImageController.h"
-#import "ORSearchController.h"
+#import <GIFKit/ORRedditSearchNetworkModel.h>
+#import <GIFKit/ORSubredditNetworkModel.h>
 #import "ORTumblrController.h"
 #import "ORStarredSourceController.h"
 #import "GIF.h"
@@ -16,7 +16,10 @@
 #import <StandardPaths/StandardPaths.h>
 #import "NSString+StringBetweenStrings.h"
 #import "ORMenuController.h"
-#import <ARAnalytics/ARAnalytics.h>
+
+@interface GIF()
+@property (nonatomic, strong, readwrite) NSDate *dateAdded;
+@end
 
 @interface ORGIFController ()
 @property(nonatomic, copy) NSURL *userSelectedDirectory;
@@ -26,20 +29,16 @@
     NSObject <ORGIFSource> *_currentSource;
     NSSet *_starred;
     NSString *_gifPath;
-
-    AFImageRequestOperation *_gifDownloadOp;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
     if([string rangeOfString:@"reddit"].location != NSNotFound){
         _currentSource = _redditController;
-        _searchController.gifViewController = self;
-        [_redditController setRedditURL:string];
+        [_redditController setSubreddit:string];
     }
 
     else if([string rangeOfString:@".tumblr"].location != NSNotFound){
         _currentSource = _tumblrController;
-        _searchController.gifViewController = self;
         [_tumblrController setTumblrURL:string];
 
     } else if([string isEqualToString:@"STARRED"]){
@@ -49,7 +48,6 @@
 
     } else {
         _currentSource = _searchController;
-        _searchController.gifViewController = self;
         [_searchController setSearchQuery:string];
     }
     
@@ -96,11 +94,6 @@
         NSMutableSet *mutableSet = [NSMutableSet setWithSet:_starred];
         [mutableSet removeObject:gif];
         _starred = mutableSet;
-
-        [ARAnalytics event:@"Saved GIF" withProperties:@{
-            @"url" : download
-        }];
-
     } else {
         _starred = [_starred setByAddingObject:gif];
     }
@@ -112,25 +105,35 @@
 }
 
 
-- (void)myTableClipBoundsChanged:(NSNotification *)notification {
+- (void)myTableClipBoundsChanged:(NSNotification *)notification
+{
     NSClipView *clipView = [notification object];
     NSRect newClipBounds = [clipView bounds];
     CGFloat height = _imageScrollView.contentSize.height;
 
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
-        [_currentSource getNextGIFs];
+        [self getNextGIFs];
     }
 }
 
-- (void)gotNewGIFs {
+- (void)gotNewGIFs
+{
     [_imageBrowser reloadData];
     NSClipView *clipView = (NSClipView *)[_imageBrowser superview];
     if (CGRectGetHeight(clipView.documentVisibleRect) == CGRectGetHeight([clipView.documentView bounds])) {
-        [_currentSource getNextGIFs];
+        [self getNextGIFs];
     }
 }
 
-- (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser {
+- (void)getNextGIFs
+{
+    [_currentSource getNextGIFs:^(NSArray *newGIFs, NSError *error) {
+        [_imageBrowser reloadData];
+    }];
+}
+
+- (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser
+{
     return _currentSource.numberOfGifs;
 }
 

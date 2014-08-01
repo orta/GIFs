@@ -15,7 +15,6 @@
 
     NSString *path = [NSString stringWithFormat:@"%@/api/read/json", sender.stringValue];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:path]];
-    NSLog(@"%@", path);
 
     AFHTTPRequestOperation *requestOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [requestOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -33,8 +32,8 @@
     [self.sourcePopover performClose:self];
 }
 
-- (IBAction)redditTextFieldChanged:(NSTextField *)sender {
-
+- (IBAction)redditTextFieldChanged:(NSTextField *)sender
+{
     NSString *path = [NSString stringWithFormat:@"http://www.reddit.com%@.json", sender.stringValue];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:path]];
     AFHTTPRequestOperation *requestOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -47,7 +46,8 @@
     [requestOp start];
 }
 
-- (IBAction)redditSaveTapped:(id)sender {
+- (IBAction)redditSaveTapped:(id)sender
+{
     [self.menuController addNewSubreddit:self.redditTextField.stringValue];
     [self.sourcePopover performClose:self];
 }
