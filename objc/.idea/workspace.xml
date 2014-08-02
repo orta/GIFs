@@ -26,7 +26,7 @@
       <file leaf-file-name="GIF.h" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../GIFKit/Pod/Classes/GIF.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="686" selection-end="686" vertical-scroll-proportion="0.464666" vertical-offset="0" max-vertical-offset="1533">
+            <state line="14" column="23" selection-start="399" selection-end="399" vertical-scroll-proportion="0.2710552" vertical-offset="0" max-vertical-offset="1533">
               <folding />
             </state>
           </provider>
@@ -144,6 +144,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -270,7 +271,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../GIFKit/Pod/Classes/GIF.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="686" selection-end="686" vertical-scroll-proportion="0.464666" vertical-offset="0" max-vertical-offset="1533">
+        <state line="14" column="23" selection-start="399" selection-end="399" vertical-scroll-proportion="0.2710552" vertical-offset="0" max-vertical-offset="1533">
           <folding />
         </state>
       </provider>

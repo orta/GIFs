@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
-            BuildableName = "All The GIFs.app"
+            BuildableName = "GIFs.app"
             BlueprintName = "GIFs"
             ReferencedContainer = "container:All The GIFs.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
-            BuildableName = "All The GIFs.app"
+            BuildableName = "GIFs.app"
             BlueprintName = "GIFs"
             ReferencedContainer = "container:All The GIFs.xcodeproj">
          </BuildableReference>
