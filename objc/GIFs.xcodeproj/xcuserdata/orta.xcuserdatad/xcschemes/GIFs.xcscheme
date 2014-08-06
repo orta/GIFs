@@ -20,6 +20,20 @@
                ReferencedContainer = "container:All The GIFs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
+               BuildableName = "GIFs.app"
+               BlueprintName = "GIFs"
+               ReferencedContainer = "container:GIFs.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -54,7 +68,7 @@
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
             BuildableName = "GIFs.app"
             BlueprintName = "GIFs"
-            ReferencedContainer = "container:All The GIFs.xcodeproj">
+            ReferencedContainer = "container:GIFs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

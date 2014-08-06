@@ -36,6 +36,8 @@
 		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
 		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
 		60B62298198B728400A57EDF /* ORImageKitCompatibleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B62297198B728400A57EDF /* ORImageKitCompatibleCollectionView.m */; };
+		60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */; };
+		60C618ED1991D28400C6CEE1 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C618EC1991D28400C6CEE1 /* GridViewCell.swift */; };
 		60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */; };
 		60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDE183F17BE0067F321 /* NSString+StringBetweenStrings.m */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
@@ -51,8 +53,6 @@
 		60ECD1C416A1FA6400A0FB7A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C216A1FA6400A0FB7A /* Credits.rtf */; };
 		60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */; };
 		60ECD1CA16A1FA6400A0FB7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ECD1C816A1FA6400A0FB7A /* MainMenu.xib */; };
-		60F849E21835CC5E009A0F25 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E01835CC5E009A0F25 /* plus.png */; };
-		60F849E31835CC5E009A0F25 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E11835CC5E009A0F25 /* plus@2x.png */; };
 		60F849E61835CD05009A0F25 /* plus_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E41835CD05009A0F25 /* plus_active@2x.png */; };
 		60F849E71835CD05009A0F25 /* plus_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E51835CD05009A0F25 /* plus_active.png */; };
 		60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */; };
@@ -104,6 +104,9 @@
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		60B62296198B728400A57EDF /* ORImageKitCompatibleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORImageKitCompatibleCollectionView.h; sourceTree = "<group>"; };
 		60B62297198B728400A57EDF /* ORImageKitCompatibleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageKitCompatibleCollectionView.m; sourceTree = "<group>"; };
+		60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFs-Bridging-Header.h"; sourceTree = "<group>"; };
+		60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORTintedVisualEffectView.swift; sourceTree = "<group>"; };
+		60C618EC1991D28400C6CEE1 /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
 		60CBFBDA183F11EE0067F321 /* ORStarredSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORStarredSourceController.h; sourceTree = "<group>"; };
 		60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORStarredSourceController.m; sourceTree = "<group>"; };
 		60CBFBDD183F17BE0067F321 /* NSString+StringBetweenStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringBetweenStrings.h"; sourceTree = "<group>"; };
@@ -124,7 +127,7 @@
 		60ECD1B616A1FA6400A0FB7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		60ECD1B716A1FA6400A0FB7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		60ECD1B816A1FA6400A0FB7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		60ECD1BB16A1FA6400A0FB7A /* All The GIFs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "All The GIFs-Info.plist"; sourceTree = "<group>"; };
+		60ECD1BB16A1FA6400A0FB7A /* GIFs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GIFs-Info.plist"; sourceTree = "<group>"; };
 		60ECD1BD16A1FA6400A0FB7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60ECD1BF16A1FA6400A0FB7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60ECD1C116A1FA6400A0FB7A /* GIFs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFs-Prefix.pch"; sourceTree = "<group>"; };
@@ -132,8 +135,6 @@
 		60ECD1C516A1FA6400A0FB7A /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORAppDelegate.h; sourceTree = "<group>"; };
 		60ECD1C616A1FA6400A0FB7A /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORAppDelegate.m; sourceTree = "<group>"; };
 		60ECD1C916A1FA6400A0FB7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		60F849E01835CC5E009A0F25 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
-		60F849E11835CC5E009A0F25 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		60F849E41835CD05009A0F25 /* plus_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_active@2x.png"; sourceTree = "<group>"; };
 		60F849E51835CD05009A0F25 /* plus_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_active.png; sourceTree = "<group>"; };
 		60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDarkBlueView.h; sourceTree = "<group>"; };
@@ -236,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				60238CBD16ABC7C6002DC7CD /* gif_template.html */,
-				60ECD1BB16A1FA6400A0FB7A /* All The GIFs-Info.plist */,
+				60ECD1BB16A1FA6400A0FB7A /* GIFs-Info.plist */,
 				60ECD1BC16A1FA6400A0FB7A /* InfoPlist.strings */,
 				60ECD1BF16A1FA6400A0FB7A /* main.m */,
 				60ECD1C116A1FA6400A0FB7A /* GIFs-Prefix.pch */,
@@ -263,8 +264,6 @@
 				60F849EF1835D451009A0F25 /* tick.png */,
 				60F849E41835CD05009A0F25 /* plus_active@2x.png */,
 				60F849E51835CD05009A0F25 /* plus_active.png */,
-				60F849E01835CC5E009A0F25 /* plus.png */,
-				60F849E11835CC5E009A0F25 /* plus@2x.png */,
 				60238CDB16AC76E2002DC7CD /* RedditWhite.png */,
 				60238CDC16AC76E2002DC7CD /* RedditWhite@2x.png */,
 				60238CD616AC7301002DC7CD /* Reddit@2x.png */,
@@ -287,6 +286,9 @@
 				60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */,
 				60EC306516A2089500E9BE93 /* ORImageView.h */,
 				60EC306616A2089500E9BE93 /* ORImageView.m */,
+				60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */,
+				60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */,
+				60C618EC1991D28400C6CEE1 /* GridViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -366,7 +368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 60ECD1A916A1FA6400A0FB7A /* Build configuration list for PBXProject "All The GIFs" */;
+			buildConfigurationList = 60ECD1A916A1FA6400A0FB7A /* Build configuration list for PBXProject "GIFs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -403,7 +405,6 @@
 				60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */,
 				60238CD816AC7302002DC7CD /* Reddit@2x.png in Resources */,
 				60F849FA1835DCF2009A0F25 /* tumblr_t_active@2x.png in Resources */,
-				60F849E21835CC5E009A0F25 /* plus.png in Resources */,
 				60238CD916AC7302002DC7CD /* Reddit.png in Resources */,
 				60238CDD16AC76E2002DC7CD /* RedditWhite.png in Resources */,
 				60FB8854183AE74600FC05CB /* close@2x.png in Resources */,
@@ -412,7 +413,6 @@
 				60238CF216ACB9E0002DC7CD /* Search.png in Resources */,
 				60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */,
 				60F849F11835D451009A0F25 /* tick.png in Resources */,
-				60F849E31835CC5E009A0F25 /* plus@2x.png in Resources */,
 				60F849F01835D451009A0F25 /* tick@2x.png in Resources */,
 				60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */,
 				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
@@ -464,6 +464,7 @@
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
+				60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
 				60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */,
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
@@ -472,6 +473,7 @@
 				60B62298198B728400A57EDF /* ORImageKitCompatibleCollectionView.m in Sources */,
 				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
+				60C618ED1991D28400C6CEE1 /* GridViewCell.swift in Sources */,
 				60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,12 +572,17 @@
 			baseConfigurationReference = 44059188DA724A85B6EA5694 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GIFs/All The GIFs-Prefix.pch";
-				INFOPLIST_FILE = "GIFs/All The GIFs-Info.plist";
+				GCC_PREFIX_HEADER = "GIFs/GIFs-Prefix.pch";
+				INFOPLIST_FILE = "GIFs/GIFs-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = GIFs;
+				SWIFT_OBJC_BRIDGING_HEADER = "GIFs/GIFs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -585,12 +592,16 @@
 			baseConfigurationReference = 44059188DA724A85B6EA5694 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GIFs/All The GIFs-Prefix.pch";
-				INFOPLIST_FILE = "GIFs/All The GIFs-Info.plist";
+				GCC_PREFIX_HEADER = "GIFs/GIFs-Prefix.pch";
+				INFOPLIST_FILE = "GIFs/GIFs-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = GIFs;
+				SWIFT_OBJC_BRIDGING_HEADER = "GIFs/GIFs-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -612,7 +623,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		60ECD1A916A1FA6400A0FB7A /* Build configuration list for PBXProject "All The GIFs" */ = {
+		60ECD1A916A1FA6400A0FB7A /* Build configuration list for PBXProject "GIFs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60ECD1CB16A1FA6400A0FB7A /* Debug */,

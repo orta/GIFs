@@ -26,19 +26,20 @@ PODS:
 
 DEPENDENCIES:
   - GIFKit (from `../../GIFKit`)
-  - JNWCollectionView
+  - JNWCollectionView (from `../../JNWCollectionView`)
   - StandardPaths (~> 1.5.4)
 
 EXTERNAL SOURCES:
   GIFKit:
     :path: ../../GIFKit
+  JNWCollectionView:
+    :path: ../../JNWCollectionView
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   GIFKit: 8eff65a70467e08a9a5ea2d7e425c0e90a7f392e
-  JNWCollectionView: 879df2734740bdad82806dc381de2090d6c08a58
+  JNWCollectionView: 23ada4986fd74b6f2c8bef5bc10a19943223464f
   JNWScrollView: 1c343fd858ab1d7826f83cb9d6dc0d1753f0bdea
-  AFNetworking: 5f5b2a731d6fc2082b8abc63d40fcaed5482c42f
   StandardPaths: 0e0c5da1aaf26140fcee9add0024bfe078c07d25
 
 COCOAPODS: 0.33.1

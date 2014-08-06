@@ -97,6 +97,25 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 #pragma mark -
 #pragma mark ORSourceListDataSource
 
+
+- (NSImage *)sourceList:(ORSimpleSourceListView *)sourceList imageForHeaderInSection:(NSUInteger)section {
+    switch (section) {
+        case ORMenuTitleSearch:
+            return [NSImage imageNamed:@"SearchWhite"];
+            
+        case ORMenuTitleReddit:
+            return [NSImage imageNamed:@"RedditWhite"];
+            
+        case ORMenuTitleTumblr:
+            return [NSImage imageNamed:@"tumblr_t_active"];
+            
+        case ORMenuTitleStar:
+            return [NSImage imageNamed:@"tick"];
+    }
+    
+    return nil;
+}
+
 - (NSString *)sourceList:(ORSimpleSourceListView *)sourceList titleOfHeaderForSection:(NSUInteger)section {
     switch (section) {
         case ORMenuTitleSearch:

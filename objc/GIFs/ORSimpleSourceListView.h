@@ -17,11 +17,11 @@
 @end
 
 @interface ORSourceListHeaderView : NSTableCellView
-- (id)initWithTitle:(NSString *)title;
+- (id)initWithTitle:(NSString *)title sourceList:(ORSimpleSourceListView *)sourceList;
 @end
 
 @interface ORSourceListItemView : NSTableCellView
-- (id)initWithSourceListItem:(ORSourceListItem *)item;
+- (id)initWithSourceListItem:(ORSourceListItem *)item sourceList:(ORSimpleSourceListView *)sourceList;
 @property (assign, nonatomic) BOOL selected;
 @property (strong, nonatomic) NSButton *rightImageView;
 @end
@@ -39,6 +39,7 @@
 - (NSUInteger)numberOfSectionsInSourceList:(ORSimpleSourceListView *)sourceList;
 - (NSUInteger)sourceList:(ORSimpleSourceListView *)sourceList numberOfRowsInSection:(NSUInteger)section;
 
+- (NSImage *)sourceList:(ORSimpleSourceListView *)sourceList imageForHeaderInSection:(NSUInteger)section;
 - (NSString *)sourceList:(ORSimpleSourceListView *)sourceList titleOfHeaderForSection:(NSUInteger)section;
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -53,6 +54,11 @@
 @interface ORSimpleSourceListView : NSTableView <NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet NSObject <ORSourceListDelegate> *sourceListDelegate;
 @property (weak) IBOutlet NSObject <ORSourceListDataSource> *sourceListDataSource;
+
+@property (strong) NSColor *selectionColor;
+@property (strong) NSColor *textColor;
+@property (strong) NSColor *highlightedTextColor;
+
 
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath;
 - (void)selectTopItem;

@@ -16,12 +16,15 @@
 #import <StandardPaths/StandardPaths.h>
 #import "NSString+StringBetweenStrings.h"
 #import "ORMenuController.h"
+#import "GIFs-Swift.h"
+#import <JNWScrollView/JNWScrollView.h>
 
 @interface GIF()
 @property (nonatomic, strong, readwrite) NSDate *dateAdded;
 @end
 
-@interface ORGIFController ()
+@interface ORGIFController () <JNWCollectionViewDataSource, JNWCollectionViewDelegate, JNWCollectionViewGridLayoutDelegate>
+
 @property(nonatomic, copy) NSURL *userSelectedDirectory;
 @end
 
@@ -52,18 +55,27 @@
     }
 
     [self getNextGIFs];
-    [_imageBrowser reloadData];
+    [self.collectionView reloadData];
 }
 
 - (void)awakeFromNib {
-    [_imageBrowser setValue:[NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000] forKey:IKImageBrowserBackgroundColorKey];
-    [[_imageBrowser superview] setPostsBoundsChangedNotifications:YES];
+    [self.collectionView registerClass:GridViewCell.class forCellWithReuseIdentifier:@"gif"];
+    self.collectionView.backgroundColor = [NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000];
+    
+    JNWCollectionViewGridLayout *layout = [[JNWCollectionViewGridLayout alloc] init];
+    layout.delegate = self;
+    layout.itemSize = CGSizeMake(90, 90);
+    layout.verticalSpacing = 20;
+    layout.itemHorizontalMargin = 20;
 
-    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
-
+    self.collectionView.collectionViewLayout = layout;
+    
+    [self.collectionView.clipView setPostsBoundsChangedNotifications:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
-                                                 name:NSViewBoundsDidChangeNotification object:[_imageBrowser superview]];
+                                                 name:NSViewBoundsDidChangeNotification object:self.collectionView.clipView];
+
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 
     [self loadStarred];
 }
@@ -130,16 +142,34 @@
 - (void)getNextGIFs
 {
     [_currentSource getNextGIFs:^(NSArray *newGIFs, NSError *error) {
-        [_imageBrowser reloadData];
+        [self.collectionView reloadData];
     }];
 }
 
-- (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser
+- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index
 {
+    return 60;
+}
+
+- (NSUInteger)collectionView:(JNWCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _currentSource.numberOfGifs;
 }
 
-- (void)imageBrowser:(IKImageBrowserView *)aBrowser cellWasRightClickedAtIndex:(NSUInteger)index withEvent:(NSEvent *)event {
+- (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    GridViewCell *cell = (id)[collectionView dequeueReusableCellWithIdentifier:@"gif"];
+    if (cell) {
+        cell.backgroundColor = [NSColor colorWithRed:0.3 green:0.6 blue:0.2 alpha:1];
+
+        GIF *gif = [_currentSource gifAtIndex:indexPath.jnw_item];
+        [cell updateWithURL:gif.imageRepresentation];
+    }
+    return cell;
+}
+
+- (void)collectionView:(JNWCollectionView *)collectionView didRightClickItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSEvent *event = collectionView.window.currentEvent;
+
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"menu"];
     [menu setAutoenablesItems:NO];
 
@@ -160,7 +190,7 @@
     item = [menu addItemWithTitle:@"Download GIF" action:@selector(downloadGIF) keyEquivalent:@""];
     item.target = self;
 
-    [NSMenu popUpContextMenu:menu withEvent:event forView:aBrowser];
+    [NSMenu popUpContextMenu:menu withEvent:event forView:collectionView];
 }
 
 - (void)downloadGIF {
@@ -228,13 +258,9 @@
     [[NSWorkspace sharedWorkspace] openURL:_currentGIF.sourceURL];
 }
 
-- (id) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
-    return [_currentSource gifAtIndex:index];;
-}
-
-- (void) imageBrowserSelectionDidChange:(IKImageBrowserView *) aBrowser {
-    NSInteger index = [[aBrowser selectionIndexes] lastIndex];
-
+- (void)collectionView:(JNWCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger index = indexPath.jnw_item;
 
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
@@ -270,6 +296,7 @@
 - (IBAction)togglePopover:(NSButton *)sender
 {
     if (!self.createSourcePopover.isShown) {
+        self.createSourcePopover.behavior = NSPopoverBehaviorTransient;
         [self.createSourcePopover showRelativeToRect:[sender bounds]
                                           ofView:sender
                                    preferredEdge:NSMinYEdge];
