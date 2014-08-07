@@ -254,6 +254,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
         [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"http://www.reddit.com/r/reactiongifs.json"],
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"http://www.reddit.com/r/gifs.json"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"http://www.reddit.com/r/gif.json"],
+        [ORMenuItem itemWithName:@"/r/highqualitygifs" address:@"http://www.reddit.com/r/highqualitygifs.json"],
         [ORMenuItem itemWithName:@"/r/aww" address:@"http://www.reddit.com/r/aww.json"],
         [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"http://www.reddit.com/r/cinemagraphs.json"],
         [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"http://www.reddit.com/r/chemicalreactiongifs.json"],
