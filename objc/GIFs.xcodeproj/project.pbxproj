@@ -66,6 +66,9 @@
 		60F849FC1835DCF2009A0F25 /* tumblr_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F81835DCF2009A0F25 /* tumblr_t@2x.png */; };
 		60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849F91835DCF2009A0F25 /* tumblr_t.png */; };
 		60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8BFF216AE1E2600036609 /* ORTumblrController.m */; };
+		60FA43C31994548E002CA538 /* ORWindowTitleDecorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FA43C21994548E002CA538 /* ORWindowTitleDecorationController.swift */; };
+		60FA43C519945A8C002CA538 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FA43C419945A8C002CA538 /* shadow.png */; };
+		60FA43C719945AC9002CA538 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FA43C619945AC9002CA538 /* ShadowView.swift */; };
 		60FB8852183AE74600FC05CB /* close_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB884E183AE74600FC05CB /* close_active@2x.png */; };
 		60FB8853183AE74600FC05CB /* close_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB884F183AE74600FC05CB /* close_active.png */; };
 		60FB8854183AE74600FC05CB /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8850183AE74600FC05CB /* close@2x.png */; };
@@ -151,6 +154,9 @@
 		60F849F91835DCF2009A0F25 /* tumblr_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr_t.png; sourceTree = "<group>"; };
 		60F8BFF116AE1E2600036609 /* ORTumblrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORTumblrController.h; sourceTree = "<group>"; };
 		60F8BFF216AE1E2600036609 /* ORTumblrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORTumblrController.m; sourceTree = "<group>"; };
+		60FA43C21994548E002CA538 /* ORWindowTitleDecorationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORWindowTitleDecorationController.swift; sourceTree = "<group>"; };
+		60FA43C419945A8C002CA538 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
+		60FA43C619945AC9002CA538 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		60FB884E183AE74600FC05CB /* close_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_active@2x.png"; sourceTree = "<group>"; };
 		60FB884F183AE74600FC05CB /* close_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_active.png; sourceTree = "<group>"; };
 		60FB8850183AE74600FC05CB /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		60F8BFF516AE1E6B00036609 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60FA43C419945A8C002CA538 /* shadow.png */,
 				E5C7A1CB18EB1B9900BC180A /* Resources.xcassets */,
 				60FB884E183AE74600FC05CB /* close_active@2x.png */,
 				60FB884F183AE74600FC05CB /* close_active.png */,
@@ -289,6 +296,7 @@
 				60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */,
 				60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */,
 				60C618EC1991D28400C6CEE1 /* GridViewCell.swift */,
+				60FA43C619945AC9002CA538 /* ShadowView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 				60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */,
 				60B62296198B728400A57EDF /* ORImageKitCompatibleCollectionView.h */,
 				60B62297198B728400A57EDF /* ORImageKitCompatibleCollectionView.m */,
+				60FA43C21994548E002CA538 /* ORWindowTitleDecorationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -400,6 +409,7 @@
 				60FB8855183AE74600FC05CB /* close.png in Resources */,
 				60FB8853183AE74600FC05CB /* close_active.png in Resources */,
 				60F849E71835CD05009A0F25 /* plus_active.png in Resources */,
+				60FA43C519945A8C002CA538 /* shadow.png in Resources */,
 				E5C7A1CC18EB1B9900BC180A /* Resources.xcassets in Resources */,
 				60FB8852183AE74600FC05CB /* close_active@2x.png in Resources */,
 				60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */,
@@ -459,7 +469,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60FA43C719945AC9002CA538 /* ShadowView.swift in Sources */,
 				60ECD1C016A1FA6400A0FB7A /* main.m in Sources */,
+				60FA43C31994548E002CA538 /* ORWindowTitleDecorationController.swift in Sources */,
 				60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */,
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,

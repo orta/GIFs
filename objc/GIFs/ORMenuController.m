@@ -80,20 +80,6 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     return YES;
 }
 
-- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex {
-    if(dividerIndex == 0){
-        return 180;
-    }
-    return proposedMinimumPosition;
-}
-
-- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMaximumPosition ofSubviewAt:(NSInteger)dividerIndex {
-    if(dividerIndex == 0){
-        return 240;
-    }
-    return proposedMaximumPosition;
-}
-
 #pragma mark -
 #pragma mark ORSourceListDataSource
 

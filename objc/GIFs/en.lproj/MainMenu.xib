@@ -684,14 +684,14 @@
                                                             <action selector="togglePopover:" target="648" id="NVd-x1-53f"/>
                                                         </connections>
                                                     </button>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="573">
+                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="573">
                                                         <rect key="frame" x="0.0" y="0.0" width="258" height="436"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Saz-be-m64">
                                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="33" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
+                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" rowSizeStyle="automatic" headerView="576" viewBased="YES" id="574" customClass="ORSimpleSourceListView">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                                     <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -752,6 +752,18 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableHeaderView>
                                                     </scrollView>
+                                                    <searchField wantsLayer="YES" verticalHuggingPriority="750" id="l1m-ld-uib">
+                                                        <rect key="frame" x="53" y="446" width="100" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="0fb-VX-ycX">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </searchFieldCell>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="611" id="hpy-6f-HUD"/>
+                                                        </connections>
+                                                    </searchField>
                                                 </subviews>
                                             </customView>
                                         </subviews>
@@ -790,17 +802,6 @@
                                                     <outlet property="UIDelegate" destination="646" id="LgX-2W-osN"/>
                                                 </connections>
                                             </webView>
-                                            <button id="eyI-LS-LPv">
-                                                <rect key="frame" x="12" y="457" width="328" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="bevel" title=" Text" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="left" alignment="left" inset="2" id="Puf-Ty-636">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="openCurrentGIF:" target="648" id="HYi-bA-0Ld"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </customView>
                                 </subviews>
@@ -808,6 +809,9 @@
                                     <real value="250"/>
                                     <real value="250"/>
                                 </holdingPriorities>
+                                <connections>
+                                    <outlet property="delegate" destination="ytP-yV-B2K" id="Db5-dS-Mkr"/>
+                                </connections>
                             </splitView>
                         </subviews>
                         <holdingPriorities>
@@ -815,40 +819,16 @@
                             <real value="250"/>
                         </holdingPriorities>
                         <connections>
-                            <outlet property="delegate" destination="611" id="669"/>
+                            <outlet property="delegate" destination="ytP-yV-B2K" id="9dN-fZ-Wsd"/>
                         </connections>
                     </splitView>
-                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" id="k8D-yk-DcV">
-                        <rect key="frame" x="183" y="439" width="777" height="50"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <searchField wantsLayer="YES" verticalHuggingPriority="750" id="l1m-ld-uib">
-                                <rect key="frame" x="0.0" y="-78" width="980" height="22"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="0fb-VX-ycX">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </searchFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="611" id="hpy-6f-HUD"/>
-                                </connections>
-                            </searchField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Cv-If-Yxg">
-                                <rect key="frame" x="0.0" y="-28" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="RedditWhite" id="K5r-6V-egO"/>
-                            </imageView>
-                        </subviews>
-                    </visualEffectView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="506" y="24.5"/>
+            <point key="canvasLocation" x="590" y="-133.5"/>
         </window>
         <customObject id="494" customClass="ORAppDelegate">
             <connections>
                 <outlet property="menuController" destination="611" id="E7N-Sa-vfT"/>
-                <outlet property="networkProgress" destination="672" id="674"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
@@ -861,7 +841,6 @@
                 <outlet property="menuTableView" destination="574" id="662"/>
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="jpQ-rv-8Na"/>
                 <outlet property="window" destination="371" id="670"/>
-                <outlet property="windowToolbar" destination="671" id="673"/>
             </connections>
         </customObject>
         <customObject id="646" customClass="ORWebViewDelegateStuff"/>
@@ -894,16 +873,6 @@
                 <outlet property="gifController" destination="648" id="704"/>
             </connections>
         </customObject>
-        <customView id="671">
-            <rect key="frame" x="0.0" y="0.0" width="723" height="40"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-            <subviews>
-                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="672">
-                    <rect key="frame" x="692" y="12" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                </progressIndicator>
-            </subviews>
-        </customView>
         <customObject id="r3L-u3-GrL" customClass="ORSourcesController">
             <connections>
                 <outlet property="menuController" destination="611" id="zhU-zs-wie"/>
@@ -917,6 +886,16 @@
         <customObject id="rG7-qJ-RqL" customClass="ORStarredSourceController">
             <connections>
                 <outlet property="gifController" destination="648" id="3KU-W6-670"/>
+            </connections>
+        </customObject>
+        <customObject id="ytP-yV-B2K" customClass="ORWindowTitleDecorationController" customModule="GIFs" customModuleProvider="target">
+            <connections>
+                <outlet property="fakeRightSplitter" destination="tqB-ht-k6W" id="5qF-Ki-GfG"/>
+                <outlet property="gridAndDetailSplitter" destination="558" id="QbP-Zj-LEv"/>
+                <outlet property="mainWindow" destination="371" id="dWZ-jC-ayE"/>
+                <outlet property="rightColumnView" destination="560" id="LCf-F0-ecA"/>
+                <outlet property="sourceListSuperView" destination="643" id="cH0-Cz-0sA"/>
+                <outlet property="titleBlurView" destination="YDK-WX-PY8" id="JQt-aA-rtq"/>
             </connections>
         </customObject>
         <viewController id="gpJ-SU-huq" userLabel="Popover View Controller">
@@ -1021,12 +1000,52 @@
                     </tabViewItems>
                 </tabView>
             </subviews>
-            <point key="canvasLocation" x="662" y="512.5"/>
+            <point key="canvasLocation" x="995" y="621.5"/>
+        </customView>
+        <customView id="YDK-WX-PY8">
+            <rect key="frame" x="0.0" y="0.0" width="722" height="71"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <subviews>
+                <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" id="k8D-yk-DcV">
+                    <rect key="frame" x="0.0" y="20" width="722" height="50"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView id="tqB-ht-k6W" customClass="ORDarkBlueView">
+                            <rect key="frame" x="384" y="0.0" width="1" height="96"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </customView>
+                        <button id="eyI-LS-LPv">
+                            <rect key="frame" x="399" y="14" width="328" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="bevel" title=" Text" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="left" alignment="left" inset="2" id="Puf-Ty-636">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="openCurrentGIF:" target="648" id="HYi-bA-0Ld"/>
+                            </connections>
+                        </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Lq-MN-lOV">
+                            <rect key="frame" x="365" y="26" width="38" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="ORWindowTitleDecorationController" id="PyN-or-816">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </visualEffectView>
+                <customView id="Dsb-ZB-DbG" customClass="ShadowView" customModule="GIFs" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="1" width="722" height="20"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                </customView>
+            </subviews>
+            <point key="canvasLocation" x="481" y="309.5"/>
         </customView>
     </objects>
     <resources>
         <image name="NSShareTemplate" width="11" height="16"/>
-        <image name="RedditWhite" width="16" height="16"/>
         <image name="plus_active" width="20" height="19"/>
         <image name="tick" width="21" height="19"/>
         <image name="tick_active" width="21" height="19"/>

@@ -12,7 +12,7 @@
 
 @class ORStarredSourceController;
 
-@interface ORMenuController : NSObject <ORSourceListDataSource, ORSourceListDelegate, NSTextFieldDelegate, NSSplitViewDelegate>
+@interface ORMenuController : NSObject <ORSourceListDataSource, ORSourceListDelegate, NSTextFieldDelegate>
 
 @property (weak) IBOutlet ORGIFController *gifViewController;
 @property (weak) IBOutlet ORSimpleSourceListView *menuTableView;

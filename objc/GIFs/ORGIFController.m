@@ -158,7 +158,7 @@
 - (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     GridViewCell *cell = (id)[collectionView dequeueReusableCellWithIdentifier:@"gif"];
     if (cell) {
-        cell.backgroundColor = [NSColor colorWithRed:0.3 green:0.6 blue:0.2 alpha:1];
+        cell.backgroundColor = [NSColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
 
         GIF *gif = [_currentSource gifAtIndex:indexPath.jnw_item];
         [cell updateWithURL:gif.imageRepresentation];
