@@ -649,7 +649,7 @@
             </items>
         </menu>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
             <rect key="contentRect" x="801" y="515" width="960" height="489"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="960" height="480"/>
@@ -685,7 +685,7 @@
                                                         </connections>
                                                     </button>
                                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="573">
-                                                        <rect key="frame" x="0.0" y="0.0" width="258" height="436"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="258" height="404"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Saz-be-m64">
                                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
@@ -753,8 +753,8 @@
                                                         </tableHeaderView>
                                                     </scrollView>
                                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" id="l1m-ld-uib">
-                                                        <rect key="frame" x="53" y="446" width="100" height="22"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <rect key="frame" x="20" y="412" width="224" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="0fb-VX-ycX">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -848,10 +848,11 @@
             <connections>
                 <outlet property="collectionView" destination="3Hm-2c-Sf2" id="Jxk-Uw-Vkb"/>
                 <outlet property="createSourcePopover" destination="QID-Px-0jj" id="6Jh-Hp-qK7"/>
+                <outlet property="gifTitle" destination="4JI-PY-tzw" id="YeE-rD-icf"/>
                 <outlet property="menuController" destination="611" id="WSU-qX-H0I"/>
-                <outlet property="openGIFContextButton" destination="eyI-LS-LPv" id="PIH-Qs-Zfm"/>
                 <outlet property="redditController" destination="616" id="655"/>
                 <outlet property="searchController" destination="656" id="657"/>
+                <outlet property="sectionTitle" destination="0Lq-MN-lOV" id="pqu-IT-VQ4"/>
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="1Sf-rc-4dp"/>
                 <outlet property="tumblrController" destination="703" id="705"/>
                 <outlet property="webView" destination="Q2C-jo-PUZ" id="Lfl-gD-8pa"/>
@@ -892,8 +893,11 @@
             <connections>
                 <outlet property="fakeRightSplitter" destination="tqB-ht-k6W" id="5qF-Ki-GfG"/>
                 <outlet property="gridAndDetailSplitter" destination="558" id="QbP-Zj-LEv"/>
+                <outlet property="itemTitle" destination="4JI-PY-tzw" id="TTP-4f-EnS"/>
+                <outlet property="leftColumnView" destination="Q2C-jo-PUZ" id="C9Y-UE-3m9"/>
                 <outlet property="mainWindow" destination="371" id="dWZ-jC-ayE"/>
                 <outlet property="rightColumnView" destination="560" id="LCf-F0-ecA"/>
+                <outlet property="sectionTitle" destination="0Lq-MN-lOV" id="RVs-Ls-rGw"/>
                 <outlet property="sourceListSuperView" destination="643" id="cH0-Cz-0sA"/>
                 <outlet property="titleBlurView" destination="YDK-WX-PY8" id="JQt-aA-rtq"/>
             </connections>
@@ -1010,28 +1014,26 @@
                     <rect key="frame" x="0.0" y="20" width="722" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <customView id="tqB-ht-k6W" customClass="ORDarkBlueView">
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4JI-PY-tzw" userLabel="GIF Title">
+                            <rect key="frame" x="342" y="16" width="38" height="17"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" id="kbG-RM-hWc">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView id="tqB-ht-k6W" customClass="ORMiddleGreyView">
                             <rect key="frame" x="384" y="0.0" width="1" height="96"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         </customView>
-                        <button id="eyI-LS-LPv">
-                            <rect key="frame" x="399" y="14" width="328" height="22"/>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Lq-MN-lOV" userLabel="Section Title">
+                            <rect key="frame" x="-2" y="17" width="38" height="17"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="bevel" title=" Text" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="left" alignment="left" inset="2" id="Puf-Ty-636">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="openCurrentGIF:" target="648" id="HYi-bA-0Ld"/>
-                            </connections>
-                        </button>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Lq-MN-lOV">
-                            <rect key="frame" x="365" y="26" width="38" height="17"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="ORWindowTitleDecorationController" id="PyN-or-816">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="GIF Section Title" id="PyN-or-816">
+                                <font key="font" metaFont="systemBold" size="14"/>
+                                <color key="textColor" red="0.29411764705882354" green="0.31764705882352939" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </textFieldCell>
                         </textField>
                     </subviews>
@@ -1045,7 +1047,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="NSShareTemplate" width="11" height="16"/>
         <image name="plus_active" width="20" height="19"/>
         <image name="tick" width="21" height="19"/>
         <image name="tick_active" width="21" height="19"/>

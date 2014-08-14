@@ -19,10 +19,6 @@
 
 @property (weak) IBOutlet JNWCollectionView *collectionView;
 
-@property (weak) IBOutlet NSScrollView *imageScrollView;
-
-@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
-@property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSButton *openGIFContextButton;
 
@@ -35,6 +31,9 @@
 @property (weak) IBOutlet ORTumblrController *tumblrController;
 @property (weak) IBOutlet ORStarredSourceController *starredController;
 @property (weak) IBOutlet ORMenuController *menuController;
+
+@property (weak) IBOutlet NSTextField *sectionTitle;
+@property (weak) IBOutlet NSTextField *gifTitle;
 
 @property (strong) GIF *currentGIF;
 

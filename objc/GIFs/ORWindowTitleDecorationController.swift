@@ -16,11 +16,15 @@ class ORWindowTitleDecorationController: NSObject, NSSplitViewDelegate  {
     @IBOutlet weak var fakeRightSplitter: NSView!
     @IBOutlet weak var rightColumnView: NSView!
     
+    @IBOutlet weak var itemTitle: NSTextField!
+    @IBOutlet weak var sectionTitle: NSTextField!
+    
     @IBOutlet weak var gridAndDetailSplitter: NSSplitView!
     
     override func awakeFromNib() {
         mainWindow.contentView.addSubview(self.titleBlurView);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToolbarBlur", name: NSWindowDidResizeNotification, object: self.mainWindow)
+        updateToolbarBlur()
     }
     
     func splitView(splitView: NSSplitView!, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
@@ -41,11 +45,14 @@ class ORWindowTitleDecorationController: NSObject, NSSplitViewDelegate  {
         let leftColumnWidth = CGRectGetWidth(self.sourceListSuperView.frame)
         let titleWidth  = CGRectGetWidth(windowFrame!) - leftColumnWidth
         let titleHeight = CGRectGetHeight(self.titleBlurView.bounds)
-        
+        let rightColumnWidth = CGRectGetWidth(self.rightColumnView.frame)
+
         self.titleBlurView.frame = CGRectMake(leftColumnWidth, CGRectGetHeight(windowFrame!) - titleHeight + 1, titleWidth , titleHeight);
         
-        let rightColumnWidth = CGRectGetWidth(self.rightColumnView.frame)
-        
         self.fakeRightSplitter.frame = CGRectMake(titleWidth - rightColumnWidth, 0, 1, titleHeight)
+        
+        self.itemTitle.frame = CGRectMake(titleWidth - rightColumnWidth + 2, 18, rightColumnWidth , 18);
+        
+        self.sectionTitle.frame = CGRectMake(0,  18, titleWidth - rightColumnWidth, 18);
     }
 }

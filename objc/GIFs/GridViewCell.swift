@@ -24,9 +24,9 @@ import Cocoa
         requestOperation.setCompletionBlockWithSuccess({ (op: AFHTTPRequestOperation! , thing:AnyObject!) -> Void in
             self.backgroundImage = thing as NSImage
             
-            }, failure: { (op:AFHTTPRequestOperation!, error:NSError!) -> Void in
-                NSLog("Eroror");
-                
+        }, failure: { (op:AFHTTPRequestOperation!, error:NSError!) -> Void in
+            
+            NSLog("Eroror");
         });
 
         requestOperation.start();

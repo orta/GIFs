@@ -56,6 +56,7 @@
 
     [self getNextGIFs];
     [self.collectionView reloadData];
+    self.sectionTitle.stringValue = string;
 }
 
 - (void)awakeFromNib {
@@ -115,7 +116,7 @@
     [self saveStarred];
     [_starredController reloadData];
     [_menuController.menuTableView reloadData];
-    [_imageBrowser reloadData];
+    
 }
 
 
@@ -123,7 +124,7 @@
 {
     NSClipView *clipView = [notification object];
     NSRect newClipBounds = [clipView bounds];
-    CGFloat height = _imageScrollView.contentSize.height;
+    CGFloat height = _collectionView.contentSize.height;
 
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
         [self getNextGIFs];
@@ -132,8 +133,7 @@
 
 - (void)gotNewGIFs
 {
-    [_imageBrowser reloadData];
-    NSClipView *clipView = (NSClipView *)[_imageBrowser superview];
+    NSClipView *clipView = (NSClipView *)[_collectionView superview];
     if (CGRectGetHeight(clipView.documentVisibleRect) == CGRectGetHeight([clipView.documentView bounds])) {
         [self getNextGIFs];
     }
@@ -144,6 +144,11 @@
     [_currentSource getNextGIFs:^(NSArray *newGIFs, NSError *error) {
         [self.collectionView reloadData];
     }];
+}
+
+- (NSEdgeInsets)collectionView:(JNWCollectionView *)collectionView layout:(JNWCollectionViewGridLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return NSEdgeInsetsMake(0, 10, 0, 10);
 }
 
 - (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index
@@ -272,6 +277,8 @@
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:address];
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_THUMB_URL}}" withString:[gif.imageRepresentation absoluteString]];
 
+        self.gifTitle.stringValue = gif.sourceTitle;
+        
         if ([_starredController hasGIFWithDownloadAddress:address]) {
             html = [html stringByReplacingOccurrencesOfString:@" id='star' " withString:@" id='star' class='active' "];
         }

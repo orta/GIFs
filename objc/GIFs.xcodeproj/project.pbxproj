@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015B460199C653800587A4E /* ORMiddleGreyView.m */; };
 		60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 60238CBD16ABC7C6002DC7CD /* gif_template.html */; };
 		60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */; };
 		60238CD816AC7302002DC7CD /* Reddit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CD616AC7301002DC7CD /* Reddit@2x.png */; };
@@ -90,6 +91,8 @@
 /* Begin PBXFileReference section */
 		44059188DA724A85B6EA5694 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		50FD7C5321E34413A5C61F2D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6015B45F199C653800587A4E /* ORMiddleGreyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMiddleGreyView.h; sourceTree = "<group>"; };
+		6015B460199C653800587A4E /* ORMiddleGreyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMiddleGreyView.m; sourceTree = "<group>"; };
 		60238CBD16ABC7C6002DC7CD /* gif_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gif_template.html; sourceTree = "<group>"; };
 		60238CC716AC261A002DC7CD /* ORSimpleSourceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSimpleSourceListView.h; sourceTree = "<group>"; };
 		60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSimpleSourceListView.m; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */,
 				60C618EC1991D28400C6CEE1 /* GridViewCell.swift */,
 				60FA43C619945AC9002CA538 /* ShadowView.swift */,
+				6015B45F199C653800587A4E /* ORMiddleGreyView.h */,
+				6015B460199C653800587A4E /* ORMiddleGreyView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				60FA43C31994548E002CA538 /* ORWindowTitleDecorationController.swift in Sources */,
 				60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */,
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
+				6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
 				60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */,

@@ -26,6 +26,9 @@
 @property (strong, nonatomic) NSButton *rightImageView;
 @end
 
+@interface ORSourceListRowView : NSTableRowView
+@end
+
 @interface ORSourceListItem : NSObject
 @property (strong) NSString *selectedThumbnail;
 @property (strong) NSString *thumbnail;

@@ -64,7 +64,6 @@ CGFloat ORCellImageDimensions = 16;
     self.allowsMultipleSelection = NO;
     self.allowsEmptySelection = NO;
     self.enclosingScrollView.scrollerStyle = NSScrollerStyleOverlay;
-    
     self.selectionColor = [NSColor colorWithWhite:0.3 alpha:1];
     
     _currentSelectionIndex = NSNotFound;
@@ -125,6 +124,11 @@ CGFloat ORCellImageDimensions = 16;
     return result;
 }
 
+- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
+{
+    return [[ORSourceListRowView alloc] init];
+}
+
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row {
     id item =_items[row];
     return [item isKindOfClass:[ORSourceListItem class]];
@@ -168,9 +172,11 @@ CGFloat ORCellImageDimensions = 16;
 
 - (void)_visuallySelectRowAtIndex:(NSUInteger)index toState:(BOOL)state {
     ORSourceListItemView *cell = [self viewAtColumn:0 row:index makeIfNecessary:NO];
-    if (cell && [cell respondsToSelector:@selector(setSelected:)]) {
-        cell.selected = state;
-    }
+    ORSourceListRowView *row = [self rowViewAtRow:index makeIfNecessary:NO];
+    
+//    if (cell && [cell respondsToSelector:@selector(setSelected:)]) {
+        row.selected = state;
+//    }
 }
 
 - (NSUInteger)indexPathToRow:(NSIndexPath *)path {
@@ -251,7 +257,6 @@ CGFloat ORCellImageDimensions = 16;
     self.imageView = itemImage;
     [self addSubview:itemImage];
 
-
     self.textField.stringValue = [title uppercaseString];
     return self;
 }
@@ -267,7 +272,6 @@ CGFloat ORCellImageDimensions = 16;
     [[NSColor colorWithCalibratedRed:0.162 green:0.137 blue:0.160 alpha:1.000]set];
     NSRectFill(dirtyRect);
 }
-
 
 @end
 
@@ -295,7 +299,7 @@ CGFloat ORCellImageDimensions = 16;
     self.textField = titleTextField;
     [self addSubview:titleTextField];
 
-    self.textField.stringValue = item.title;
+    self.textField.stringValue = item. title;
     return self;
 }
 
@@ -304,6 +308,20 @@ CGFloat ORCellImageDimensions = 16;
 
     self.textField.frame = CGRectMake(ORCellItemLeftPadding, -ORCellItemTopPadding, CGRectGetWidth(frameRect) - ORCellItemLeftPadding, ORCellHeight);
     self.imageView.frame = CGRectMake(0, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
+}
+
+@end
+
+@implementation ORSourceListRowView
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    if (selected) {
+        self.backgroundColor = [NSColor whiteColor];
+    } else {
+        self.backgroundColor = [NSColor clearColor];
+    }
 }
 
 @end

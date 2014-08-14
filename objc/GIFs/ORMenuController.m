@@ -11,10 +11,10 @@
 #import "ORStarredSourceController.h"
 
 NS_ENUM(NSUInteger, ORMenuTitle){
+    ORMenuTitleStar,
     ORMenuTitleSearch,
     ORMenuTitleReddit,
-    ORMenuTitleTumblr,
-    ORMenuTitleStar 
+    ORMenuTitleTumblr
 };
 
 @interface ORMenuItem : NSObject <NSCoding>
