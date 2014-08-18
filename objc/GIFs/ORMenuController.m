@@ -213,12 +213,12 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
         case ORMenuTitleReddit:
             item = _redditSources[index];
-            [_gifViewController getGIFsFromSourceString:[item address]];
+            [_gifViewController getGIFsFromSourceString:item.name];
             break;
 
         case ORMenuTitleTumblr:
             item = _tumblrSources[index];
-            [_gifViewController getGIFsFromSourceString:[item address]];
+            [_gifViewController getGIFsFromSourceString:item.address];
             break;
 
         case ORMenuTitleStar:
@@ -263,6 +263,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
         [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"cinemagraphs"],
         [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"chemicalreactiongifs"],
         [ORMenuItem itemWithName:@"/r/perfectloops" address:@"perfectloops"],
+        [ORMenuItem itemWithName:@"/r/highqualitygifs" address:@"highqualitygifs"],
     ];
 }
 

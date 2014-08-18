@@ -12,7 +12,6 @@
 #import "ORTumblrController.h"
 #import "ORStarredSourceController.h"
 #import "GIF.h"
-#import "AFNetworking.h"
 #import <StandardPaths/StandardPaths.h>
 #import "NSString+StringBetweenStrings.h"
 #import "ORMenuController.h"
@@ -35,7 +34,7 @@
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
-    if([string rangeOfString:@"reddit"].location != NSNotFound){
+    if([string rangeOfString:@"/r/"].location != NSNotFound){
         _currentSource = _redditController;
         [_redditController setSubreddit:string];
     }
@@ -60,6 +59,8 @@
 }
 
 - (void)awakeFromNib {
+    self.webView.drawsBackground = NO;
+    
     [self.collectionView registerClass:GridViewCell.class forCellWithReuseIdentifier:@"gif"];
     self.collectionView.backgroundColor = [NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000];
     
@@ -98,10 +99,11 @@
 {
     NSString *appleURL = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     NSString *download = [appleURL substringBetween:@"?dl=" and:@"***thumb"];
-    NSString *thumbnail = [appleURL substringBetween:@"***thumb" and:@"&***source_title"];
-    NSString *sourceTitle = [appleURL substringBetween:@"***source_title" and:@"&***source"];
-    NSString *source = [[appleURL componentsSeparatedByString:@"&***source"] lastObject];
-
+    NSString *thumbnail = [appleURL substringBetween:@"***thumb=" and:@"&***source_title"];
+    NSString *source = [[appleURL componentsSeparatedByString:@"&***source="] lastObject];
+    NSString *sourceTitle = [appleURL substringBetween:@"***source_title=" and:@"&***source="];
+    sourceTitle = [sourceTitle stringByRemovingPercentEncoding];
+	
     GIF *gif = [[GIF alloc] initWithDownloadURL:download thumbnail:thumbnail source:source sourceTitle:sourceTitle];
     gif.dateAdded = [NSDate date];
 
@@ -152,7 +154,11 @@
 
 - (NSEdgeInsets)collectionView:(JNWCollectionView *)collectionView layout:(JNWCollectionViewGridLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return NSEdgeInsetsMake(0, 10, 0, 10);
+    CGFloat totalWidth = collectionView.visibleSize.width - collectionViewLayout.itemHorizontalMargin;
+    NSUInteger numberOfColumns = totalWidth / (collectionViewLayout.itemSize.width + collectionViewLayout.itemHorizontalMargin);
+    CGFloat totalOffset = totalWidth - (numberOfColumns * (collectionViewLayout.itemSize.width + collectionViewLayout.itemHorizontalMargin ));
+    
+    return NSEdgeInsetsMake(0, totalOffset/2, 0, 0);
 }
 
 - (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index
@@ -280,6 +286,9 @@
         NSString *address = gif.downloadURL.absoluteString;
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_IMAGE_URL}}" withString:address];
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_THUMB_URL}}" withString:[gif.imageRepresentation absoluteString]];
+		html = [html stringByReplacingOccurrencesOfString:@"{{OR_SOURCE_URL}}" withString:[gif.sourceURL absoluteString]];
+		html = [html stringByReplacingOccurrencesOfString:@"{{OR_SOURCE_TITLE}}" withString:gif.sourceTitle];
+
 
         self.gifTitle.stringValue = gif.sourceTitle;
         
@@ -308,17 +317,11 @@
 {
     if (!self.createSourcePopover.isShown) {
         self.createSourcePopover.behavior = NSPopoverBehaviorTransient;
-        [self.createSourcePopover showRelativeToRect:[sender bounds]
-                                          ofView:sender
-                                   preferredEdge:NSMinYEdge];
+        [self.createSourcePopover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMinYEdge];
+        
     } else {
         [self.createSourcePopover close];
     }
-}
-
-- (void)getGIFsFromStarred
-{
-
 }
 
 @end

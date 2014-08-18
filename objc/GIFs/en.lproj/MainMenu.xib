@@ -792,16 +792,22 @@
                                         <rect key="frame" x="342" y="0.0" width="360" height="517"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <webView id="Q2C-jo-PUZ">
+                                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="vCa-Fh-m5Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="488"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
-                                                    <nil key="identifier"/>
-                                                </webPreferences>
-                                                <connections>
-                                                    <outlet property="UIDelegate" destination="646" id="LgX-2W-osN"/>
-                                                </connections>
-                                            </webView>
+                                                <subviews>
+                                                    <webView id="Q2C-jo-PUZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="488"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                                            <nil key="identifier"/>
+                                                        </webPreferences>
+                                                        <connections>
+                                                            <outlet property="UIDelegate" destination="646" id="LgX-2W-osN"/>
+                                                        </connections>
+                                                    </webView>
+                                                </subviews>
+                                            </visualEffectView>
                                         </subviews>
                                     </customView>
                                 </subviews>
