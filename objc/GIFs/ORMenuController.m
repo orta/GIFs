@@ -75,7 +75,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
     [_menuTableView reloadData];
     
-    [_menuTableView setSelectedIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [_menuTableView setSelectedIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
 
     return YES;
 }
