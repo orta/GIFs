@@ -133,8 +133,11 @@
 
 - (void)gotNewGIFs
 {
-    NSClipView *clipView = (NSClipView *)[_collectionView superview];
-    if (CGRectGetHeight(clipView.documentVisibleRect) == CGRectGetHeight([clipView.documentView bounds])) {
+    NSClipView *clipView = (NSClipView *)[_collectionView clipView];
+    
+    CGFloat clipViewVisibleHeight = CGRectGetHeight(clipView.documentVisibleRect);
+    CGFloat clipViewDocumentHeight = CGRectGetHeight([clipView.documentView bounds]);
+    if (clipViewVisibleHeight == clipViewDocumentHeight) {
         [self getNextGIFs];
     }
 }
@@ -143,6 +146,7 @@
 {
     [_currentSource getNextGIFs:^(NSArray *newGIFs, NSError *error) {
         [self.collectionView reloadData];
+        [self gotNewGIFs];
     }];
 }
 

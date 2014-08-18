@@ -8,6 +8,7 @@
 
 #import "ORAppDelegate.h"
 #import "ORMenuController.h"
+#import <CocoaPods-Keys/GIFsKeys.h>
 
 @implementation ORAppDelegate
 

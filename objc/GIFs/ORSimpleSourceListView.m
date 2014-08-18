@@ -174,9 +174,7 @@ CGFloat ORCellImageDimensions = 16;
     ORSourceListItemView *cell = [self viewAtColumn:0 row:index makeIfNecessary:NO];
     ORSourceListRowView *row = [self rowViewAtRow:index makeIfNecessary:NO];
     
-//    if (cell && [cell respondsToSelector:@selector(setSelected:)]) {
-        row.selected = state;
-//    }
+    row.selected = state;
 }
 
 - (NSUInteger)indexPathToRow:(NSIndexPath *)path {
@@ -318,7 +316,7 @@ CGFloat ORCellImageDimensions = 16;
 {
     [super setSelected:selected];
     if (selected) {
-        self.backgroundColor = [NSColor whiteColor];
+        self.backgroundColor = [NSColor purpleColor];
     } else {
         self.backgroundColor = [NSColor clearColor];
     }
