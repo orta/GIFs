@@ -104,13 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GIFs/ORGIFController.m"
-            timestampString = "430028028.180743"
+            timestampString = "430283476.932893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-            landmarkType = "5">
+            startingLineNumber = "270"
+            endingLineNumber = "270">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

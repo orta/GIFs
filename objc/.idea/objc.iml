@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GIFKit" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../../JNWCollectionView">
+      <sourceFolder url="file://$MODULE_DIR$/../../JNWCollectionView" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

@@ -18,11 +18,11 @@ static ORAppDelegate *_sharedInstance = nil;
     _sharedInstance = self;
 
     self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
-    self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
-    self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
-    self.window.titlebarAppearsTransparent = YES;
+self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
+    self.window.titleVisibility = NSWindowTitleHidden;
+  self.window.titlebarAppearsTransparent = YES;
     self.window.movableByWindowBackground = YES;
-
+//
     [self.menuController.menuTableView reloadData];
     [self.menuController.menuTableView selectTopItem];
 }

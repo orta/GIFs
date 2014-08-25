@@ -260,6 +260,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"gifs"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"gif"],
         [ORMenuItem itemWithName:@"/r/aww" address:@"aww"],
+        [ORMenuItem itemWithName:@"/r/pugs" address:@"pugs"],
         [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"cinemagraphs"],
         [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"chemicalreactiongifs"],
         [ORMenuItem itemWithName:@"/r/perfectloops" address:@"perfectloops"],

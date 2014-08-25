@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="101000" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6205"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="6205"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.8"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="6206.8"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -869,12 +869,6 @@
                 <outlet property="gifViewController" destination="648" id="660"/>
             </connections>
         </customObject>
-        <customObject id="688" customClass="ORSharingController">
-            <connections>
-                <outlet property="appWindow" destination="371" id="698"/>
-                <outlet property="gifController" destination="648" id="699"/>
-            </connections>
-        </customObject>
         <customObject id="703" customClass="ORTumblrController">
             <connections>
                 <outlet property="gifController" destination="648" id="704"/>
@@ -1016,7 +1010,7 @@
             <rect key="frame" x="0.0" y="0.0" width="722" height="71"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <subviews>
-                <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" id="k8D-yk-DcV">
+                <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" id="k8D-yk-DcV" customClass="ORWindowDraggableVisualEffectsView">
                     <rect key="frame" x="0.0" y="20" width="722" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>

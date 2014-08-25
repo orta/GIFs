@@ -17,7 +17,7 @@
                BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
                BuildableName = "GIFs.app"
                BlueprintName = "GIFs"
-               ReferencedContainer = "container:All The GIFs.xcodeproj">
+               ReferencedContainer = "container:GIFs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

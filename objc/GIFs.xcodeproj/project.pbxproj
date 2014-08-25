@@ -33,10 +33,11 @@
 		60238CF316ACB9E0002DC7CD /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF116ACB9DF002DC7CD /* Search@2x.png */; };
 		60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF516ACBA0C002DC7CD /* SearchWhite.png */; };
 		60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */; };
-		60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CFE16ACD600002DC7CD /* ORSharingController.m */; };
 		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
 		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
 		60B62298198B728400A57EDF /* ORImageKitCompatibleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B62297198B728400A57EDF /* ORImageKitCompatibleCollectionView.m */; };
+		60C3CE3919A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C3CE3819A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m */; };
+		60C3CE3C19A5976200E7B88F /* ORGIFRightClickMenuMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C3CE3B19A5976200E7B88F /* ORGIFRightClickMenuMaker.m */; };
 		60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */; };
 		60C618ED1991D28400C6CEE1 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C618EC1991D28400C6CEE1 /* GridViewCell.swift */; };
 		60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */; };
@@ -104,12 +105,14 @@
 		60238CF116ACB9DF002DC7CD /* Search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search@2x.png"; sourceTree = "<group>"; };
 		60238CF516ACBA0C002DC7CD /* SearchWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchWhite.png; sourceTree = "<group>"; };
 		60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SearchWhite@2x.png"; sourceTree = "<group>"; };
-		60238CFD16ACD600002DC7CD /* ORSharingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSharingController.h; sourceTree = "<group>"; };
-		60238CFE16ACD600002DC7CD /* ORSharingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSharingController.m; sourceTree = "<group>"; };
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		60B62296198B728400A57EDF /* ORImageKitCompatibleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORImageKitCompatibleCollectionView.h; sourceTree = "<group>"; };
 		60B62297198B728400A57EDF /* ORImageKitCompatibleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageKitCompatibleCollectionView.m; sourceTree = "<group>"; };
+		60C3CE3719A595D200E7B88F /* ORWindowDraggableVisualEffectsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORWindowDraggableVisualEffectsView.h; sourceTree = "<group>"; };
+		60C3CE3819A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORWindowDraggableVisualEffectsView.m; sourceTree = "<group>"; };
+		60C3CE3A19A5976200E7B88F /* ORGIFRightClickMenuMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFRightClickMenuMaker.h; sourceTree = "<group>"; };
+		60C3CE3B19A5976200E7B88F /* ORGIFRightClickMenuMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFRightClickMenuMaker.m; sourceTree = "<group>"; };
 		60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFs-Bridging-Header.h"; sourceTree = "<group>"; };
 		60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORTintedVisualEffectView.swift; sourceTree = "<group>"; };
 		60C618EC1991D28400C6CEE1 /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				60FA43C619945AC9002CA538 /* ShadowView.swift */,
 				6015B45F199C653800587A4E /* ORMiddleGreyView.h */,
 				6015B460199C653800587A4E /* ORMiddleGreyView.m */,
+				60C3CE3719A595D200E7B88F /* ORWindowDraggableVisualEffectsView.h */,
+				60C3CE3819A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,8 +320,6 @@
 				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
 				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
 				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
-				60238CFD16ACD600002DC7CD /* ORSharingController.h */,
-				60238CFE16ACD600002DC7CD /* ORSharingController.m */,
 				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
 				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
 				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
@@ -333,6 +336,8 @@
 		60FB8858183AED8400FC05CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60C3CE3A19A5976200E7B88F /* ORGIFRightClickMenuMaker.h */,
+				60C3CE3B19A5976200E7B88F /* ORGIFRightClickMenuMaker.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -476,11 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C3CE3919A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m in Sources */,
 				60FA43C719945AC9002CA538 /* ShadowView.swift in Sources */,
 				60ECD1C016A1FA6400A0FB7A /* main.m in Sources */,
 				60FA43C31994548E002CA538 /* ORWindowTitleDecorationController.swift in Sources */,
 				60ECD1C716A1FA6400A0FB7A /* ORAppDelegate.m in Sources */,
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
+				60C3CE3C19A5976200E7B88F /* ORGIFRightClickMenuMaker.m in Sources */,
 				6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
@@ -491,7 +498,6 @@
 				60EC307216A3306E00E9BE93 /* ORGIFController.m in Sources */,
 				60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */,
 				60B62298198B728400A57EDF /* ORImageKitCompatibleCollectionView.m in Sources */,
-				60238CFF16ACD601002DC7CD /* ORSharingController.m in Sources */,
 				60F8BFF316AE1E2600036609 /* ORTumblrController.m in Sources */,
 				60C618ED1991D28400C6CEE1 /* GridViewCell.swift in Sources */,
 				60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */,
@@ -559,7 +565,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -582,7 +588,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -601,6 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = GIFs;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "GIFs/GIFs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -621,6 +628,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = GIFs;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "GIFs/GIFs-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
