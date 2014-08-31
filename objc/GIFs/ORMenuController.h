@@ -22,7 +22,7 @@
 @property (weak) IBOutlet NSView *windowToolbar;
 @property (weak) IBOutlet NSSplitView *mainSplitView;
 
-@property (weak) IBOutlet NSSearchField *searchBar;
+@property (weak) IBOutlet NSTextField *searchBar;
 
 - (IBAction)makeSearchFieldFirstResponder:(id)sender;
 - (void)addNewSubreddit:(NSString *)subreddit;

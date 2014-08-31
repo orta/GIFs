@@ -14,4 +14,5 @@
 @property(nonatomic, copy) NSURL *lastUserSelectedDirectory;
 
 - (NSMenu *)menu;
+- (NSArray *)menuItems;
 @end

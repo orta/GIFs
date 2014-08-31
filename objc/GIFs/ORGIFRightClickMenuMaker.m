@@ -23,8 +23,6 @@
     
     _gif = gif;
     
-    
-    
     return self;
 }
 
@@ -33,41 +31,57 @@
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"menu"];
     [menu setAutoenablesItems:NO];
     
-    NSMenuItem *item = [menu addItemWithTitle:@"Copy GIF URL to Clipboard" action: @selector(copyURL) keyEquivalent:@""];
-    [item setTarget:self];
+    for (NSMenuItem *item in [self menuItems]) {
+        [menu addItem:item];
+    }
+    return menu;
+}
+
+- (NSArray *)menuItems
+{
+    NSMutableArray *menuItems = [NSMutableArray array];
     
-    item = [menu addItemWithTitle:@"Copy Image Markdown" action: @selector(copyMarkdown) keyEquivalent:@""];
+    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Copy GIF URL to Clipboard" action: @selector(copyURL) keyEquivalent:@"c"];
     [item setTarget:self];
+    [menuItems addObject:item];
     
-    [menu addItem:[NSMenuItem separatorItem]];
-    item = [menu addItemWithTitle:@"Open GIF in Browser" action:@selector(openInBrowser) keyEquivalent:@""];
+    item = [[NSMenuItem alloc] initWithTitle:@"Copy Image Markdown" action: @selector(copyMarkdown) keyEquivalent:@"C"];
+    [item setTarget:self];
+    [menuItems addObject:item];
+    
+    [menuItems addObject:[NSMenuItem separatorItem]];
+    item = [[NSMenuItem alloc] initWithTitle:@"Open GIF in Browser" action:@selector(openInBrowser) keyEquivalent:@"b"];
     item.target = self;
+    [menuItems addObject:item];
     
     if (self.gif.sourceURL) {
-        item = [menu addItemWithTitle:@"Open GIF context" action:@selector(openContext) keyEquivalent:@""];
+        item = [[NSMenuItem alloc] initWithTitle:@"Open GIF Context" action:@selector(openContext) keyEquivalent:@"o"];
         item.target = self;
+        [menuItems addObject:item];
     }
     
-    [menu addItem:[NSMenuItem separatorItem]];
-    item = [menu addItemWithTitle:@"Download GIF" action:@selector(downloadGIF) keyEquivalent:@""];
+    [menuItems addObject:[NSMenuItem separatorItem]];
+    item = [[NSMenuItem alloc] initWithTitle:@"Download GIF" action:@selector(downloadGIF) keyEquivalent:@"s"];
     item.target = self;
+    [menuItems addObject:item];
     
-    [menu addItem:[NSMenuItem separatorItem]];
+    [menuItems addObject:[NSMenuItem separatorItem]];
     
     NSArray *sharingServiceIDs = @[NSSharingServiceNamePostOnFacebook, NSSharingServiceNamePostOnTwitter, NSSharingServiceNamePostOnSinaWeibo, NSSharingServiceNamePostOnTencentWeibo, NSSharingServiceNamePostOnLinkedIn, NSSharingServiceNameComposeEmail, NSSharingServiceNameComposeMessage];
-   
+    
     _sharingServices = [NSSharingService sharingServicesForItems:sharingServiceIDs];
     for (NSSharingService *currentService in self.sharingServices) {
         NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:currentService.title action:@selector(share:) keyEquivalent:@""];
         item.image = currentService.image;
         item.representedObject = currentService;
         item.target = self;
-        [menu addItem:item];
         
         currentService.delegate = self;
+        [menuItems addObject:item];
     }
+
+    return [NSArray arrayWithArray:menuItems];
     
-    return menu;
 }
 
 - (void)share:(NSMenuItem *)share
@@ -131,7 +145,7 @@
 - (void)copyMarkdown
 {
     [[NSPasteboard generalPasteboard] clearContents];
-    NSString *markdown = [NSString stringWithFormat:@"![gif](%@)", self.gif.downloadURL];
+    NSString *markdown = [NSString stringWithFormat:@"![%@](%@)", self.gif.sourceTitle, self.gif.downloadURL];
     [[NSPasteboard generalPasteboard] writeObjects:@[markdown]];
 }
 

@@ -69,14 +69,13 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 }
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
-    NSSearchField *searchField = (NSSearchField *)control;
+    NSTextField *searchField = (NSTextField *)control;
     [_searches insertObject:searchField.stringValue atIndex:0];
     [searchField setStringValue:@""];
 
     [_menuTableView reloadData];
     
     [_menuTableView setSelectedIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-
     return YES;
 }
 

@@ -170,9 +170,7 @@ CGFloat ORCellImageDimensions = 16;
 }
 
 - (void)_visuallySelectRowAtIndex:(NSUInteger)index toState:(BOOL)state {
-    ORSourceListItemView *cell = [self viewAtColumn:0 row:index makeIfNecessary:NO];
     ORSourceListRowView *row = [self rowViewAtRow:index makeIfNecessary:NO];
-    
     row.selected = state;
 }
 

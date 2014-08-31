@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
 
+@class ORGIFController;
 @interface ORWebViewDelegateStuff : NSObject 
 @property (weak) IBOutlet WebView *webView;
-
+@property (weak) IBOutlet ORGIFController *gifController;
 @end

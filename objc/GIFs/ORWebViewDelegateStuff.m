@@ -7,9 +7,12 @@
 //
 
 #import "ORWebViewDelegateStuff.h"
+#import "ORGIFRightClickMenuMaker.h"
+#import "ORGIFController.h"
 
 @implementation ORWebViewDelegateStuff {
     NSURL *currentAddress;
+    ORGIFRightClickMenuMaker *menuMaker;
 }
 
 - (void)awakeFromNib {
@@ -17,21 +20,13 @@
 }
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems {
-    if (element[WebElementImageURLKey]) {
-
-        currentAddress = element[WebElementImageURLKey];
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Copy URL" action:@selector(copyURL) keyEquivalent:@""];
-        item.target = self;
-
-        return @[item];
-    }
     
-    return defaultMenuItems;
-}
-
-- (void)copyURL {
-    [[NSPasteboard generalPasteboard] clearContents];
-    [[NSPasteboard generalPasteboard] writeObjects:@[currentAddress]];
+    GIF *gif = self.gifController.currentGIF;
+    if (gif) {
+        menuMaker = [[ORGIFRightClickMenuMaker alloc] initWithGIF:gif];
+        return menuMaker.menuItems;
+    }
+    return @[];
 }
 
 @end
