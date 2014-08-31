@@ -176,43 +176,10 @@
                             <menuItem isSeparatorItem="YES" id="214">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Find" id="218">
-                                <menu key="submenu" title="Find" id="220">
-                                    <items>
-                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="209">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="241"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find and Replace…" tag="12" keyEquivalent="f" id="534">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="535"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="208">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="487"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="213">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="488"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="221">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="489"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="210">
-                                            <connections>
-                                                <action selector="centerSelectionInVisibleArea:" target="-1" id="245"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
+                            <menuItem title="Find" keyEquivalent="f" id="tRa-yK-Ilp">
+                                <connections>
+                                    <action selector="makeSearchFieldFirstResponder:" target="611" id="rKS-gY-vLa"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Spelling and Grammar" id="216">
                                 <menu key="submenu" title="Spelling and Grammar" id="200">
@@ -852,7 +819,7 @@
                     </splitView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="590" y="-128"/>
+            <point key="canvasLocation" x="580" y="90"/>
         </window>
         <customObject id="494" customClass="ORAppDelegate">
             <connections>
@@ -867,6 +834,7 @@
                 <outlet property="gifViewController" destination="648" id="659"/>
                 <outlet property="mainSplitView" destination="644" id="675"/>
                 <outlet property="menuTableView" destination="574" id="662"/>
+                <outlet property="searchBar" destination="l1m-ld-uib" id="9VG-Mo-4ai"/>
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="jpQ-rv-8Na"/>
                 <outlet property="window" destination="371" id="670"/>
             </connections>

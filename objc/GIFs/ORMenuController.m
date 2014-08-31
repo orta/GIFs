@@ -325,4 +325,9 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     [self saveTumblr];
 }
 
+- (void)makeSearchFieldFirstResponder:(id)sender
+{
+    [self.searchBar becomeFirstResponder];
+}
+
 @end
