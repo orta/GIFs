@@ -104,11 +104,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GIFs/ORGIFController.m"
-            timestampString = "430283476.932893"
+            timestampString = "431143546.829358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270">
+            startingLineNumber = "237"
+            endingLineNumber = "237">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

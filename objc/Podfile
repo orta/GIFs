@@ -3,4 +3,4 @@ platform :osx, "10.9"
 pod 'StandardPaths', '~> 1.5.4'
 pod "GIFKit", :path => "../../GIFKit"
 # pod "JNWCollectionView"
-pod "JNWCollectionView", :path => "../../JNWCollectionView"
+#pod "JNWCollectionView", :path => "../../JNWCollectionView"

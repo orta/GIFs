@@ -64,7 +64,6 @@ CGFloat ORCellImageDimensions = 16;
     self.allowsMultipleSelection = NO;
     self.allowsEmptySelection = NO;
     self.enclosingScrollView.scrollerStyle = NSScrollerStyleOverlay;
-    self.selectionColor = [NSColor colorWithWhite:0.3 alpha:1];
     
     _currentSelectionIndex = NSNotFound;
 }
@@ -134,9 +133,9 @@ CGFloat ORCellImageDimensions = 16;
     return [item isKindOfClass:[ORSourceListItem class]];
 }
 
-- (void)selectTopItem
+- (void)selectDefaultItem
 {
-    NSIndexSet *set = [NSIndexSet indexSetWithIndex:2];
+    NSIndexSet *set = [NSIndexSet indexSetWithIndex:4];
     [self selectRowIndexes:set byExtendingSelection:NO];
 }
 
@@ -315,11 +314,13 @@ CGFloat ORCellImageDimensions = 16;
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
-    if (selected) {
-        self.backgroundColor = [NSColor purpleColor];
-    } else {
-        self.backgroundColor = [NSColor clearColor];
+
+    NSColor *color = selected ? [NSColor selectedMenuItemColor] : [ NSColor clearColor];
+    
+    for (NSView *view in self.subviews) {
+        view.layer.backgroundColor = color.CGColor;
     }
+    self.backgroundColor = color;
 }
 
 @end

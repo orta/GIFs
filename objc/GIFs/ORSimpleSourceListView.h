@@ -64,5 +64,5 @@
 
 
 - (void)setSelectedIndexPath:(NSIndexPath *)indexPath;
-- (void)selectTopItem;
+- (void)selectDefaultItem;
 @end

@@ -8,6 +8,7 @@
 
 #import "ORGIFController.h"
 #import <GIFKit/ORRedditSearchNetworkModel.h>
+#import <GIFKit/ORGiphyNetworkModel.h>
 #import <GIFKit/ORSubredditNetworkModel.h>
 #import "ORTumblrController.h"
 #import "ORStarredSourceController.h"
@@ -16,14 +17,13 @@
 #import "NSString+StringBetweenStrings.h"
 #import "ORMenuController.h"
 #import "GIFs-Swift.h"
-#import <JNWScrollView/JNWScrollView.h>
 #import "ORGIFRightClickMenuMaker.h"
 
 @interface GIF()
 @property (nonatomic, strong, readwrite) NSDate *dateAdded;
 @end
 
-@interface ORGIFController () <JNWCollectionViewDataSource, JNWCollectionViewDelegate, JNWCollectionViewGridLayoutDelegate>
+@interface ORGIFController ()
 
 @property(nonatomic, copy) NSURL *lastUserSelectedDirectory;
 @property(nonatomic, copy) ORGIFRightClickMenuMaker *menuMaker;
@@ -36,12 +36,12 @@
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
-    if([string rangeOfString:@"/r/"].location != NSNotFound){
+    if([string rangeOfString:@"/r/"].location != NSNotFound) {
         _currentSource = _redditController;
         [_redditController setSubreddit:string];
     }
 
-    else if([string rangeOfString:@".tumblr"].location != NSNotFound){
+    else if([string rangeOfString:@".tumblr"].location != NSNotFound) {
         _currentSource = _tumblrController;
         [_tumblrController setTumblrURL:string];
 
@@ -52,7 +52,8 @@
 
     } else {
         _currentSource = _searchController;
-        [_searchController setSearchQuery:string];
+        [_searchController setQuery:string];
+        [_searchController setAPIKey:@"dc6zaTOxFJmzC"];
     }
 
     [self getNextGIFs];
@@ -63,21 +64,10 @@
 - (void)awakeFromNib {
     self.webView.drawsBackground = NO;
     
-    [self.collectionView registerClass:GridViewCell.class forCellWithReuseIdentifier:@"gif"];
-    self.collectionView.backgroundColor = [NSColor colorWithCalibratedRed:0.955 green:0.950 blue:0.970 alpha:1.000];
-    
-    JNWCollectionViewGridLayout *layout = [[JNWCollectionViewGridLayout alloc] init];
-    layout.delegate = self;
-    layout.itemSize = CGSizeMake(90, 90);
-    layout.verticalSpacing = 20;
-    layout.itemHorizontalMargin = 20;
-
-    self.collectionView.collectionViewLayout = layout;
-    
-    [self.collectionView.clipView setPostsBoundsChangedNotifications:YES];
+    [self.collectionView.superview setPostsBoundsChangedNotifications:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)
-                                                 name:NSViewBoundsDidChangeNotification object:self.collectionView.clipView];
+                                                 name:NSViewBoundsDidChangeNotification object:self.collectionView.superview];
 
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 
@@ -123,13 +113,12 @@
     
 }
 
-
 - (void)myTableClipBoundsChanged:(NSNotification *)notification
 {
     NSClipView *clipView = [notification object];
     NSRect newClipBounds = [clipView bounds];
-    CGFloat height = _collectionView.contentSize.height;
-
+    CGFloat height = [(NSScrollView *)_collectionView.superview.superview contentSize].height;
+    
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
         [self getNextGIFs];
     }
@@ -137,7 +126,7 @@
 
 - (void)gotNewGIFs
 {
-    NSClipView *clipView = (NSClipView *)[_collectionView clipView];
+    NSClipView *clipView = (NSClipView *)[self.collectionView superview];
     
     CGFloat clipViewVisibleHeight = CGRectGetHeight(clipView.documentVisibleRect);
     CGFloat clipViewDocumentHeight = CGRectGetHeight([clipView.documentView bounds]);
@@ -154,46 +143,25 @@
     }];
 }
 
-- (NSEdgeInsets)collectionView:(JNWCollectionView *)collectionView layout:(JNWCollectionViewGridLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+-(NSUInteger)numberOfItemsInImageBrowser:(IKImageBrowserView *)aBrowser
 {
-    CGFloat totalWidth = collectionView.visibleSize.width - collectionViewLayout.itemHorizontalMargin;
-    NSUInteger numberOfColumns = totalWidth / (collectionViewLayout.itemSize.width + collectionViewLayout.itemHorizontalMargin);
-    CGFloat totalOffset = totalWidth - (numberOfColumns * (collectionViewLayout.itemSize.width + collectionViewLayout.itemHorizontalMargin ));
-    
-    return NSEdgeInsetsMake(0, totalOffset/2, 0, 0);
-}
-
-- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index
-{
-    return 60;
-}
-
-- (NSUInteger)collectionView:(JNWCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _currentSource.numberOfGifs;
 }
 
-- (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    GridViewCell *cell = (id)[collectionView dequeueReusableCellWithIdentifier:@"gif"];
-    if (cell) {
-        cell.backgroundColor = [NSColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
-
-        GIF *gif = [_currentSource gifAtIndex:indexPath.jnw_item];
-        [cell updateWithURL:gif.imageRepresentation];
-    }
-    return cell;
+-(id)imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index
+{
+    return [_currentSource gifAtIndex:index];
 }
 
-- (void)collectionView:(JNWCollectionView *)collectionView didRightClickItemAtIndexPath:(NSIndexPath *)indexPath
+-(void)imageBrowser:(IKImageBrowserView *)aBrowser cellWasRightClickedAtIndex:(NSUInteger)index withEvent:(NSEvent *)event
 {
-    NSEvent *event = collectionView.window.currentEvent;
-
     _menuMaker = [[ORGIFRightClickMenuMaker alloc] initWithGIF:self.currentGIF];
-    [NSMenu popUpContextMenu:self.menuMaker.menu withEvent:event forView:collectionView];
+    [NSMenu popUpContextMenu:self.menuMaker.menu withEvent:event forView:aBrowser];
 }
 
-- (void)collectionView:(JNWCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void) imageBrowserSelectionDidChange:(IKImageBrowserView *) aBrowser;
 {
-    NSInteger index = indexPath.jnw_item;
+    NSInteger index = aBrowser.selectionIndexes.firstIndex;
 
     if (index != NSNotFound) {
         GIF *gif = [_currentSource gifAtIndex:index];
@@ -206,7 +174,6 @@
         html = [html stringByReplacingOccurrencesOfString:@"{{OR_THUMB_URL}}" withString:[gif.imageRepresentation absoluteString]];
 		html = [html stringByReplacingOccurrencesOfString:@"{{OR_SOURCE_URL}}" withString:[gif.sourceURL absoluteString]];
 		html = [html stringByReplacingOccurrencesOfString:@"{{OR_SOURCE_TITLE}}" withString:gif.sourceTitle];
-
 
         self.gifTitle.stringValue = gif.sourceTitle;
         

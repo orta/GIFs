@@ -11,13 +11,12 @@
 #import "ORSimpleSourceListView.h"
 #import <WebKit/WebKit.h>
 #import <GIFKit/ORGIFSource.h>
-#import <JNWCollectionView/JNWCollectionView.h>
 
-@class GIF, ORSubredditNetworkModel, ORRedditSearchNetworkModel, ORTumblrController, ORStarredSourceController, ORMenuController;
+@class GIF, ORSubredditNetworkModel, ORGiphyNetworkModel, ORTumblrController, ORStarredSourceController, ORMenuController;
 
 @interface ORGIFController : NSObject
 
-@property (weak) IBOutlet JNWCollectionView *collectionView;
+@property (weak) IBOutlet IKImageBrowserView *collectionView;
 
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSButton *openGIFContextButton;
@@ -27,7 +26,7 @@
 @property (weak) IBOutlet NSProgressIndicator *downloadProgressIndicator;
 
 @property (weak) IBOutlet ORSubredditNetworkModel *redditController;
-@property (weak) IBOutlet ORRedditSearchNetworkModel *searchController;
+@property (weak) IBOutlet ORGiphyNetworkModel *searchController;
 @property (weak) IBOutlet ORTumblrController *tumblrController;
 @property (weak) IBOutlet ORStarredSourceController *starredController;
 @property (weak) IBOutlet ORMenuController *menuController;

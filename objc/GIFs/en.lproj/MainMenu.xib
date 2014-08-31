@@ -4,6 +4,7 @@
         <deployment defaultVersion="101000" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.8"/>
         <plugIn identifier="com.apple.WebKitIBPlugin" version="6206.8"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="6206.8"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -650,31 +651,31 @@
         </menu>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
-            <rect key="contentRect" x="801" y="515" width="960" height="489"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="801" y="515" width="960" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <value key="minSize" type="size" width="960" height="480"/>
             <view key="contentView" wantsLayer="YES" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="960" height="489"/>
+                <rect key="frame" x="0.0" y="1" width="960" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView autosaveName="SidePanel" dividerStyle="thin" vertical="YES" id="644">
-                        <rect key="frame" x="0.0" y="0.0" width="960" height="517"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="643">
-                                <rect key="frame" x="0.0" y="0.0" width="257" height="517"/>
+                                <rect key="frame" x="0.0" y="0.0" width="257" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="followsWindowActiveState" id="p81-j3-8KV" customClass="ORTintedVisualEffectView" customModule="GIFs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="489"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="500"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <customView id="LUc-5k-ItX" customClass="ORTintedView" customModule="GIFs" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="264" height="510"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="521"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button focusRingType="none" id="Bot-TJ-mSC">
-                                                        <rect key="frame" x="219" y="450" width="29" height="30"/>
+                                                        <rect key="frame" x="219" y="461" width="29" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="plus_active" imagePosition="only" alignment="center" alternateImage="plus_active" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Uq2-bx-VyO">
                                                             <behavior key="behavior" lightByContents="YES"/>
@@ -685,7 +686,7 @@
                                                         </connections>
                                                     </button>
                                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="573">
-                                                        <rect key="frame" x="0.0" y="0.0" width="258" height="404"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="258" height="415"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Saz-be-m64">
                                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
@@ -753,7 +754,7 @@
                                                         </tableHeaderView>
                                                     </scrollView>
                                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" id="l1m-ld-uib">
-                                                        <rect key="frame" x="20" y="412" width="224" height="22"/>
+                                                        <rect key="frame" x="20" y="423" width="224" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="0fb-VX-ycX">
                                                             <font key="font" metaFont="system"/>
@@ -771,33 +772,54 @@
                                 </subviews>
                             </customView>
                             <splitView autosaveName="ContentPanel" dividerStyle="thin" vertical="YES" id="558">
-                                <rect key="frame" x="258" y="0.0" width="702" height="517"/>
+                                <rect key="frame" x="258" y="0.0" width="702" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView id="559">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="517"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <customView id="3Hm-2c-Sf2" customClass="JNWCollectionView">
-                                                <rect key="frame" x="0.0" y="0.0" width="341" height="489"/>
+                                            <scrollView horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="500"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="648" id="rpI-8j-Acv"/>
-                                                    <outlet property="delegate" destination="648" id="3zZ-3b-HVm"/>
-                                                </connections>
-                                            </customView>
+                                                <clipView key="contentView" copiesOnScroll="NO" id="fNh-TT-LWc">
+                                                    <rect key="frame" x="1" y="1" width="166" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.4504426121711731" allowsMultipleSelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
+                                                            <rect key="frame" x="0.0" y="0.0" width="341" height="498"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <ikCellsStyle key="cellsStyleMask" none="YES"/>
+                                                            <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
+                                                            <size key="cellSize" width="100" height="100"/>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="648" id="R2c-hn-OVt"/>
+                                                                <outlet property="delegate" destination="648" id="gYc-75-5qt"/>
+                                                            </connections>
+                                                        </ikImageBrowserView>
+                                                    </subviews>
+                                                </clipView>
+                                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="yAj-61-BqU">
+                                                    <rect key="frame" x="1" y="80" width="166" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </scroller>
+                                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jGX-BH-EEs">
+                                                    <rect key="frame" x="167" y="1" width="15" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </scroller>
+                                            </scrollView>
                                         </subviews>
                                     </customView>
                                     <customView id="560">
-                                        <rect key="frame" x="342" y="0.0" width="360" height="517"/>
+                                        <rect key="frame" x="342" y="0.0" width="360" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="vCa-Fh-m5Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="360" height="488"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="471"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <webView id="Q2C-jo-PUZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="488"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="471"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
                                                             <nil key="identifier"/>
@@ -830,7 +852,7 @@
                     </splitView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="590" y="-133.5"/>
+            <point key="canvasLocation" x="590" y="-128"/>
         </window>
         <customObject id="494" customClass="ORAppDelegate">
             <connections>
@@ -852,7 +874,7 @@
         <customObject id="646" customClass="ORWebViewDelegateStuff"/>
         <customObject id="648" customClass="ORGIFController">
             <connections>
-                <outlet property="collectionView" destination="3Hm-2c-Sf2" id="Jxk-Uw-Vkb"/>
+                <outlet property="collectionView" destination="I0N-qp-qnV" id="NNw-35-1pX"/>
                 <outlet property="createSourcePopover" destination="QID-Px-0jj" id="6Jh-Hp-qK7"/>
                 <outlet property="gifTitle" destination="4JI-PY-tzw" id="YeE-rD-icf"/>
                 <outlet property="menuController" destination="611" id="WSU-qX-H0I"/>
@@ -864,7 +886,7 @@
                 <outlet property="webView" destination="Q2C-jo-PUZ" id="Lfl-gD-8pa"/>
             </connections>
         </customObject>
-        <customObject id="656" customClass="ORRedditSearchNetworkModel">
+        <customObject id="656" customClass="ORGiphyNetworkModel">
             <connections>
                 <outlet property="gifViewController" destination="648" id="660"/>
             </connections>
