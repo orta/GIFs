@@ -27,5 +27,6 @@
 - (IBAction)makeSearchFieldFirstResponder:(id)sender;
 - (void)addNewSubreddit:(NSString *)subreddit;
 - (void)addNewTumblr:(NSString *)tumblr;
+- (void)reloadFavourites;
 
 @end

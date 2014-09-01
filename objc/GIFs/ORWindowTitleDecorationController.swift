@@ -7,35 +7,48 @@
 //
 
 import Cocoa
+import AppKit
 
-class ORWindowTitleDecorationController: NSObject, NSSplitViewDelegate  {
+@objc public class ORWindowTitleDecorationController: NSObject, NSSplitViewDelegate  {
    
     @IBOutlet weak var mainWindow: NSWindow!
     @IBOutlet weak var titleBlurView: NSView!
     @IBOutlet weak var sourceListSuperView: NSView!
     @IBOutlet weak var fakeRightSplitter: NSView!
     @IBOutlet weak var rightColumnView: NSView!
-    
+
     @IBOutlet weak var itemTitle: NSTextField!
     @IBOutlet weak var sectionTitle: NSTextField!
     
     @IBOutlet weak var gridAndDetailSplitter: NSSplitView!
     
-    override func awakeFromNib() {
+    @IBOutlet weak var giphyLogo: NSImageView!
+    
+    @objc public func showGiphyLogo(show:ObjCBool) {
+        giphyLogo.hidden = !show.boolValue
+    }
+    
+    override public func awakeFromNib() {
         mainWindow.contentView.addSubview(self.titleBlurView);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToolbarBlur", name: NSWindowDidResizeNotification, object: self.mainWindow)
         updateToolbarBlur()
+
+        giphyLogo.animates = true
+        
+        var path = NSBundle.mainBundle().pathForResource("Giphy_API_Logo_ForWhite_Trans", ofType: "gif")
+        giphyLogo.image = NSImage(contentsOfFile: path)
+
     }
-    
-    func splitView(splitView: NSSplitView!, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        
+    public func splitView(splitView: NSSplitView!, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         return (splitView == self.fakeRightSplitter && dividerIndex == 0) ? 180 : proposedMinimumPosition;
     }
     
-    func splitView(splitView: NSSplitView!, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+    public func splitView(splitView: NSSplitView!, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         return (splitView == self.fakeRightSplitter && dividerIndex == 0) ? 240 : proposedMaximumPosition;
     }
     
-    func splitView(splitView: NSSplitView!, constrainSplitPosition proposedPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+    public func splitView(splitView: NSSplitView!, constrainSplitPosition proposedPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         self.updateToolbarBlur();
         return proposedPosition;
     }

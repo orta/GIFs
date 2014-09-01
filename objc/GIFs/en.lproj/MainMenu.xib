@@ -746,7 +746,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <scrollView horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
+                                            <scrollView wantsLayer="YES" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="500"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <clipView key="contentView" copiesOnScroll="NO" id="fNh-TT-LWc">
@@ -819,7 +819,7 @@
                     </splitView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="580" y="90"/>
+            <point key="canvasLocation" x="557" y="-62"/>
         </window>
         <customObject id="5dG-zb-LQd" customClass="AboutController" customModule="GIFs" customModuleProvider="target">
             <connections>
@@ -848,11 +848,7 @@
                 <outlet property="window" destination="371" id="670"/>
             </connections>
         </customObject>
-        <customObject id="703" customClass="ORTumblrController">
-            <connections>
-                <outlet property="gifController" destination="648" id="704"/>
-            </connections>
-        </customObject>
+        <customObject id="703" customClass="ORTumblrController"/>
         <customObject id="646" customClass="ORWebViewDelegateStuff">
             <connections>
                 <outlet property="gifController" destination="648" id="ixk-qq-1Yq"/>
@@ -871,13 +867,10 @@
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="1Sf-rc-4dp"/>
                 <outlet property="tumblrController" destination="703" id="705"/>
                 <outlet property="webView" destination="Q2C-jo-PUZ" id="Lfl-gD-8pa"/>
+                <outlet property="windowDecorationController" destination="ytP-yV-B2K" id="YIx-sv-BfZ"/>
             </connections>
         </customObject>
-        <customObject id="656" customClass="ORGiphyNetworkModel">
-            <connections>
-                <outlet property="gifViewController" destination="648" id="660"/>
-            </connections>
-        </customObject>
+        <customObject id="656" customClass="ORGiphyNetworkModel"/>
         <customObject id="r3L-u3-GrL" customClass="ORSourcesController">
             <connections>
                 <outlet property="menuController" destination="611" id="zhU-zs-wie"/>
@@ -896,6 +889,7 @@
         <customObject id="ytP-yV-B2K" customClass="ORWindowTitleDecorationController" customModule="GIFs" customModuleProvider="target">
             <connections>
                 <outlet property="fakeRightSplitter" destination="tqB-ht-k6W" id="5qF-Ki-GfG"/>
+                <outlet property="giphyLogo" destination="h6h-LA-nji" id="UZz-JT-pzI"/>
                 <outlet property="gridAndDetailSplitter" destination="558" id="QbP-Zj-LEv"/>
                 <outlet property="itemTitle" destination="4JI-PY-tzw" id="TTP-4f-EnS"/>
                 <outlet property="leftColumnView" destination="Q2C-jo-PUZ" id="C9Y-UE-3m9"/>
@@ -1032,7 +1026,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         </customView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Lq-MN-lOV" userLabel="Section Title">
-                            <rect key="frame" x="-2" y="17" width="38" height="17"/>
+                            <rect key="frame" x="178" y="17" width="38" height="17"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="GIF Section Title" id="PyN-or-816">
                                 <font key="font" metaFont="systemBold" size="14"/>
@@ -1040,6 +1034,11 @@
                                 <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </textFieldCell>
                         </textField>
+                        <imageView id="h6h-LA-nji">
+                            <rect key="frame" x="16" y="12" width="73" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Giphy_API_Logo_ForWhite_Trans" id="9qV-eI-Ph2"/>
+                        </imageView>
                     </subviews>
                 </visualEffectView>
                 <customView id="Dsb-ZB-DbG" customClass="ShadowView" customModule="GIFs" customModuleProvider="target">
@@ -1132,6 +1131,7 @@ how distracting it is to work on?</string>
     </objects>
     <resources>
         <image name="DotSlash" width="30" height="48"/>
+        <image name="Giphy_API_Logo_ForWhite_Trans" width="73" height="27"/>
         <image name="Github" width="53" height="53"/>
         <image name="TwitterBird" width="55" height="45"/>
         <image name="plus_active" width="20" height="19"/>

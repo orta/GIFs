@@ -24,6 +24,7 @@
 @end
 
 @interface ORGIFController ()
+@property(nonatomic, strong) IBOutlet ORWindowTitleDecorationController *windowDecorationController;
 
 @property(nonatomic, copy) NSURL *lastUserSelectedDirectory;
 @property(nonatomic, copy) ORGIFRightClickMenuMaker *menuMaker;
@@ -36,6 +37,8 @@
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
+    BOOL showGiphyLogo = NO;
+    
     if([string rangeOfString:@"/r/"].location != NSNotFound) {
         _currentSource = _redditController;
         [_redditController setSubreddit:string];
@@ -54,8 +57,10 @@
         _currentSource = _searchController;
         [_searchController setQuery:string];
         [_searchController setAPIKey:@"dc6zaTOxFJmzC"];
+        showGiphyLogo = YES;
     }
-
+    
+    [self.windowDecorationController showGiphyLogo:showGiphyLogo];
     [self getNextGIFs];
     [self.collectionView reloadData];
     self.sectionTitle.stringValue = string;
@@ -109,7 +114,7 @@
 
     [self saveStarred];
     [_starredController reloadData];
-    [_menuController.menuTableView reloadData];
+    [_menuController reloadFavourites];
     
 }
 

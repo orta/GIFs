@@ -8,15 +8,15 @@
 
 #import "ORSimpleSourceListView.h"
 
-CGFloat ORCellHeight = 36;
+CGFloat ORCellHeight = 44;
 CGFloat ORCellLeftPadding = 12;
 
-CGFloat ORCellTitleTopPadding = 8;
+CGFloat ORCellTitleLeftPadding = 42;
 
-CGFloat ORCellItemLeftPadding = 40;
-CGFloat ORCellItemTopPadding = 8;
+CGFloat ORCellItemLeftPadding = 16;
+CGFloat ORCellItemTopPadding = 14;
 
-CGFloat ORCellImageDimensions = 16;
+CGFloat ORCellImageDimensions = 32;
 
 @implementation NSIndexPath(SourceListExtension)
 + (NSIndexPath *)indexPathForRow:(NSInteger)row inSection:(NSInteger)section {
@@ -216,14 +216,14 @@ CGFloat ORCellImageDimensions = 16;
     [titleLabel setEditable:NO];
     [titleLabel setSelectable:NO];
     [[titleLabel cell] setBackgroundStyle:NSBackgroundStyleDark];
-    titleLabel.font = [NSFont systemFontOfSize:12];
+    titleLabel.font = [NSFont systemFontOfSize:13];
     titleLabel.textColor = self.textColor;
     return titleLabel;
 }
 
 - (NSTextField *)textFieldForHeaders {
     NSTextField *headerTextField = [self textFieldForItems];
-    headerTextField.font = [NSFont boldSystemFontOfSize:12];
+    headerTextField.font = [NSFont boldSystemFontOfSize:13];
     headerTextField.textColor = [NSColor colorWithCalibratedRed:0.455 green:0.442 blue:0.459 alpha:1.000];
     return headerTextField;
 }
@@ -259,12 +259,12 @@ CGFloat ORCellImageDimensions = 16;
 - (void)setFrame:(NSRect)frameRect {
     [super setFrame:frameRect];
     
-    self.textField.frame = CGRectMake(ORCellItemLeftPadding, -ORCellItemTopPadding, CGRectGetWidth(frameRect) - ORCellItemLeftPadding, ORCellHeight);
+    self.textField.frame = CGRectMake(ORCellTitleLeftPadding, -ORCellItemTopPadding, CGRectGetWidth(frameRect) - ORCellItemLeftPadding, ORCellHeight);
     self.imageView.frame = CGRectMake(ORCellLeftPadding, CGRectGetHeight(frameRect)/2 - ORCellImageDimensions/2, ORCellImageDimensions, ORCellImageDimensions);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor colorWithCalibratedRed:0.162 green:0.137 blue:0.160 alpha:1.000]set];
+    [[NSColor colorWithCalibratedRed:0.162 green:0.137 blue:0.160 alpha:0.300]set];
     NSRectFill(dirtyRect);
 }
 

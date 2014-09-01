@@ -79,6 +79,22 @@ NS_ENUM(NSUInteger, ORMenuTitle){
     return YES;
 }
 
+- (void)reloadFavourites
+{
+
+    NSTableRowView *row = [self.menuTableView rowViewAtRow:1 makeIfNecessary:NO];
+    NSTableCellView *cell = [row viewAtColumn:0];
+    
+    CABasicAnimation *anime = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    anime.fromValue = (id)[cell.layer backgroundColor];
+    anime.toValue = (id) [NSColor colorWithCalibratedRed:1.000 green:0.965 blue:0.722 alpha:1.000].CGColor;
+    anime.duration = 0.15;
+    anime.autoreverses = YES;
+
+    [cell.layer addAnimation:anime forKey:@"backgroundColor"];
+    cell.textField.stringValue = [self titleForStars];
+}
+
 #pragma mark -
 #pragma mark ORSourceListDataSource
 

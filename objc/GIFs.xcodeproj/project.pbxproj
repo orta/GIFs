@@ -35,6 +35,7 @@
 		60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */; };
 		60238D0116ACDACD002DC7CD /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 60238D0016ACDACC002DC7CD /* more.png */; };
 		60238D0416ACDD83002DC7CD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */; };
+		604CA0C319B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif in Resources */ = {isa = PBXBuildFile; fileRef = 604CA0C219B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif */; };
 		606F435219B3920F00FC5406 /* ORSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 606F435119B3920F00FC5406 /* ORSearchTextField.m */; };
 		606F436419B3A14800FC5406 /* about1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 606F435619B3A14800FC5406 /* about1.jpg */; };
 		606F436519B3A14800FC5406 /* about2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 606F435719B3A14800FC5406 /* about2.jpg */; };
@@ -54,7 +55,6 @@
 		6086FC5819AABAD4008F447D /* ORImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6086FC5719AABAD4008F447D /* ORImageBrowserView.m */; };
 		60C3CE3919A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C3CE3819A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m */; };
 		60C3CE3C19A5976200E7B88F /* ORGIFRightClickMenuMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C3CE3B19A5976200E7B88F /* ORGIFRightClickMenuMaker.m */; };
-		60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */; };
 		60CBFBDC183F11EE0067F321 /* ORStarredSourceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */; };
 		60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CBFBDE183F17BE0067F321 /* NSString+StringBetweenStrings.m */; };
 		60EC305A16A1FB7A00E9BE93 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC305816A1FB7A00E9BE93 /* Quartz.framework */; };
@@ -74,6 +74,7 @@
 		60F0496A19B3A708007D3EBE /* Github.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F0496719B3A708007D3EBE /* Github.png */; };
 		60F0496B19B3A708007D3EBE /* TwitterBird.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F0496819B3A708007D3EBE /* TwitterBird.png */; };
 		60F0496C19B3A708007D3EBE /* DotSlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F0496919B3A708007D3EBE /* DotSlash.png */; };
+		60F0496E19B3C2EF007D3EBE /* ORTintedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0496D19B3C2EF007D3EBE /* ORTintedVisualEffectView.swift */; };
 		60F849E61835CD05009A0F25 /* plus_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E41835CD05009A0F25 /* plus_active@2x.png */; };
 		60F849E71835CD05009A0F25 /* plus_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F849E51835CD05009A0F25 /* plus_active.png */; };
 		60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F849E91835CEB6009A0F25 /* ORDarkBlueView.m */; };
@@ -126,6 +127,7 @@
 		60238CF616ACBA0C002DC7CD /* SearchWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SearchWhite@2x.png"; sourceTree = "<group>"; };
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		604CA0C219B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Giphy_API_Logo_ForWhite_Trans.gif; sourceTree = "<group>"; };
 		606F435019B3920F00FC5406 /* ORSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSearchTextField.h; sourceTree = "<group>"; };
 		606F435119B3920F00FC5406 /* ORSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSearchTextField.m; sourceTree = "<group>"; };
 		606F435619B3A14800FC5406 /* about1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about1.jpg; sourceTree = "<group>"; };
@@ -150,7 +152,6 @@
 		60C3CE3A19A5976200E7B88F /* ORGIFRightClickMenuMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFRightClickMenuMaker.h; sourceTree = "<group>"; };
 		60C3CE3B19A5976200E7B88F /* ORGIFRightClickMenuMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFRightClickMenuMaker.m; sourceTree = "<group>"; };
 		60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFs-Bridging-Header.h"; sourceTree = "<group>"; };
-		60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORTintedVisualEffectView.swift; sourceTree = "<group>"; };
 		60CBFBDA183F11EE0067F321 /* ORStarredSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORStarredSourceController.h; sourceTree = "<group>"; };
 		60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORStarredSourceController.m; sourceTree = "<group>"; };
 		60CBFBDD183F17BE0067F321 /* NSString+StringBetweenStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringBetweenStrings.h"; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		60F0496719B3A708007D3EBE /* Github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Github.png; sourceTree = "<group>"; };
 		60F0496819B3A708007D3EBE /* TwitterBird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterBird.png; sourceTree = "<group>"; };
 		60F0496919B3A708007D3EBE /* DotSlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DotSlash.png; sourceTree = "<group>"; };
+		60F0496D19B3C2EF007D3EBE /* ORTintedVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORTintedVisualEffectView.swift; sourceTree = "<group>"; };
 		60F849E41835CD05009A0F25 /* plus_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_active@2x.png"; sourceTree = "<group>"; };
 		60F849E51835CD05009A0F25 /* plus_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_active.png; sourceTree = "<group>"; };
 		60F849E81835CEB6009A0F25 /* ORDarkBlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDarkBlueView.h; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		60F8BFF516AE1E6B00036609 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				604CA0C219B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif */,
 				60F0496619B3A6FC007D3EBE /* about-buttons */,
 				606F435519B3A05100FC5406 /* about-backgrounds */,
 				60FA43C419945A8C002CA538 /* shadow.png */,
@@ -375,7 +378,6 @@
 				60EC306516A2089500E9BE93 /* ORImageView.h */,
 				60EC306616A2089500E9BE93 /* ORImageView.m */,
 				60C618E21991AA0F00C6CEE1 /* GIFs-Bridging-Header.h */,
-				60C618E51991AA8000C6CEE1 /* ORTintedVisualEffectView.swift */,
 				60FA43C619945AC9002CA538 /* ShadowView.swift */,
 				6015B45F199C653800587A4E /* ORMiddleGreyView.h */,
 				6015B460199C653800587A4E /* ORMiddleGreyView.m */,
@@ -401,6 +403,7 @@
 				60CBFBDA183F11EE0067F321 /* ORStarredSourceController.h */,
 				60CBFBDB183F11EE0067F321 /* ORStarredSourceController.m */,
 				60FA43C21994548E002CA538 /* ORWindowTitleDecorationController.swift */,
+				60F0496D19B3C2EF007D3EBE /* ORTintedVisualEffectView.swift */,
 				606F437219B3A17100FC5406 /* AboutController.swift */,
 			);
 			name = Controllers;
@@ -526,6 +529,7 @@
 				60F0496C19B3A708007D3EBE /* DotSlash.png in Resources */,
 				60F849F01835D451009A0F25 /* tick@2x.png in Resources */,
 				60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */,
+				604CA0C319B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif in Resources */,
 				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
 				60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */,
 				60F0496A19B3A708007D3EBE /* Github.png in Resources */,
@@ -576,6 +580,7 @@
 			files = (
 				60C3CE3919A595D200E7B88F /* ORWindowDraggableVisualEffectsView.m in Sources */,
 				60FA43C719945AC9002CA538 /* ShadowView.swift in Sources */,
+				60F0496E19B3C2EF007D3EBE /* ORTintedVisualEffectView.swift in Sources */,
 				60ECD1C016A1FA6400A0FB7A /* main.m in Sources */,
 				6086FC5819AABAD4008F447D /* ORImageBrowserView.m in Sources */,
 				60FA43C31994548E002CA538 /* ORWindowTitleDecorationController.swift in Sources */,
@@ -586,7 +591,6 @@
 				6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
-				60C618E61991AA8000C6CEE1 /* ORTintedVisualEffectView.swift in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,
 				60CBFBDF183F17BE0067F321 /* NSString+StringBetweenStrings.m in Sources */,
 				60EC306C16A22CA300E9BE93 /* ORWebViewDelegateStuff.m in Sources */,
