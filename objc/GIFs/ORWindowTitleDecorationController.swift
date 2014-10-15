@@ -29,13 +29,13 @@ import AppKit
     }
     
     override public func awakeFromNib() {
-        mainWindow.contentView.addSubview(self.titleBlurView);
+        (mainWindow.contentView as NSView).addSubview(self.titleBlurView);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToolbarBlur", name: NSWindowDidResizeNotification, object: self.mainWindow)
         updateToolbarBlur()
 
         giphyLogo.animates = true
         
-        var path = NSBundle.mainBundle().pathForResource("Giphy_API_Logo_ForWhite_Trans", ofType: "gif")
+        var path = NSBundle.mainBundle().pathForResource("Giphy_API_Logo_ForWhite_Trans", ofType: "gif")!
         giphyLogo.image = NSImage(contentsOfFile: path)
 
     }

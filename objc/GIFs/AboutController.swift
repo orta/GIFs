@@ -37,23 +37,23 @@ class AboutController : NSObject {
     
     @IBAction func openGithub(sender: AnyObject) {
         let workspace = NSWorkspace.sharedWorkspace()
-        workspace.openURL(NSURL(string: "http://github.com/orta"));
+        workspace.openURL(NSURL(string: "http://github.com/orta")!);
     }
     
     @IBAction func openTwitter(sender: AnyObject) {
         let workspace = NSWorkspace.sharedWorkspace()
         if let tweetbot = workspace.fullPathForApplication("Tweetbot") {
-            workspace.openURL(NSURL(string: "tweetbot:///user_profile/orta"));
+            workspace.openURL(NSURL(string: "tweetbot:///user_profile/orta")!);
             
         } else {
-            workspace.openURL(NSURL(string: "http://twitter.com/orta"));
+            workspace.openURL(NSURL(string: "http://twitter.com/orta")!);
         }
         
     }
     
     @IBAction func openMySite(sender: AnyObject) {
         let workspace = NSWorkspace.sharedWorkspace()
-        workspace.openURL(NSURL(string: "http://orta.io"));
+        workspace.openURL(NSURL(string: "http://orta.io")!);
 
     }
 }

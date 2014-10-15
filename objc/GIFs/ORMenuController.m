@@ -285,12 +285,13 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
 - (NSArray *)defaultTumblrSources {
     return @[
-        [ORMenuItem itemWithName:@"whatshouldwecallme" address:@"http://whatshouldwecallme.tumblr.com"],
-        [ORMenuItem itemWithName:@"animalygifs" address:@"http://animalygifs.tumblr.com"],
-        [ORMenuItem itemWithName:@"gifmovie" address:@"http://gifmovie.tumblr.com"],
-        [ORMenuItem itemWithName:@"realitytvgifs" address:@"http://realitytvgifs.tumblr.com"],
-        [ORMenuItem itemWithName:@"mr gif" address:@"http://mr-gif.com"],
-        [ORMenuItem itemWithName:@"beerlabelsinmotion" address:@"http://beerlabelsinmotion.tumblr.com"]
+        [ORMenuItem itemWithName:@"What Should We Call Me" address:@"http://whatshouldwecallme.tumblr.com"],
+        [ORMenuItem itemWithName:@"Animaly GIFs" address:@"http://animalygifs.tumblr.com"],
+        [ORMenuItem itemWithName:@"GIF Movie" address:@"http://gifmovie.tumblr.com"],
+        [ORMenuItem itemWithName:@"Reality TV GIFs" address:@"http://realitytvgifs.tumblr.com"],
+        [ORMenuItem itemWithName:@"Mr GIF" address:@"http://mr-gif.com"],
+        [ORMenuItem itemWithName:@"Beer Labels In Motion" address:@"http://beerlabelsinmotion.tumblr.com"],
+        [ORMenuItem itemWithName:@"Bees & Bombs" address:@"http://beesandbombs.tumblr.com"]
     ];
 }
 
