@@ -67,8 +67,8 @@
 }
 
 - (void)awakeFromNib {
-    self.webView.drawsBackground = NO;
-    
+//    self.webView.drawsBackground = NO;
+
     [self.collectionView.superview setPostsBoundsChangedNotifications:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(myTableClipBoundsChanged:)

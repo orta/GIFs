@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		601465DF19F93F0500607614 /* GIFs-Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 601465DE19F93F0500607614 /* GIFs-Icon.icns */; };
 		6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015B460199C653800587A4E /* ORMiddleGreyView.m */; };
 		60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 60238CBD16ABC7C6002DC7CD /* gif_template.html */; };
 		60238CC916AC261A002DC7CD /* ORSimpleSourceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60238CC816AC261A002DC7CD /* ORSimpleSourceListView.m */; };
@@ -96,7 +97,6 @@
 		60FB8854183AE74600FC05CB /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8850183AE74600FC05CB /* close@2x.png */; };
 		60FB8855183AE74600FC05CB /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8851183AE74600FC05CB /* close.png */; };
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
-		E5C7A1CC18EB1B9900BC180A /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C7A1CB18EB1B9900BC180A /* Resources.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +112,7 @@
 /* Begin PBXFileReference section */
 		50FD7C5321E34413A5C61F2D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		548A6FADF62FAB86CD31C7D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = Pods/Pods.release.xcconfig; sourceTree = "<group>"; };
+		601465DE19F93F0500607614 /* GIFs-Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "GIFs-Icon.icns"; sourceTree = "<group>"; };
 		6015B45F199C653800587A4E /* ORMiddleGreyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMiddleGreyView.h; sourceTree = "<group>"; };
 		6015B460199C653800587A4E /* ORMiddleGreyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMiddleGreyView.m; sourceTree = "<group>"; };
 		60238CBD16ABC7C6002DC7CD /* gif_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gif_template.html; sourceTree = "<group>"; };
@@ -209,7 +210,6 @@
 		60FB8850183AE74600FC05CB /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		60FB8851183AE74600FC05CB /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		989A42A7F29C1B70ACA82A18 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = Pods/Pods.debug.xcconfig; sourceTree = "<group>"; };
-		E5C7A1CB18EB1B9900BC180A /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +297,7 @@
 		60ECD1B916A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
+				601465DE19F93F0500607614 /* GIFs-Icon.icns */,
 				60FB8859183AED9100FC05CB /* Misc */,
 				60FB8858183AED8400FC05CB /* Models */,
 				60FB8857183AED6A00FC05CB /* Controllers */,
@@ -340,7 +341,6 @@
 				60F0496619B3A6FC007D3EBE /* about-buttons */,
 				606F435519B3A05100FC5406 /* about-backgrounds */,
 				60FA43C419945A8C002CA538 /* shadow.png */,
-				E5C7A1CB18EB1B9900BC180A /* Resources.xcassets */,
 				60FB884E183AE74600FC05CB /* close_active@2x.png */,
 				60FB884F183AE74600FC05CB /* close_active.png */,
 				60FB8850183AE74600FC05CB /* close@2x.png */,
@@ -504,7 +504,6 @@
 				60F849E71835CD05009A0F25 /* plus_active.png in Resources */,
 				60F0496519B3A637007D3EBE /* about0.jpg in Resources */,
 				60FA43C519945A8C002CA538 /* shadow.png in Resources */,
-				E5C7A1CC18EB1B9900BC180A /* Resources.xcassets in Resources */,
 				606F436D19B3A14800FC5406 /* about10.jpg in Resources */,
 				60FB8852183AE74600FC05CB /* close_active@2x.png in Resources */,
 				60238CBE16ABC7C6002DC7CD /* gif_template.html in Resources */,
@@ -529,6 +528,7 @@
 				60F0496C19B3A708007D3EBE /* DotSlash.png in Resources */,
 				60F849F01835D451009A0F25 /* tick@2x.png in Resources */,
 				60F849FD1835DCF2009A0F25 /* tumblr_t.png in Resources */,
+				601465DF19F93F0500607614 /* GIFs-Icon.icns in Resources */,
 				604CA0C319B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif in Resources */,
 				60238CF716ACBA0C002DC7CD /* SearchWhite.png in Resources */,
 				60238CF816ACBA0C002DC7CD /* SearchWhite@2x.png in Resources */,
@@ -695,7 +695,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 989A42A7F29C1B70ACA82A18 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -716,7 +715,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 548A6FADF62FAB86CD31C7D9 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
