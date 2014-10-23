@@ -17,6 +17,7 @@ CGFloat ORCellItemLeftPadding = 16;
 CGFloat ORCellItemTopPadding = 14;
 
 CGFloat ORCellImageDimensions = 32;
+@class ORSimpleTextField;
 
 @implementation NSIndexPath(SourceListExtension)
 + (NSIndexPath *)indexPathForRow:(NSInteger)row inSection:(NSInteger)section {
@@ -25,6 +26,20 @@ CGFloat ORCellImageDimensions = 32;
 }
 - (NSUInteger)row { return [self indexAtPosition:0]; }
 - (NSUInteger)section { return [self indexAtPosition:1]; }
+@end
+
+
+
+@interface ORSimpleTextField : NSTextField
+@end
+
+@implementation ORSimpleTextField
+
+- (BOOL)allowsVibrancy
+{
+    return NO;
+}
+
 @end
 
 @implementation ORSourceListItem
@@ -209,8 +224,8 @@ CGFloat ORCellImageDimensions = 32;
     return [NSIndexPath indexPathForRow:indexRow inSection:indexSection];
 }
 
-- (NSTextField *)textFieldForItems {
-    NSTextField *titleLabel = [[NSTextField alloc] init];
+- (ORSimpleTextField *)textFieldForItems {
+    ORSimpleTextField *titleLabel = [[ORSimpleTextField alloc] init];
     [titleLabel setBezeled:NO];
     [titleLabel setDrawsBackground:NO];
     [titleLabel setEditable:NO];
@@ -289,12 +304,14 @@ CGFloat ORCellImageDimensions = 32;
     _rightImageActiveName = item.rightButtonActiveImage.copy;
     _sourceList = sourceList;
 
-    NSTextField *titleTextField = [sourceList textFieldForItems];
+    ORSimpleTextField *titleTextField = [sourceList textFieldForItems];
     titleTextField.lineBreakMode = NSLineBreakByTruncatingTail;
     self.textField = titleTextField;
     [self addSubview:titleTextField];
 
     self.textField.stringValue = item. title;
+    self.textField.drawsBackground = NO;
+    
     return self;
 }
 
@@ -319,6 +336,7 @@ CGFloat ORCellImageDimensions = 32;
         view.layer.backgroundColor = color.CGColor;
     }
     self.backgroundColor = color;
+
 }
 
 @end
