@@ -56,7 +56,7 @@
     } else {
         _currentSource = _searchController;
         [_searchController setQuery:string];
-        [_searchController setAPIKey:@"dc6zaTOxFJmzC"];
+        [_searchController setAPIKey:@"ToMjGpGi3Cu2VlM2xJ6"];
         showGiphyLogo = YES;
     }
     

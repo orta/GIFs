@@ -1,37 +1,37 @@
 PODS:
-  - AFNetworking (2.3.1):
+  - AFNetworking (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.3.1):
+  - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.3.1):
+  - AFNetworking/NSURLSession (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.3.1)
-  - AFNetworking/Security (2.3.1)
-  - AFNetworking/Serialization (2.3.1)
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
   - GIFKit (0.1.0):
     - AFNetworking (~> 2.3)
-  - StandardPaths (1.5.4)
+  - StandardPaths (1.5.6)
 
 DEPENDENCIES:
-  - GIFKit (from `../../GIFKit`)
+  - GIFKit (from `https://github.com/orta/GIFKit.git`)
   - StandardPaths (~> 1.5.4)
 
 EXTERNAL SOURCES:
   GIFKit:
-    :path: ../../GIFKit
+    :git: https://github.com/orta/GIFKit.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   GIFKit: 8eff65a70467e08a9a5ea2d7e425c0e90a7f392e
-  StandardPaths: 0e0c5da1aaf26140fcee9add0024bfe078c07d25
+  StandardPaths: 009f9c1699e26e46b2fb1a46b8bacc693d34460e
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4

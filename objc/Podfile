@@ -1,6 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :osx, "10.9"
 
 pod 'StandardPaths', '~> 1.5.4'
-pod "GIFKit", :path => "../../GIFKit"
+pod "GIFKit", :git => "https://github.com/orta/GIFKit.git"
 # pod "JNWCollectionView"
 #pod "JNWCollectionView", :path => "../../JNWCollectionView"

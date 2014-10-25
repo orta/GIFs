@@ -1,5 +1,2 @@
-gem "cocoapods", :path => "/Users/orta/dev/ruby/Rainforest/CocoaPods"
-gem "claide", :path => "/Users/orta/dev/ruby/Rainforest/CLAide"
-gem "cocoapods-core", :path => "/Users/orta/dev/ruby/Rainforest/Core"
-gem "xcodeproj", :path => "/Users/orta/dev/ruby/Rainforest/xcodeproj"
-gem "cocoapods-keys", :path => "/Users/orta/dev/ruby/cocoapods-keys"
+gem "cocoapods"
+gem "cocoapods-keys"

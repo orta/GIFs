@@ -14,3 +14,11 @@ Find GIFs, store your favourites, browse great sources. WIP but definitely useab
 Coming to the App Store for Yosemite release. No download link:
 
 ![Screenshot](https://raw.github.com/orta/GIFs/master/web/yosemite.png "screenshot")
+
+### Compiling
+
+```
+git clone https://github.com/orta/GIFs.git
+cd GIFs/objc
+make bootstrap
+```

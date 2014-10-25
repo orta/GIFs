@@ -708,7 +708,7 @@
                                                     <textField wantsLayer="YES" verticalHuggingPriority="750" id="Wti-54-4Ha" customClass="ORSearchTextField">
                                                         <rect key="frame" x="20" y="429" width="165" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" id="fLM-Fe-JgN">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Search" id="fLM-Fe-JgN">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -737,15 +737,15 @@
                                 <rect key="frame" x="539" y="0.0" width="421" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView wantsLayer="YES" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
+                                    <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
                                         <rect key="frame" x="0.0" y="0.0" width="423" height="500"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" copiesOnScroll="NO" id="fNh-TT-LWc">
                                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.39661490917205811" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="596" height="500"/>
+                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.39605903625488281" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="598" height="502"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <ikCellsStyle key="cellsStyleMask" none="YES"/>
                                                     <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
@@ -820,11 +820,11 @@
             <connections>
                 <outlet property="collectionView" destination="I0N-qp-qnV" id="NNw-35-1pX"/>
                 <outlet property="createSourcePopover" destination="QID-Px-0jj" id="6Jh-Hp-qK7"/>
-                <outlet property="gifTitle" destination="4JI-PY-tzw" id="YeE-rD-icf"/>
+                <outlet property="gifTitle" destination="0Lq-MN-lOV" id="erp-2o-x8Z"/>
                 <outlet property="menuController" destination="611" id="WSU-qX-H0I"/>
                 <outlet property="redditController" destination="616" id="655"/>
                 <outlet property="searchController" destination="656" id="657"/>
-                <outlet property="sectionTitle" destination="0Lq-MN-lOV" id="pqu-IT-VQ4"/>
+                <outlet property="sectionTitle" destination="4JI-PY-tzw" id="eK3-r2-vFA"/>
                 <outlet property="starredController" destination="rG7-qJ-RqL" id="1Sf-rc-4dp"/>
                 <outlet property="tumblrController" destination="703" id="705"/>
                 <outlet property="webView" destination="Q2C-jo-PUZ" id="Lfl-gD-8pa"/>
@@ -987,7 +987,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Lq-MN-lOV" userLabel="Section Title">
                             <rect key="frame" x="178" y="17" width="38" height="17"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="GIF Section Title" id="PyN-or-816">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" id="PyN-or-816" userLabel="GIF Section Title">
                                 <font key="font" metaFont="systemBold" size="14"/>
                                 <color key="textColor" red="0.29411764705882354" green="0.31764705882352939" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1009,7 +1009,6 @@
         </customView>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="YZb-Q0-KeP">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="-2277" y="195" width="720" height="480"/>
             <rect key="screenRect" x="-2560" y="-116" width="2560" height="1440"/>
             <view key="contentView" wantsLayer="YES" id="wqy-6c-xa4">
