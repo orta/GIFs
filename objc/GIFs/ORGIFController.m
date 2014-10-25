@@ -67,7 +67,8 @@
 }
 
 - (void)awakeFromNib {
-//    self.webView.drawsBackground = NO;
+    self.webView.drawsBackground = NO;
+    self.webView.frame = self.webView.superview.bounds;
 
     [self.collectionView.superview setPostsBoundsChangedNotifications:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self
