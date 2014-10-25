@@ -629,19 +629,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="643">
-                                <rect key="frame" x="0.0" y="0.0" width="210" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="215" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="followsWindowActiveState" id="p81-j3-8KV" customClass="ORTintedVisualEffectView" customModule="GIFs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="217" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="500"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <customView id="LUc-5k-ItX" customClass="ORTintedView" customModule="GIFs" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="217" height="521"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="222" height="521"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button focusRingType="none" id="Bot-TJ-mSC">
-                                                        <rect key="frame" x="172" y="461" width="29" height="30"/>
+                                                        <rect key="frame" x="177" y="461" width="29" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="plus_active" imagePosition="only" alignment="center" alternateImage="plus_active" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Uq2-bx-VyO">
                                                             <behavior key="behavior" lightByContents="YES"/>
@@ -652,7 +652,7 @@
                                                         </connections>
                                                     </button>
                                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="573">
-                                                        <rect key="frame" x="0.0" y="0.0" width="211" height="415"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="415"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Saz-be-m64">
                                                             <rect key="frame" x="0.0" y="17" width="158" height="349"/>
@@ -664,7 +664,7 @@
                                                                     <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                     <tableColumns>
-                                                                        <tableColumn width="208" minWidth="40" maxWidth="1000" id="578">
+                                                                        <tableColumn width="213" minWidth="40" maxWidth="1000" id="578">
                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -678,7 +678,7 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView identifier="menuItem" id="590">
-                                                                                    <rect key="frame" x="1" y="1" width="208" height="32"/>
+                                                                                    <rect key="frame" x="1" y="1" width="213" height="32"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 </tableCellView>
                                                                             </prototypeCellViews>
@@ -706,7 +706,7 @@
                                                         </tableHeaderView>
                                                     </scrollView>
                                                     <textField wantsLayer="YES" verticalHuggingPriority="750" id="Wti-54-4Ha" customClass="ORSearchTextField">
-                                                        <rect key="frame" x="20" y="429" width="165" height="22"/>
+                                                        <rect key="frame" x="20" y="429" width="170" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Search" id="fLM-Fe-JgN">
                                                             <font key="font" metaFont="system"/>
@@ -723,16 +723,21 @@
                                     </visualEffectView>
                                 </subviews>
                             </customView>
-                            <webView id="Q2C-jo-PUZ">
-                                <rect key="frame" x="211" y="0.0" width="327" height="500"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
-                                    <nil key="identifier"/>
-                                </webPreferences>
-                                <connections>
-                                    <outlet property="UIDelegate" destination="646" id="LgX-2W-osN"/>
-                                </connections>
-                            </webView>
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="BHj-yb-kH1">
+                                <rect key="frame" x="216" y="0.0" width="322" height="500"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <webView id="Q2C-jo-PUZ">
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                            <nil key="identifier"/>
+                                        </webPreferences>
+                                        <connections>
+                                            <outlet property="UIDelegate" destination="646" id="LgX-2W-osN"/>
+                                        </connections>
+                                    </webView>
+                                </subviews>
+                            </visualEffectView>
                             <customView id="559">
                                 <rect key="frame" x="539" y="0.0" width="421" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -744,12 +749,12 @@
                                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.39605903625488281" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
+                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.43643578886985779" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
                                                     <rect key="frame" x="0.0" y="0.0" width="598" height="502"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <ikCellsStyle key="cellsStyleMask" none="YES"/>
                                                     <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                                                    <size key="cellSize" width="100" height="100"/>
+                                                    <size key="cellSize" width="112" height="112"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="648" id="R2c-hn-OVt"/>
                                                         <outlet property="delegate" destination="648" id="gYc-75-5qt"/>

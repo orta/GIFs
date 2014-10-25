@@ -132,7 +132,9 @@ CGFloat ORCellImageDimensions = 32;
     } else {
         NSString *headerString = (NSString *)item;
         result = [[ORSourceListHeaderView alloc] initWithTitle:headerString sourceList:self];
-        result.imageView.image = [self.sourceListDataSource sourceList:self imageForHeaderInSection:row];
+
+        NSIndexPath *indexPath = [self rowToIndexPath:row];
+        result.imageView.image = [self.sourceListDataSource sourceList:self imageForHeaderInSection:indexPath.section];
     }
 
     return result;
@@ -279,7 +281,12 @@ CGFloat ORCellImageDimensions = 32;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor colorWithCalibratedRed:0.162 green:0.137 blue:0.160 alpha:0.300]set];
+    if (self.allowsVibrancy) {
+        [[NSColor colorWithCalibratedRed:0.162 green:0.137 blue:0.160 alpha:0.300] set];
+    } else {
+        [[NSColor colorWithCalibratedRed:0.264 green:0.229 blue:0.257 alpha:1.000] set];
+    }
+
     NSRectFill(dirtyRect);
 }
 

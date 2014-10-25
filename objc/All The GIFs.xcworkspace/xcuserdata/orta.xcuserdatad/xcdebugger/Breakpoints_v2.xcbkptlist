@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/GIFKit/Pod/Classes/ORSubredditNetworkModel.m"
-            timestampString = "428566997.09856"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-setSubreddit:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GIFs/GIF.m"
             timestampString = "428567684.877624"
             startingColumnNumber = "9223372036854775807"
@@ -128,11 +112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GIFs/ORSimpleSourceListView.m"
-            timestampString = "435801282.557796"
+            timestampString = "435963760.205275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "-setSelected:"
             landmarkType = "5">
          </BreakpointContent>
