@@ -105,10 +105,10 @@ NS_ENUM(NSUInteger, ORMenuTitle){
             return [NSImage imageNamed:@"SearchWhite"];
             
         case ORMenuTitleReddit:
-            return [NSImage imageNamed:@"tumblr_t_active"];
+            return [NSImage imageNamed:@"RedditWhite"];
 
         case ORMenuTitleTumblr:
-            return [NSImage imageNamed:@"RedditWhite"];
+            return [NSImage imageNamed:@"tumblr_t_active"];
 
         case ORMenuTitleStar:
             return [NSImage imageNamed:@"tick"];
