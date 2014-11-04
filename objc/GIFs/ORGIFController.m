@@ -150,6 +150,11 @@
     [_currentSource getNextGIFs:^(NSArray *newGIFs, NSError *error) {
         [self.collectionView reloadData];
         [self gotNewGIFs];
+
+        if (!self.currentGIF){
+            NSIndexSet *set = [NSIndexSet indexSetWithIndex:0];
+            [self.collectionView setSelectionIndexes:set byExtendingSelection:YES];
+        }
     }];
 }
 
