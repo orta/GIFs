@@ -274,8 +274,7 @@ NS_ENUM(NSUInteger, ORMenuTitle){
         [ORMenuItem itemWithName:@"/r/ReactionGIFs" address:@"reactiongifs"],
         [ORMenuItem itemWithName:@"/r/GIFs" address:@"gifs"],
         [ORMenuItem itemWithName:@"/r/GIF" address:@"gif"],
-        [ORMenuItem itemWithName:@"/r/aww" address:@"aww"],
-        [ORMenuItem itemWithName:@"/r/pugs" address:@"pugs"],
+        [ORMenuItem itemWithName:@"/r/aww_gifs" address:@"aww_gifs"],
         [ORMenuItem itemWithName:@"/r/Cinemagraphs" address:@"cinemagraphs"],
         [ORMenuItem itemWithName:@"/r/chemicalreactiongifs" address:@"chemicalreactiongifs"],
         [ORMenuItem itemWithName:@"/r/perfectloops" address:@"perfectloops"],
@@ -334,11 +333,13 @@ NS_ENUM(NSUInteger, ORMenuTitle){
 
 - (void)addNewSubreddit:(NSString *)subreddit {
     NSString *address = [subreddit stringByReplacingOccurrencesOfString:@"/r/" withString:@""];
+    address = [address stringByReplacingOccurrencesOfString:@"http://reddit.com/" withString:@""];
+    address = [address stringByReplacingOccurrencesOfString:@"/" withString:@""];
 
     ORMenuItem *item =[ORMenuItem itemWithName:subreddit address:address];
     [_redditSources addObject:item];
     [self.menuTableView reloadData];
-    [self saveTumblr];
+    [self saveReddit];
 }
 
 - (void)makeSearchFieldFirstResponder:(id)sender
