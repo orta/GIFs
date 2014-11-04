@@ -17,11 +17,13 @@ PODS:
   - AFNetworking/Reachability (2.4.1)
   - AFNetworking/Security (2.4.1)
   - AFNetworking/Serialization (2.4.1)
+  - CNSplitView (0.1.9)
   - GIFKit (0.1.0):
     - AFNetworking (~> 2.3)
   - StandardPaths (1.5.6)
 
 DEPENDENCIES:
+  - CNSplitView
   - GIFKit (from `https://github.com/orta/GIFKit.git`)
   - StandardPaths (~> 1.5.4)
 
@@ -31,6 +33,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  CNSplitView: 7c1517d1249cefb7208ee29cb53f3749c809dd96
   GIFKit: 8eff65a70467e08a9a5ea2d7e425c0e90a7f392e
   StandardPaths: 009f9c1699e26e46b2fb1a46b8bacc693d34460e
 

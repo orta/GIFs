@@ -34,6 +34,8 @@
     NSObject <ORGIFSource> *_currentSource;
     NSSet *_starred;
     NSString *_gifPath;
+
+    CALayer *_headerLayer;
 }
 
 - (void)getGIFsFromSourceString:(NSString *)string {
@@ -128,6 +130,7 @@
     if (CGRectGetMinY(newClipBounds) + CGRectGetHeight(newClipBounds) < height + 20) {
         [self getNextGIFs];
     }
+
 }
 
 - (void)gotNewGIFs
@@ -139,6 +142,7 @@
     if (clipViewVisibleHeight == clipViewDocumentHeight) {
         [self getNextGIFs];
     }
+
 }
 
 - (void)getNextGIFs
@@ -194,6 +198,26 @@
         }
     }
 }
+//
+//    - (NSUInteger) numberOfGroupsInImageBrowser:(IKImageBrowserView *) aBrowser
+//    {
+//        return 1;
+//    }
+//
+//    - (NSDictionary *) imageBrowser:(IKImageBrowserView *)aBrowser groupAtIndex:(NSUInteger)index
+//    {
+//        CALayer *headerLayer = [CALayer layer];
+//        headerLayer.bounds = CGRectMake(0.0, 0.0, 1.0, 70.0);
+//        headerLayer.backgroundColor = [NSColor whiteColor].CGColor;
+//
+//        NSValue *range = [NSValue valueWithRange:NSMakeRange(0, [self numberOfItemsInImageBrowser:aBrowser])];
+//
+//        return @{
+//             IKImageBrowserGroupStyleKey: @(IKGroupDisclosureStyle),
+//             IKImageBrowserGroupHeaderLayer: headerLayer,
+//             IKImageBrowserGroupRangeKey: range
+//         };
+//    }
 
 - (NSString *)gifFilePath {
     return _gifPath;

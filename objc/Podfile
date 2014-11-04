@@ -6,3 +6,4 @@ pod 'StandardPaths', '~> 1.5.4'
 pod "GIFKit", :git => "https://github.com/orta/GIFKit.git"
 # pod "JNWCollectionView"
 #pod "JNWCollectionView", :path => "../../JNWCollectionView"
+pod 'CNSplitView'

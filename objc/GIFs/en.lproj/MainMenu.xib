@@ -742,19 +742,19 @@
                                 <rect key="frame" x="539" y="0.0" width="421" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
-                                        <rect key="frame" x="0.0" y="0.0" width="423" height="500"/>
+                                    <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7qI-fH-2Qx">
+                                        <rect key="frame" x="0.0" y="0.0" width="423" height="451"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" copiesOnScroll="NO" id="fNh-TT-LWc">
                                             <rect key="frame" x="1" y="1" width="166" height="79"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.43643578886985779" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="598" height="502"/>
+                                                <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.30000001192092896" allowsMultipleSelection="NO" allowsEmptySelection="NO" id="I0N-qp-qnV" customClass="ORImageBrowserView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="855" height="874"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <ikCellsStyle key="cellsStyleMask" none="YES"/>
                                                     <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                                                    <size key="cellSize" width="112" height="112"/>
+                                                    <size key="cellSize" width="76" height="76"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="648" id="R2c-hn-OVt"/>
                                                         <outlet property="delegate" destination="648" id="gYc-75-5qt"/>

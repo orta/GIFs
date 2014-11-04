@@ -52,6 +52,4 @@ static CGFloat const ORImageBrowserMargin = 3;
     return [super layerForType:type];
 }
 
-
-
 @end
