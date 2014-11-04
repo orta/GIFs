@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     RubyInline (3.12.3)
       ZenTest (~> 4.3)
