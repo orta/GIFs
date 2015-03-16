@@ -5,15 +5,12 @@
 2012's word of the year: GIF.
 --------
 
-Find GIFs, store your favourites, browse great sources. WIP but definitely useable.
-[Download app](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip)
-
-
 ### Release
 
-Coming to the App Store for Yosemite release. No download link:
+Coming to the App Store for Yosemite release. Download link below
 
 ![Screenshot](https://raw.github.com/orta/GIFs/master/web/yosemite.png "screenshot")
+[Download app](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip)
 
 ### Compiling
 
