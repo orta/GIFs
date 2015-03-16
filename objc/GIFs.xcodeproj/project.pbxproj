@@ -128,6 +128,7 @@
 		60238D0016ACDACC002DC7CD /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		60238D0316ACDD82002DC7CD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		604CA0C219B3F3A000028695 /* Giphy_API_Logo_ForWhite_Trans.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Giphy_API_Logo_ForWhite_Trans.gif; sourceTree = "<group>"; };
+		6051073F1A772E1700E94DB6 /* GIFs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GIFs.entitlements; sourceTree = "<group>"; };
 		606F435019B3920F00FC5406 /* ORSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSearchTextField.h; sourceTree = "<group>"; };
 		606F435119B3920F00FC5406 /* ORSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSearchTextField.m; sourceTree = "<group>"; };
 		606F435619B3A14800FC5406 /* about1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about1.jpg; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 		60ECD1B916A1FA6400A0FB7A /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
+				6051073F1A772E1700E94DB6 /* GIFs.entitlements */,
 				601465DE19F93F0500607614 /* GIFs-Icon.icns */,
 				60FB8859183AED9100FC05CB /* Misc */,
 				60FB8858183AED8400FC05CB /* Models */,
@@ -471,7 +473,12 @@
 				ORGANIZATIONNAME = "Orta Therox";
 				TargetAttributes = {
 					60ECD1AE16A1FA6400A0FB7A = {
-						DevelopmentTeam = NETCV7NTVF;
+						DevelopmentTeam = GN257VN844;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -704,6 +711,8 @@
 			baseConfigurationReference = 9E6765FAE8ACE68D1156A26E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GIFs/GIFs.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -724,6 +733,8 @@
 			baseConfigurationReference = D7BC7B7FBE60CF0BF3B073BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GIFs/GIFs.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: We Go To 12 (GN257VN844)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -732,6 +743,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = GIFs;
+				PROVISIONING_PROFILE = "e188221f-9fc1-4414-9cd8-79be0b918637";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "GIFs/GIFs-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;

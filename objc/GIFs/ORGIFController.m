@@ -18,6 +18,7 @@
 #import "ORMenuController.h"
 #import "GIFs-Swift.h"
 #import "ORGIFRightClickMenuMaker.h"
+#import <CocoaPods-Keys/GIFsKeys.h>
 
 @interface GIF()
 @property (nonatomic, strong, readwrite) NSDate *dateAdded;
@@ -58,7 +59,7 @@
     } else {
         _currentSource = _searchController;
         [_searchController setQuery:string];
-        [_searchController setAPIKey:@"ToMjGpGi3Cu2VlM2xJ6"];
+        [_searchController setAPIKey:[GIFsKeys new].giphyAPIKey];
         showGiphyLogo = YES;
     }
     

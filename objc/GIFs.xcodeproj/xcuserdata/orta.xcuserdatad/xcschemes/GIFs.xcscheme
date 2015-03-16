@@ -49,7 +49,7 @@
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
             BuildableName = "GIFs.app"
             BlueprintName = "GIFs"
-            ReferencedContainer = "container:All The GIFs.xcodeproj">
+            ReferencedContainer = "container:GIFs.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,7 +62,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
@@ -80,7 +81,8 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "60ECD1AE16A1FA6400A0FB7A"
