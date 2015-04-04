@@ -139,7 +139,7 @@
 - (void)copyURL
 {
     [[NSPasteboard generalPasteboard] clearContents];
-    [[NSPasteboard generalPasteboard] writeObjects:@[self.gif.downloadURL]];
+    [[NSPasteboard generalPasteboard] writeObjects:@[self.gif.downloadURL.absoluteString]];
 }
 
 - (void)copyMarkdown
