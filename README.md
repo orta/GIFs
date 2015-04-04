@@ -1,10 +1,6 @@
 2012's word of the year: GIF.
 --------
 
-### Release
-
-Coming to the App Store for Yosemite release. Download link below
-
 ![Screenshot](https://raw.github.com/orta/GIFs/master/web/yosemite.png "screenshot")
 
 ### Download
