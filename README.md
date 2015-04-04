@@ -6,7 +6,10 @@
 Coming to the App Store for Yosemite release. Download link below
 
 ![Screenshot](https://raw.github.com/orta/GIFs/master/web/yosemite.png "screenshot")
-[Download app](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip)
+
+### Download
+
+You can grab the app from [Mac App Store](https://itunes.apple.com/us/app/gifs/id961850017?l=en&mt=12) (it's free! 🎉) or download directly [here](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip).
 
 ### Compiling
 
