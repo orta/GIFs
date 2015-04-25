@@ -621,7 +621,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="215" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="followsWindowActiveState" id="p81-j3-8KV" customClass="ORTintedVisualEffectView" customModule="GIFs" customModuleProvider="target">
+                                    <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="followsWindowActiveState" id="p81-j3-8KV">
                                         <rect key="frame" x="0.0" y="0.0" width="222" height="500"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
