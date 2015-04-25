@@ -23,7 +23,39 @@ static CGFloat const ORImageBrowserMargin = 3;
 
 - (NSRect)imageFrame
 {
-    return self.frame;
+    NSRect imageFrame = [super imageFrame];
+    
+    if (NSIsEmptyRect(imageFrame)) {
+        return NSZeroRect;
+    }
+    
+    CGFloat aspectRatio =  imageFrame.size.width / imageFrame.size.height;
+    
+    if (aspectRatio == 1.0f) {
+        return imageFrame;
+    }
+    
+    NSRect containerFrame = [self imageContainerFrame];
+    
+    if (NSIsEmptyRect(containerFrame)) {
+        return NSZeroRect;
+    }
+    
+    CGFloat containerAspectRatio = containerFrame.size.width / containerFrame.size.height;
+    
+    if (containerAspectRatio > aspectRatio) {
+        imageFrame.size.height = containerFrame.size.height;
+        imageFrame.origin.y = containerFrame.origin.y;
+        imageFrame.size.width = imageFrame.size.height * aspectRatio;
+        imageFrame.origin.x = containerFrame.origin.x + (containerFrame.size.width - imageFrame.size.width) / 2.0f;
+    } else {
+        imageFrame.size.width = containerFrame.size.width;
+        imageFrame.origin.x = containerFrame.origin.x;
+        imageFrame.size.height = imageFrame.size.width / aspectRatio;
+        imageFrame.origin.y = containerFrame.origin.y + (containerFrame.size.height - imageFrame.size.height) / 2.0f;
+    }
+    
+    return imageFrame;
 }
 
 - (NSRect) selectionFrame
