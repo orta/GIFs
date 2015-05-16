@@ -17,6 +17,13 @@ static CGFloat const ORImageBrowserMargin = 3;
     return [[ORImageBrowserCell alloc] init];
 }
 
+- (void)copy:(id)sender
+{
+    NSURL *url = [self.gifDelegate URLForCurrentGIF];
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] writeObjects:@[url.absoluteString]];
+}
+
 @end
 
 @implementation ORImageBrowserCell

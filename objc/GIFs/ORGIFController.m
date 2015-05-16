@@ -245,4 +245,9 @@
     }
 }
 
+- (NSURL *)URLForCurrentGIF
+{
+    return self.currentGIF.downloadURL;
+}
+
 @end

@@ -747,6 +747,7 @@
                                                     <connections>
                                                         <outlet property="dataSource" destination="648" id="R2c-hn-OVt"/>
                                                         <outlet property="delegate" destination="648" id="gYc-75-5qt"/>
+                                                        <outlet property="gifDelegate" destination="648" id="EnS-5b-f5m"/>
                                                     </connections>
                                                 </ikImageBrowserView>
                                             </subviews>
