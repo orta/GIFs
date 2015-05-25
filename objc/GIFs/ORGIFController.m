@@ -245,9 +245,21 @@
     }
 }
 
+#pragma mark - ORImageBrowserViewDelegate
+
 - (NSURL *)URLForCurrentGIF
 {
-    return self.currentGIF.downloadURL;
+    return [self.currentGIF downloadURL];
+}
+
+- (NSURL *)URLForCurrentGIFContext
+{
+    return [self.currentGIF sourceURL];
+}
+
+- (NSString *)sourceTitleForCurrentGIF
+{
+    return self.currentGIF.sourceTitle;
 }
 
 @end
