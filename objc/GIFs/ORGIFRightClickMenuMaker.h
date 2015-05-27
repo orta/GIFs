@@ -11,8 +11,6 @@
 - (instancetype)initWithGIF:(GIF *)gif;
 @property (readonly, nonatomic, strong) GIF *gif;
 
-@property(nonatomic, copy) NSURL *lastUserSelectedDirectory;
-
 - (NSMenu *)menu;
 - (NSArray *)menuItems;
 @end

@@ -11,6 +11,8 @@
 @protocol ORImageBrowserViewDelegate <NSObject>
 
 - (NSURL *)URLForCurrentGIF;
+- (NSURL *)URLForCurrentGIFContext;
+- (NSString *)sourceTitleForCurrentGIF;
 
 @end
 
