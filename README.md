@@ -5,7 +5,7 @@
 
 ### Download
 
-You can grab the app from [Mac App Store](https://itunes.apple.com/us/app/gifs/id961850017?l=en&mt=12) (it's free! 🎉) or download directly [here](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip).
+You can grab the app from [Mac App Store](https://itunes.apple.com/us/app/gifs/id961850017?l=en&mt=12) (it's free! 🎉) or download the latest version directly [here](https://raw.github.com/orta/GIFs/master/web/GIFs.app.zip).
 
 ### Compiling
 
