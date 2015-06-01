@@ -7,7 +7,7 @@
 //
 
 #import "ORGIFRightClickMenuMaker.h"
-#import <AFNetworking/AFNetworking.h>
+#import "ORGIFActionsController.h"
 
 @interface ORGIFRightClickMenuMaker()<NSSharingServiceDelegate>
 @property (readonly, nonatomic, copy) NSArray *sharingServices;
@@ -92,73 +92,28 @@
 
 - (void)downloadGIF
 {
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    savePanel.allowedFileTypes = @[@"gif"];
-    savePanel.canCreateDirectories = YES;
-    savePanel.allowsOtherFileTypes = NO;
-    savePanel.canSelectHiddenExtension = YES;
-    
-    NSString *downloadDirectoryPath = [ NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES) firstObject];
-    NSURL *downloadDirectoryURL = [NSURL fileURLWithPath:downloadDirectoryPath];
-    savePanel.directoryURL = self.lastUserSelectedDirectory ? self.lastUserSelectedDirectory : downloadDirectoryURL;
-    savePanel.nameFieldStringValue = self.gif.downloadURL.lastPathComponent;
-    
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:self.gif.downloadURL];
-    AFHTTPRequestOperation *afhttpRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-    [afhttpRequestOperation
-     setDownloadProgressBlock:^(NSUInteger bytesRead, long long int totalBytesRead, long long int totalBytesExpectedToRead) {
-//         [self.downloadProgressIndicator setIndeterminate:NO];
-//         double doubleValue = (double) totalBytesRead / totalBytesExpectedToRead * 100.0;
-//         [self.downloadProgressIndicator setDoubleValue:doubleValue];
-     }];
-    
-    [savePanel beginWithCompletionHandler:^(NSInteger result) {
-        if (result) {
-            self.lastUserSelectedDirectory = savePanel.directoryURL;
-//            [self.downloadProgressIndicator setHidden:NO];
-            
-            [afhttpRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, NSData * responseObject) {
-                BOOL success = [responseObject writeToURL:savePanel.URL atomically:YES];
-                if (!success) {
-                    NSLog(@"Failed to write file");
-                }
-//                [self.downloadProgressIndicator stopAnimation:nil];
-//                [self.downloadProgressIndicator setHidden:YES];
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error)
-             {
-                 NSLog(@"Fetch failed\n %@ \n %@", operation, error);
-             }];
-            
-//            [self.downloadProgressIndicator startAnimation:nil];
-            [afhttpRequestOperation start];
-        }
-    }];
+    [ORGIFActionsController downloadGIFWithURL:self.gif.downloadURL completion:nil];
 }
 
 - (void)copyURL
 {
-    [[NSPasteboard generalPasteboard] clearContents];
-    [[NSPasteboard generalPasteboard] writeObjects:@[self.gif.downloadURL.absoluteString]];
+    [ORGIFActionsController copyGIFDownloadURLToClipboard:self.gif.downloadURL];
 }
 
 - (void)copyMarkdown
 {
-    [[NSPasteboard generalPasteboard] clearContents];
-    NSString *markdown = [NSString stringWithFormat:@"![%@](%@)", self.gif.sourceTitle, self.gif.downloadURL];
-    [[NSPasteboard generalPasteboard] writeObjects:@[markdown]];
+    [ORGIFActionsController copyGIFMarkdownToClipboardWithSourceTitle:self.gif.sourceTitle
+                                                          downloadURL:self.gif.downloadURL];
 }
 
 - (void)openInBrowser
 {
-    [[NSWorkspace sharedWorkspace] openURL:self.gif.downloadURL];
+    [ORGIFActionsController openGIFDownloadURLInBrowser:self.gif.downloadURL];
 }
 
 - (void)openContext
 {
-    [[NSWorkspace sharedWorkspace] openURL:self.gif.sourceURL];
+    [ORGIFActionsController openGIFContextURLInBrowser:self.gif.sourceURL];
 }
-
-
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ORImageBrowserView.h"
+#import "ORGIFActionsController.h"
 
 static CGFloat const ORImageBrowserMargin = 3;
 
@@ -15,6 +16,31 @@ static CGFloat const ORImageBrowserMargin = 3;
 - (IKImageBrowserCell *) newCellForRepresentedItem:(id) cell
 {
     return [[ORImageBrowserCell alloc] init];
+}
+
+- (void)copy:(id)sender
+{
+    [ORGIFActionsController copyGIFDownloadURLToClipboard:[self.gifDelegate URLForCurrentGIF]];
+}
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    if (theEvent.modifierFlags & NSCommandKeyMask) {
+        if ([theEvent.characters isEqualToString:@"b"]) { // Command+b - Open in browser
+            [ORGIFActionsController openGIFDownloadURLInBrowser:[self.gifDelegate URLForCurrentGIF]];
+        } else if ([theEvent.characters isEqualToString:@"o"]) { // Command+o - Open GIF context in browser
+            [ORGIFActionsController openGIFContextURLInBrowser:[self.gifDelegate URLForCurrentGIFContext]];
+        } else if ([theEvent.characters isEqualToString:@"s"]) { // Command+s - Save GIF to disk
+            [ORGIFActionsController downloadGIFWithURL:[self.gifDelegate URLForCurrentGIF] completion:nil];
+        }
+    }
+    
+    if ((theEvent.modifierFlags & NSCommandKeyMask) && (theEvent.modifierFlags & NSShiftKeyMask)) {
+        if ([theEvent.characters isEqualToString:@"c"]) { // Command+Shift+c - Copy GIF markdown to clipboard
+            [ORGIFActionsController copyGIFMarkdownToClipboardWithSourceTitle:[self.gifDelegate sourceTitleForCurrentGIF]
+                                                                  downloadURL:[self.gifDelegate URLForCurrentGIF]];
+        }
+    }
 }
 
 @end

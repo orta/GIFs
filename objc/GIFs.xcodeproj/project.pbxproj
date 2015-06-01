@@ -96,6 +96,7 @@
 		60FB8853183AE74600FC05CB /* close_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB884F183AE74600FC05CB /* close_active.png */; };
 		60FB8854183AE74600FC05CB /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8850183AE74600FC05CB /* close@2x.png */; };
 		60FB8855183AE74600FC05CB /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8851183AE74600FC05CB /* close.png */; };
+		905F686A1B139E9100E8E8BF /* ORGIFActionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905F68691B139E9100E8E8BF /* ORGIFActionsController.m */; };
 		B2B9FF0252DC48C4A78AA527 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FD7C5321E34413A5C61F2D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +210,8 @@
 		60FB884F183AE74600FC05CB /* close_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_active.png; sourceTree = "<group>"; };
 		60FB8850183AE74600FC05CB /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		60FB8851183AE74600FC05CB /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		905F68681B139E9100E8E8BF /* ORGIFActionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGIFActionsController.h; sourceTree = "<group>"; };
+		905F68691B139E9100E8E8BF /* ORGIFActionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGIFActionsController.m; sourceTree = "<group>"; };
 		9E6765FAE8ACE68D1156A26E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D7BC7B7FBE60CF0BF3B073BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,6 +409,8 @@
 				60EC305D16A1FC6C00E9BE93 /* ORMenuController.m */,
 				60EC307016A3306E00E9BE93 /* ORGIFController.h */,
 				60EC307116A3306E00E9BE93 /* ORGIFController.m */,
+				905F68681B139E9100E8E8BF /* ORGIFActionsController.h */,
+				905F68691B139E9100E8E8BF /* ORGIFActionsController.m */,
 				60F8BFF116AE1E2600036609 /* ORTumblrController.h */,
 				60F8BFF216AE1E2600036609 /* ORTumblrController.m */,
 				60F849EB1835D19B009A0F25 /* ORSourcesController.h */,
@@ -604,6 +609,7 @@
 				60EC305E16A1FC6C00E9BE93 /* ORMenuController.m in Sources */,
 				60C3CE3C19A5976200E7B88F /* ORGIFRightClickMenuMaker.m in Sources */,
 				6015B461199C653800587A4E /* ORMiddleGreyView.m in Sources */,
+				905F686A1B139E9100E8E8BF /* ORGIFActionsController.m in Sources */,
 				60F849ED1835D19B009A0F25 /* ORSourcesController.m in Sources */,
 				60F849EA1835CEB6009A0F25 /* ORDarkBlueView.m in Sources */,
 				60EC306716A2089500E9BE93 /* ORImageView.m in Sources */,

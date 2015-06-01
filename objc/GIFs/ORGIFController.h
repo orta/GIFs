@@ -11,10 +11,11 @@
 #import "ORSimpleSourceListView.h"
 #import <WebKit/WebKit.h>
 #import <GIFKit/ORGIFSource.h>
+#import "ORImageBrowserView.h"
 
 @class GIF, ORSubredditNetworkModel, ORGiphyNetworkModel, ORTumblrController, ORStarredSourceController, ORMenuController;
 
-@interface ORGIFController : NSObject
+@interface ORGIFController : NSObject <ORImageBrowserViewDelegate>
 
 @property (weak) IBOutlet IKImageBrowserView *collectionView;
 

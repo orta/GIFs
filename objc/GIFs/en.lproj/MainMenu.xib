@@ -421,11 +421,7 @@
                                             </menu>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="400"/>
-                                        <menuItem title="Show Colors" keyEquivalent="C" id="401">
-                                            <connections>
-                                                <action selector="orderFrontColorPanel:" target="-1" id="433"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Show Colors" keyEquivalent="C" id="401"/>
                                         <menuItem isSeparatorItem="YES" id="402"/>
                                         <menuItem title="Copy Style" keyEquivalent="c" id="403">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
@@ -747,6 +743,7 @@
                                                     <connections>
                                                         <outlet property="dataSource" destination="648" id="R2c-hn-OVt"/>
                                                         <outlet property="delegate" destination="648" id="gYc-75-5qt"/>
+                                                        <outlet property="gifDelegate" destination="648" id="EnS-5b-f5m"/>
                                                     </connections>
                                                 </ikImageBrowserView>
                                             </subviews>

@@ -8,7 +8,17 @@
 
 #import <Quartz/Quartz.h>
 
+@protocol ORImageBrowserViewDelegate <NSObject>
+
+- (NSURL *)URLForCurrentGIF;
+- (NSURL *)URLForCurrentGIFContext;
+- (NSString *)sourceTitleForCurrentGIF;
+
+@end
+
 @interface ORImageBrowserView : IKImageBrowserView
+
+@property (nonatomic, weak) IBOutlet id <ORImageBrowserViewDelegate> gifDelegate;
 
 @end
 
