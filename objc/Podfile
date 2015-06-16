@@ -2,5 +2,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :osx, "10.9"
 
+plugin 'cocoapods-keys', {
+    :project => "GIFs",
+    :keys => [
+        "GiphyAPIKey",
+        "RandoTwitterBotConsumerKey",
+        "RandoTwitterBotConsumerSecret",
+        "RandoTwitterBotOAuthToken",
+        "RandoTwitterBotOAuthTokenSecret"
+    ]
+  }
+
 pod 'StandardPaths', '~> 1.5.4'
 pod "GIFKit", :git => "https://github.com/orta/GIFKit.git"
+pod 'STTwitter', '~> 0.2'

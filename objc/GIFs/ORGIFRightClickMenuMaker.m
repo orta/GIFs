@@ -64,7 +64,16 @@
     item = [[NSMenuItem alloc] initWithTitle:@"Download GIF" action:@selector(downloadGIF) keyEquivalent:@"s"];
     item.target = self;
     [menuItems addObject:item];
-    
+
+    [menuItems addObject:[NSMenuItem separatorItem]];
+    item = [[NSMenuItem alloc] initWithTitle:@"Post to @RandoGIFs" action:@selector(postToRando) keyEquivalent:@"r"];
+    item.target = self;
+    [menuItems addObject:item];
+
+    item = [[NSMenuItem alloc] initWithTitle:@"Send to @orta" action:@selector(postToOrta) keyEquivalent:@"O"];
+    item.target = self;
+    [menuItems addObject:item];
+
     [menuItems addObject:[NSMenuItem separatorItem]];
     
     NSArray *sharingServiceIDs = @[NSSharingServiceNamePostOnFacebook, NSSharingServiceNamePostOnTwitter, NSSharingServiceNamePostOnSinaWeibo, NSSharingServiceNamePostOnTencentWeibo, NSSharingServiceNamePostOnLinkedIn, NSSharingServiceNameComposeEmail, NSSharingServiceNameComposeMessage];
@@ -88,6 +97,17 @@
 {
     NSSharingService *service = share.representedObject;
     [service performWithItems:@[@"", self.gif.downloadURL]];
+}
+
+
+- (void)postToOrta
+{
+    [ORGIFActionsController tweetOrtaLinkToURL:self.gif.downloadURL];
+}
+
+- (void)postToRando
+{
+    [ORGIFActionsController tweetOutLinkToURL:self.gif.downloadURL];
 }
 
 - (void)downloadGIF

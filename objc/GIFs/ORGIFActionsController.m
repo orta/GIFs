@@ -8,8 +8,37 @@
 
 #import "ORGIFActionsController.h"
 #import <AFNetworking/AFHTTPRequestOperation.h>
+#import <STTwitter/STTwitter.h>
+#import <Keys/GIFsKeys.h>
 
 @implementation ORGIFActionsController
+
++ (void)tweetOrtaLinkToURL:(NSURL *)url
+{
+    NSString *tweet = [NSString stringWithFormat:@"@orta - %@", url.absoluteString];
+    [self tweet:tweet];
+}
+
++ (void)tweetOutLinkToURL:(NSURL *)url
+{
+    NSString *tweet = [NSString stringWithFormat:@"%@", url.absoluteString];
+    [self tweet:tweet];
+}
+
++ (void)tweet:(NSString *)tweet
+{
+    GIFsKeys *keys = [[GIFsKeys alloc] init];
+    STTwitterAPI *twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey: [keys randoTwitterBotConsumerKey]
+                                                          consumerSecret: [keys randoTwitterBotConsumerSecret]
+                                                              oauthToken: [keys randoTwitterBotOAuthToken]
+                                                        oauthTokenSecret: [keys randoTwitterBotOAuthTokenSecret]];
+
+    [twitter postStatusUpdate:tweet inReplyToStatusID:nil latitude:nil longitude:nil placeID:@"GIFS.app" displayCoordinates:nil trimUser:@0 successBlock:^(NSDictionary *status) {
+
+    } errorBlock:^(NSError *error) {
+
+    }];
+}
 
 + (void)copyGIFDownloadURLToClipboard:(NSURL *)downloadURL
 {

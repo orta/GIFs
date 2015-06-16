@@ -13,6 +13,10 @@
  */
 @interface ORGIFActionsController : NSObject
 
++ (void)tweetOutLinkToURL:(NSURL *)url;
+
++ (void)tweetOrtaLinkToURL:(NSURL *)url;
+
 + (void)copyGIFDownloadURLToClipboard:(NSURL *)downloadURL;
 
 + (void)copyGIFMarkdownToClipboardWithSourceTitle:(NSString *)sourceTitle downloadURL:(NSURL *)downloadURL;

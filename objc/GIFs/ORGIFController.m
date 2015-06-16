@@ -18,7 +18,7 @@
 #import "ORMenuController.h"
 #import "GIFs-Swift.h"
 #import "ORGIFRightClickMenuMaker.h"
-#import <CocoaPods-Keys/GIFsKeys.h>
+#import <Keys/GIFsKeys.h>
 
 @interface GIF()
 @property (nonatomic, strong, readwrite) NSDate *dateAdded;

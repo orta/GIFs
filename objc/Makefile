@@ -5,4 +5,10 @@ bootstrap:
 		read GIPHY_API_KEY; \
 	
 	bundle exec pod keys set GiphyAPIKey "$$GIPHY_API_KEY" GIFs
-	pod install
+	bundle exec pod keys set GiphyAPIKey "$$GIPHY_API_KEY" GIFs
+	bundle exec pod keys set RandoTwitterBotConsumerKey "" GIFs
+	bundle exec pod keys set RandoTwitterBotConsumerSecret "" GIFs
+	bundle exec pod keys set RandoTwitterBotOAuthToken "" GIFs
+	bundle exec pod keys set RandoTwitterBotOAuthTokenSecret "" GIFs
+	
+	bundle exec pod install
