@@ -26,20 +26,31 @@ static CGFloat const ORImageBrowserMargin = 3;
 - (void)keyDown:(NSEvent *)theEvent
 {
     if (theEvent.modifierFlags & NSCommandKeyMask) {
+        NSURL *gif = [self.gifDelegate URLForCurrentGIF];
         if ([theEvent.characters isEqualToString:@"b"]) { // Command+b - Open in browser
-            [ORGIFActionsController openGIFDownloadURLInBrowser:[self.gifDelegate URLForCurrentGIF]];
+            [ORGIFActionsController openGIFDownloadURLInBrowser:gif];
         } else if ([theEvent.characters isEqualToString:@"o"]) { // Command+o - Open GIF context in browser
-            [ORGIFActionsController openGIFContextURLInBrowser:[self.gifDelegate URLForCurrentGIFContext]];
+            [ORGIFActionsController openGIFContextURLInBrowser:gif];
         } else if ([theEvent.characters isEqualToString:@"s"]) { // Command+s - Save GIF to disk
-            [ORGIFActionsController downloadGIFWithURL:[self.gifDelegate URLForCurrentGIF] completion:nil];
+            [ORGIFActionsController downloadGIFWithURL:gif completion:nil];
+        } else if ([theEvent.characters isEqualToString:@"r"]) { // Command+r - Send Rando GIF
+            [ORGIFActionsController tweetOutLinkToURL:gif];
         }
+
     }
-    
-    if ((theEvent.modifierFlags & NSCommandKeyMask) && (theEvent.modifierFlags & NSShiftKeyMask)) {
+
+    else if ((theEvent.modifierFlags & NSCommandKeyMask) && (theEvent.modifierFlags & NSShiftKeyMask)) {
         if ([theEvent.characters isEqualToString:@"c"]) { // Command+Shift+c - Copy GIF markdown to clipboard
             [ORGIFActionsController copyGIFMarkdownToClipboardWithSourceTitle:[self.gifDelegate sourceTitleForCurrentGIF]
                                                                   downloadURL:[self.gifDelegate URLForCurrentGIF]];
+
+        } else if ([theEvent.characters isEqualToString:@"o"]) { // Command+r - Send Rando GIF
+            [ORGIFActionsController tweetOrtaLinkToURL:gif];
         }
+    }
+
+    else {
+        [super keyDown:theEvent];
     }
 }
 
