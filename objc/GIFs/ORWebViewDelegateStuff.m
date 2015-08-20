@@ -20,11 +20,19 @@
 }
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems {
-    
+
+    NSMenuItem *copy = nil;
+    for (NSMenuItem *item in defaultMenuItems) {
+        // I want Copy Image, but I can't look at title due to localisation stuff
+        if (item.tag == 6) {
+            copy = item;
+        }
+    }
+
     GIF *gif = self.gifController.currentGIF;
     if (gif) {
         menuMaker = [[ORGIFRightClickMenuMaker alloc] initWithGIF:gif];
-        return menuMaker.menuItems;
+        return [menuMaker menuItemsWithImageCopyItem:copy];
     }
     return @[];
 }

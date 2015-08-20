@@ -12,5 +12,5 @@
 @property (readonly, nonatomic, strong) GIF *gif;
 
 - (NSMenu *)menu;
-- (NSArray *)menuItems;
+- (NSArray *)menuItemsWithImageCopyItem:(NSMenuItem *)item;
 @end

@@ -31,13 +31,13 @@
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"menu"];
     [menu setAutoenablesItems:NO];
     
-    for (NSMenuItem *item in [self menuItems]) {
+    for (NSMenuItem *item in [self menuItemsWithImageCopyItem:nil]) {
         [menu addItem:item];
     }
     return menu;
 }
 
-- (NSArray *)menuItems
+- (NSArray *)menuItemsWithImageCopyItem:(NSMenuItem *)copyItem
 {
     NSMutableArray *menuItems = [NSMutableArray array];
     
@@ -48,6 +48,10 @@
     item = [[NSMenuItem alloc] initWithTitle:@"Copy Image Markdown" action: @selector(copyMarkdown) keyEquivalent:@"C"];
     [item setTarget:self];
     [menuItems addObject:item];
+
+    if (copyItem) {
+        [menuItems addObject:copyItem];
+    }
     
     [menuItems addObject:[NSMenuItem separatorItem]];
     item = [[NSMenuItem alloc] initWithTitle:@"Open GIF in Browser" action:@selector(openInBrowser) keyEquivalent:@"b"];
