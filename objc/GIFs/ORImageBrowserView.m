@@ -25,8 +25,9 @@ static CGFloat const ORImageBrowserMargin = 3;
 
 - (void)keyDown:(NSEvent *)theEvent
 {
+    NSURL *gif = [self.gifDelegate URLForCurrentGIF];
+
     if (theEvent.modifierFlags & NSCommandKeyMask) {
-        NSURL *gif = [self.gifDelegate URLForCurrentGIF];
         if ([theEvent.characters isEqualToString:@"b"]) { // Command+b - Open in browser
             [ORGIFActionsController openGIFDownloadURLInBrowser:gif];
         } else if ([theEvent.characters isEqualToString:@"o"]) { // Command+o - Open GIF context in browser
