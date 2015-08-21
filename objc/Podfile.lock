@@ -25,7 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - GIFKit (from `https://github.com/orta/GIFKit.git`)
-  - Keys (from `/Users/orta/spiel/mac/GIFs/objc/Pods/CocoaPodsKeys/`)
+  - Keys (from `Pods/CocoaPodsKeys`)
   - StandardPaths (~> 1.5.4)
   - STTwitter (~> 0.2)
 
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
   GIFKit:
     :git: https://github.com/orta/GIFKit.git
   Keys:
-    :path: "/Users/orta/spiel/mac/GIFs/objc/Pods/CocoaPodsKeys/"
+    :path: Pods/CocoaPodsKeys
 
 CHECKOUT OPTIONS:
   GIFKit:
@@ -47,4 +47,4 @@ SPEC CHECKSUMS:
   StandardPaths: 0c11c9256a68dd2339d4d2de647a5bd819648c46
   STTwitter: 7b348a4600eb9f868a3d1c9031b4fd8533d123e7
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

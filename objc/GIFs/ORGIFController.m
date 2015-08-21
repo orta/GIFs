@@ -58,7 +58,7 @@
     } else {
         _currentSource = _searchController;
         [_searchController setQuery:string];
-        [_searchController setAPIKey:[GIFsKeys new].giphyAPIKey];
+        [_searchController setAPIKey:[GifsKeys new].giphyAPIKey];
         showGiphyLogo = YES;
     }
     
