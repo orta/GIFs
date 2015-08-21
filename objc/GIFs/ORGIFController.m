@@ -12,7 +12,6 @@
 #import <GIFKit/ORSubredditNetworkModel.h>
 #import "ORTumblrController.h"
 #import "ORStarredSourceController.h"
-#import "GIF.h"
 #import <StandardPaths/StandardPaths.h>
 #import "NSString+StringBetweenStrings.h"
 #import "ORMenuController.h"

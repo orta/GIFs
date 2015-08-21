@@ -9,7 +9,7 @@
 #import "ORTumblrController.h"
 #import "AFNetworking.h"
 #import "ORAppDelegate.h"
-#import "GIF.h"
+#import <GIFKit/GIF.h>
 
 @interface TumblrGIF : GIF
 @property (copy, nonatomic, readwrite) NSString *representedURL;

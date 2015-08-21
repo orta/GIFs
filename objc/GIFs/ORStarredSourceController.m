@@ -8,7 +8,7 @@
 
 #import "ORStarredSourceController.h"
 #import <StandardPaths/StandardPaths.h>
-#import "GIF.h"
+
 
 @implementation ORStarredSourceController {
     NSArray *_starred;
