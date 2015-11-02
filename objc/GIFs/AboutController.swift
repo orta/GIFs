@@ -42,7 +42,7 @@ class AboutController : NSObject {
     
     @IBAction func openTwitter(sender: AnyObject) {
         let workspace = NSWorkspace.sharedWorkspace()
-        if let tweetbot = workspace.fullPathForApplication("Tweetbot") {
+        if let _ = workspace.fullPathForApplication("Tweetbot") {
             workspace.openURL(NSURL(string: "tweetbot:///user_profile/orta")!);
             
         } else {
