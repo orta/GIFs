@@ -29,7 +29,9 @@ import AppKit
     }
     
     override public func awakeFromNib() {
-        (mainWindow.contentView as! NSView).addSubview(self.titleBlurView);
+        guard let content = mainWindow.contentView else { return }
+        content.addSubview(self.titleBlurView);
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToolbarBlur", name: NSWindowDidResizeNotification, object: self.mainWindow)
         updateToolbarBlur()
 
