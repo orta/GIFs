@@ -1,6 +1,8 @@
 2012's word of the year: GIF.
 --------
 
+See https://github.com/manmal/GIFs for an updated build
+
 ![Screenshot](https://raw.github.com/orta/GIFs/master/web/yosemite.png "screenshot")
 
 ### Download
